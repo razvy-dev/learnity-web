@@ -22,6 +22,9 @@ import { AutonomousGroups } from './collections/Playground/AutonomousGrous'
 
 // guided stuff
 
+import { GuidedWorkshops } from './collections/Guided/Workshops'
+import { GuidedCourses } from './collections/Guided/Courses'
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -69,7 +72,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URL || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Workshops, Courses, AutonomousGroups],
+  collections: [Pages, Posts, Media, Categories, Users, GuidedWorkshops, GuidedCourses, AutonomousGroups, Workshops, Courses],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins,
