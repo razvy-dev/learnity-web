@@ -15,6 +15,13 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 
+// playground stuff
+import { Workshops } from './collections/Playground/Workshops'
+import { Courses } from './collections/Playground/Courses'
+import { AutonomousGroups } from './collections/Playground/AutonomousGrous'
+
+// guided stuff
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -62,7 +69,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URL || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users],
+  collections: [Pages, Posts, Media, Categories, Users, Workshops, Courses, AutonomousGroups],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins,
