@@ -19,7 +19,7 @@ export const homeStatic: RequiredDataFromCollectionSlug<'pages'> = {
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'Payload Website Template',
+                text: 'Learnity',
                 version: 1,
               },
             ],
@@ -80,9 +80,9 @@ export const homeStatic: RequiredDataFromCollectionSlug<'pages'> = {
     },
   },
   meta: {
-    description: 'An open-source website built with Payload and Next.js.',
-    title: 'Payload Website Template',
+    description: 'Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.',
+    title: 'Learnity',
   },
-  title: 'Home',
+  title: 'Acasa',
   layout: [],
 }

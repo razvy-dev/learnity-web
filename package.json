@@ -1,7 +1,7 @@
 {
   "name": "learnity-web",
   "version": "1.0.0",
-  "description": "Website template for Payload",
+  "description": "The Learnity Web Application",
   "license": "MIT",
   "type": "module",
   "scripts": {
