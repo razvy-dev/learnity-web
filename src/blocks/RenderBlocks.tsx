@@ -11,17 +11,39 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { Timeline } from '@/blocks/Timeline/Component'
 import { RulesAndValues } from '@/blocks/RulesAndValues/Component'
 import { Guided } from '@/blocks/Guided/Component'
+import { FAQ } from '@/blocks/FAQ/Component'
+import { Playground } from '@/blocks/Playground/Component'
+import { Testimonials } from '@/blocks/Testimonials/Component'
+import { PlaygroundJourney } from '@/blocks/PlaygroundJourney/Component'
+import { MapEmbed } from '@/blocks/MapEmbed/Component'
+import { GuidedExamples } from '@/blocks/GuidedExamples/Component'
+import { PlaygroundExamples } from '@/blocks/PlaygroundExamples/Component'
+import { Teachers } from '@/blocks/Teachers/Component'
+import { Teacher } from '@/blocks/Teacher/Component'
+import { Donate } from '@/blocks/Donate/Component'
+import { DonateStory } from '@/blocks/DonateStory/Component'
 
 const blockComponents = {
   about: About,
   archive: ArchiveBlock,
   content: ContentBlock,
   cta: CallToActionBlock,
+  donate: Donate,
+  donateStory: DonateStory,
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
   timeline: Timeline,
   rulesAndValues: RulesAndValues,
   guided: Guided,
+  faq: FAQ,
+  playground: Playground,
+  testimonials: Testimonials,
+  playgroundJourney: PlaygroundJourney,
+  map: MapEmbed,
+  guidedExamples: GuidedExamples,
+  playgroundExamples: PlaygroundExamples,
+  teachers: Teachers,
+  teacher: Teacher,
 }
 
 export const RenderBlocks: React.FC<{
@@ -42,7 +64,7 @@ export const RenderBlocks: React.FC<{
 
             if (Block) {
               return (
-                <div className="my-16" key={index}>
+                <div key={index}>
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}
                   <Block {...block} disableInnerContainer />
                 </div>

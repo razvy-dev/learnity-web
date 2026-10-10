@@ -60,7 +60,11 @@ export const plugins: Plugin[] = [
     },
     formOverrides: {
       fields: ({ defaultFields }) => {
-        return defaultFields.map((field) => {
+        let checkedDefaultFields
+
+        // this part is basically the validation of fields names being differnet one from the other
+        
+        checkedDefaultFields = defaultFields.map((field) => {
           if ('name' in field && field.name === 'confirmationMessage') {
             return {
               ...field,
@@ -77,6 +81,21 @@ export const plugins: Plugin[] = [
           }
           return field
         })
+
+        // and this is teh field used to keep track to what event was this form submitted to
+
+        checkedDefaultFields = [...checkedDefaultFields,
+            {
+              name: 'event',
+              type: 'relationship',
+              relationTo: 'guidedWorkshops',
+              admin: {
+                position: 'sidebar',
+              },
+            },
+          ]
+
+        return checkedDefaultFields
       },
     },
   }),

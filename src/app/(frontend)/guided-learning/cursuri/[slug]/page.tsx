@@ -6,15 +6,14 @@ import configPromise from "@payload-config";
 import { draftMode } from "next/headers";
 import { cache } from "react";
 
-import type { Course } from "@/payload-types";
-
+import { EventHero } from "@/components/EventHero";
 import { generateMeta } from '@/utilities/generateMeta'
 import { LivePreviewListener } from "@/components/LivePreviewListener";
 
 export async function generateStaticParams() {
     const payload = await getPayload({ config: configPromise });
     const courses = await payload.find({
-        collection: "courses",
+        collection: "guidedCourses",
         draft: false,
         limit: 1000,
         overrideAccess: false,
@@ -56,9 +55,7 @@ export default async function Course({ params: paramsPromise }: Args) {
 
             {draft && <LivePreviewListener />}
 
-            {/* <CourseHero course={course} /> */}
-
-        
+            <EventHero event={course} type="course" />
         </article>
     )
 }
@@ -78,7 +75,7 @@ const queryCourseBySlug = cache(async ({ slug }: { slug: string }) => {
     const payload = await getPayload({ config: configPromise })
 
     const result = await payload.find({
-        collection: 'courses',
+        collection: 'guidedCourses',
         draft,
         where: {
             slug: {

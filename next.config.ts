@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
       {
         pathname: '/api/media/file/**',
       },
+      {
+        pathname: '/learnity-logo.svg',
+      },
     ],
     qualities: [100],
     remotePatterns: [

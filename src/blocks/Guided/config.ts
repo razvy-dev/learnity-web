@@ -6,6 +6,8 @@ import {
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 
+import { iconPicker } from '@/fields/iconPicker'
+
 export const Guided: Block = {
   slug: 'guided',
   interfaceName: 'Guided',
@@ -54,26 +56,11 @@ export const Guided: Block = {
           }),
           required: true,
         },
-        {
-          name: 'icon',
-          type: 'select',
-          required: true,
-          defaultValue: 'bookOpen',
-          options: [
-            { label: 'BookOpen', value: 'bookOpen' },
-            { label: 'Lightbulb', value: 'lightbulb' },
-            { label: 'Target', value: 'target' },
-            { label: 'Sparkles', value: 'sparkles' },
-            { label: 'Star', value: 'star' },
-            { label: 'Heart', value: 'heart' },
-            { label: 'Users', value: 'users' },
-            { label: 'Shield', value: 'shield' },
-            { label: 'ArrowRight', value: 'arrowRight' },
-            { label: 'Play', value: 'play' },
-            { label: 'Award', value: 'award' },
-            { label: 'CheckCircle', value: 'checkCircle' },
-          ],
-        },
+        iconPicker({
+          overrides: {
+            defaultValue: 'bookOpen',
+          },
+        }),
         {
           name: 'iconColor',
           type: 'select',

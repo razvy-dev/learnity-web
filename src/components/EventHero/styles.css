@@ -1,0 +1,65 @@
+@keyframes ehFloatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes ehSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ehFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ehZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.eh-float-slow {
+  animation: ehFloatSlow 6s ease-in-out infinite;
+}
+
+.eh-slide-up {
+  animation: ehSlideUp 0.5s ease-out forwards;
+}
+
+.eh-fade-in {
+  animation: ehFadeIn 0.5s ease-in forwards;
+}
+
+.eh-zoom-in {
+  animation: ehZoomIn 0.5s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eh-float-slow,
+  .eh-slide-up,
+  .eh-fade-in,
+  .eh-zoom-in {
+    animation: none;
+  }
+}

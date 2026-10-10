@@ -15,6 +15,15 @@ import { Controller } from 'react-hook-form'
 import { Error } from '../Error'
 import { Width } from '../Width'
 import { stateOptions } from './options'
+import { cn } from '@/utilities/ui'
+import {
+  fieldError,
+  fieldLabel,
+  requiredMark,
+  selectContentBase,
+  selectItemBase,
+  selectTriggerBase,
+} from '../styles'
 
 export const State: React.FC<
   StateField & {
@@ -24,10 +33,10 @@ export const State: React.FC<
 > = ({ name, control, errors, label, required, width }) => {
   return (
     <Width width={width}>
-      <Label htmlFor={name}>
+      <Label className={fieldLabel} htmlFor={name}>
         {label}
         {required && (
-          <span className="required">
+          <span className={requiredMark}>
             * <span className="sr-only">(required)</span>
           </span>
         )}
@@ -41,13 +50,16 @@ export const State: React.FC<
 
           return (
             <Select onValueChange={(val) => onChange(val)} value={controlledValue?.value}>
-              <SelectTrigger className="w-full" id={name}>
+              <SelectTrigger
+                className={cn(selectTriggerBase, errors[name] && fieldError)}
+                id={name}
+              >
                 <SelectValue placeholder={label} />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className={selectContentBase}>
                 {stateOptions.map(({ label, value }) => {
                   return (
-                    <SelectItem key={value} value={value}>
+                    <SelectItem className={selectItemBase} key={value} value={value}>
                       {label}
                     </SelectItem>
                   )

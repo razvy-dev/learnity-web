@@ -11,6 +11,7 @@ import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
+import { Socials } from './Socials/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
@@ -18,12 +19,14 @@ import { getServerSideURL } from './utilities/getURL'
 // playground stuff
 import { Workshops } from './collections/Playground/Workshops'
 import { Courses } from './collections/Playground/Courses'
-import { AutonomousGroups } from './collections/Playground/AutonomousGrous'
+import { AutonomousGroups } from './collections/Playground/AutonomousGroups'
+import { Events } from './collections/Playground/Events'
 
 // guided stuff
 
 import { GuidedWorkshops } from './collections/Guided/Workshops'
 import { GuidedCourses } from './collections/Guided/Courses'
+import { GuidedBootcamps } from './collections/Guided/Bootcamps'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -72,9 +75,9 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URL || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, GuidedWorkshops, GuidedCourses, AutonomousGroups, Workshops, Courses],
+  collections: [Pages, Posts, Media, Categories, Users, GuidedWorkshops, GuidedCourses, GuidedBootcamps, AutonomousGroups, Workshops, Courses, Events],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer],
+  globals: [Header, Footer, Socials],
   plugins,
   secret: process.env.PAYLOAD_SECRET,
   sharp,

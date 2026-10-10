@@ -5,21 +5,9 @@ import { Bangers, Nunito } from 'next/font/google'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
-import {
-  Lightbulb,
-  BookOpen,
-  Target,
-  ArrowRight,
-  Sparkles,
-  Star,
-  Heart,
-  Users,
-  Shield,
-  Play,
-  Award,
-  CheckCircle,
-} from 'lucide-react'
+import { ArrowRight, Lightbulb, Target } from 'lucide-react'
 
+import { Icon } from '@/components/Icon'
 import RichText from '@/components/RichText'
 import { Media } from '@/components/Media'
 
@@ -46,7 +34,11 @@ const ORANGE = '#F8A12E'
 const LIGHT_ORANGE = '#F5B064'
 const DARK = '#2f2f27'
 
-const getIcon = (icon: string, color: 'blue' | 'orange' | 'lightOrange' = 'blue', rotation: 'left' | 'right' = 'left') => {
+const getIcon = (
+  icon: string,
+  color: 'blue' | 'orange' | 'lightOrange' = 'blue',
+  rotation: 'left' | 'right' = 'left',
+) => {
   const bgColorMap = {
     blue: 'bg-customBlue',
     orange: 'bg-customOrange',
@@ -62,47 +54,6 @@ const getIcon = (icon: string, color: 'blue' | 'orange' | 'lightOrange' = 'blue'
     right: 'rotate-3',
   }
   const iconClass = 'w-7 h-7 md:w-8 md:h-8'
-  let IconComponent
-
-  switch (icon) {
-    case 'lightbulb':
-      IconComponent = Lightbulb
-      break
-    case 'target':
-      IconComponent = Target
-      break
-    case 'sparkles':
-      IconComponent = Sparkles
-      break
-    case 'star':
-      IconComponent = Star
-      break
-    case 'heart':
-      IconComponent = Heart
-      break
-    case 'users':
-      IconComponent = Users
-      break
-    case 'shield':
-      IconComponent = Shield
-      break
-    case 'arrowRight':
-      IconComponent = ArrowRight
-      break
-    case 'play':
-      IconComponent = Play
-      break
-    case 'award':
-      IconComponent = Award
-      break
-    case 'checkCircle':
-      IconComponent = CheckCircle
-      break
-    case 'bookOpen':
-    default:
-      IconComponent = BookOpen
-      break
-  }
 
   return (
     <div
@@ -113,21 +64,13 @@ const getIcon = (icon: string, color: 'blue' | 'orange' | 'lightOrange' = 'blue'
         rotationMap[rotation] || rotationMap.left,
       )}
     >
-      <IconComponent className={iconClass} />
+      <Icon name={icon} className={iconClass} />
     </div>
   )
 }
 
 export const Guided: React.FC<Props> = (props) => {
-  const {
-    className,
-    sectionTitle,
-    sectionDescription,
-    image,
-    features,
-    ctaText,
-    ctaLink,
-  } = props
+  const { className, sectionTitle, sectionDescription, image, features, ctaText, ctaLink } = props
 
   const { ref, inView } = useInView({
     threshold: 0.2,
@@ -164,14 +107,13 @@ export const Guided: React.FC<Props> = (props) => {
 
           {sectionDescription && (
             <div
-              className={clsx('text-lg text-customBlack max-w-2xl mx-auto mt-6', inView ? 'animate-fade-in' : 'opacity-0')}
+              className={clsx(
+                'text-lg text-customBlack max-w-2xl mx-auto mt-6',
+                inView ? 'animate-fade-in' : 'opacity-0',
+              )}
               style={{ transitionDelay: '0.2s' }}
             >
-              <RichText
-                data={sectionDescription}
-                enableGutter={false}
-                enableProse={false}
-              />
+              <RichText data={sectionDescription} enableGutter={false} enableProse={false} />
             </div>
           )}
         </div>

@@ -107,10 +107,36 @@ export const GuidedWorkshops: CollectionConfig<'guidedWorkshops'> = {
                             required: true,
                         },
                         {
+                            name: 'teachers',
+                            type: 'array',
+                            fields: [
+                                {
+                                    name: 'teacher',
+                                    type: 'text',
+                                    required: true,
+                                },
+                            ],
+                        },
+                        {
                             name: 'date',
                             type: 'date',
                             required: true,
-                        }
+                              admin: {
+                                date: {
+                                    pickerAppearance: 'dayAndTime',
+                                    displayFormat: 'd MMM yyy h:mm aa',
+                                },
+                            },
+                        },
+                        {
+                            name: 'customForm',
+                            type: 'relationship',
+                            relationTo: 'forms',
+                            hasMany: false,
+                            admin: {
+                                description: 'Select or create a custom registration/feedback form for this event.',
+                            },
+                        },
                     ]
                 },
                 {

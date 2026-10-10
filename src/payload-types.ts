@@ -74,9 +74,11 @@ export interface Config {
     users: User;
     guidedWorkshops: GuidedWorkshop;
     guidedCourses: GuidedCourse;
+    guidedBootcamps: GuidedBootcamp;
     autonomousGroups: AutonomousGroup;
     workshops: Workshop;
     courses: Course;
+    events: Event;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -101,9 +103,11 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     guidedWorkshops: GuidedWorkshopsSelect<false> | GuidedWorkshopsSelect<true>;
     guidedCourses: GuidedCoursesSelect<false> | GuidedCoursesSelect<true>;
+    guidedBootcamps: GuidedBootcampsSelect<false> | GuidedBootcampsSelect<true>;
     autonomousGroups: AutonomousGroupsSelect<false> | AutonomousGroupsSelect<true>;
     workshops: WorkshopsSelect<false> | WorkshopsSelect<true>;
     courses: CoursesSelect<false> | CoursesSelect<true>;
+    events: EventsSelect<false> | EventsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -122,10 +126,12 @@ export interface Config {
   globals: {
     header: Header;
     footer: Footer;
+    socials: Social;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    socials: SocialsSelect<false> | SocialsSelect<true>;
   };
   locale: null;
   widgets: {
@@ -169,7 +175,161 @@ export interface Page {
   id: number;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'donate';
+    /**
+     * The animated hero title. Every letter "a" is replaced by the spinning logo.
+     */
+    title?: string | null;
+    subtitle?: string | null;
+    /**
+     * Button label. Scrolls visitors to the contact section below.
+     */
+    ctaLabel?: string | null;
+    /**
+     * Contact details and social links are managed in the Socials global.
+     */
+    contact?: {
+      heading?: string | null;
+    };
+    /**
+     * Main headline shown next to the hero image.
+     */
+    heading?: string | null;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Main framed image of the hero.
+     */
+    image?: (number | null) | Media;
+    /**
+     * Optional smaller image that floats over the main image.
+     */
+    floatingImage?: (number | null) | Media;
+    /**
+     * Optional badge shown over the hero image.
+     */
+    badgeText?: string | null;
+    /**
+     * Which side the image is displayed on.
+     */
+    imagePosition?: ('left' | 'right') | null;
+    /**
+     * Optional highlight cards shown below the text (e.g. Cursuri, Workshop-uri).
+     */
+    features?:
+      | {
+          title: string;
+          icon:
+            | 'school'
+            | 'graduationCap'
+            | 'book'
+            | 'bookOpen'
+            | 'library'
+            | 'calendar'
+            | 'clock'
+            | 'users'
+            | 'sparkles'
+            | 'helpCircle'
+            | 'lightbulb'
+            | 'heart'
+            | 'star'
+            | 'shield'
+            | 'messageCircle'
+            | 'messagesSquare'
+            | 'award'
+            | 'target'
+            | 'compass'
+            | 'map'
+            | 'globe'
+            | 'flaskConical'
+            | 'atom'
+            | 'brain'
+            | 'puzzle'
+            | 'palette'
+            | 'music'
+            | 'mic'
+            | 'pencil'
+            | 'fileText'
+            | 'calculator'
+            | 'dumbbell'
+            | 'leaf'
+            | 'rocket'
+            | 'briefcase'
+            | 'handshake'
+            | 'arrowRight'
+            | 'play'
+            | 'checkCircle'
+            | 'home'
+            | 'smile'
+            | 'phone'
+            | 'mail'
+            | 'facebook'
+            | 'instagram'
+            | 'twitter'
+            | 'youtube'
+            | 'linkedin'
+            | 'github'
+            | 'twitch'
+            | 'slack'
+            | 'gitlab'
+            | 'figma'
+            | 'dribbble'
+            | 'codepen'
+            | 'codesandbox'
+            | 'trello'
+            | 'framer'
+            | 'pocket'
+            | 'atSign'
+            | 'share2'
+            | 'music2'
+            | 'rss';
+          id?: string | null;
+        }[]
+      | null;
+    backgroundColor?: ('lightBlue' | 'cream' | 'white') | null;
+    /**
+     * Show animated floating shapes and icons in the background.
+     */
+    showDecorations?: boolean | null;
+    /**
+     * Impact numbers shown next to the heading (e.g. "100 Tineri sprijiniți").
+     */
+    stats?:
+      | {
+          value: string;
+          label: string;
+          id?: string | null;
+        }[]
+      | null;
+    /**
+     * Rotating badge floating over the hero image.
+     */
+    floatingText?: string | null;
+    /**
+     * Label of the donation progress card floating over the image.
+     */
+    goalLabel?: string | null;
+    /**
+     * Progress percentage (0-100) shown on the donation progress card.
+     */
+    goalProgress?: number | null;
+    /**
+     * Show a wavy divider at the bottom of the hero.
+     */
+    waveDivider?: boolean | null;
     richText?: {
       root: {
         type: string;
@@ -201,18 +361,15 @@ export interface Page {
                 } | null);
             url?: string | null;
             label: string;
-            /**
-             * Choose how the link should be rendered.
-             */
-            appearance?: ('default' | 'outline') | null;
           };
           id?: string | null;
         }[]
       | null;
-    media?: (number | null) | Media;
   };
   layout: (
     | CallToActionBlock
+    | DonateBlock
+    | DonateStory
     | ContentBlock
     | MediaBlock
     | ArchiveBlock
@@ -221,6 +378,15 @@ export interface Page {
     | RulesAndValues
     | About
     | Guided
+    | FAQ
+    | Playground
+    | Testimonials
+    | PlaygroundJourney
+    | MapEmbed
+    | GuidedExamples
+    | PlaygroundExamples
+    | Teachers
+    | TeacherBlock
   )[];
   meta?: {
     title?: string | null;
@@ -231,56 +397,6 @@ export interface Page {
     description?: string | null;
   };
   publishedAt?: string | null;
-  /**
-   * When enabled, the slug will auto-generate from the title field on save and autosave.
-   */
-  generateSlug?: boolean | null;
-  slug: string;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "posts".
- */
-export interface Post {
-  id: number;
-  title: string;
-  heroImage?: (number | null) | Media;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  relatedPosts?: (number | Post)[] | null;
-  categories?: (number | Category)[] | null;
-  meta?: {
-    title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (number | null) | Media;
-    description?: string | null;
-  };
-  publishedAt?: string | null;
-  authors?: (number | User)[] | null;
-  populatedAuthors?:
-    | {
-        id?: string | null;
-        name?: string | null;
-      }[]
-    | null;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
@@ -411,6 +527,56 @@ export interface FolderInterface {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  title: string;
+  heroImage?: (number | null) | Media;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  relatedPosts?: (number | Post)[] | null;
+  categories?: (number | Category)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  populatedAuthors?:
+    | {
+        id?: string | null;
+        name?: string | null;
+      }[]
+    | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "categories".
  */
 export interface Category {
@@ -465,6 +631,10 @@ export interface User {
  * via the `definition` "CallToActionBlock".
  */
 export interface CallToActionBlock {
+  /**
+   * Big display headline shown at the top of the section.
+   */
+  heading?: string | null;
   richText?: {
     root: {
       type: string;
@@ -480,6 +650,23 @@ export interface CallToActionBlock {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * Optional small label shown above the heading.
+   */
+  badgeText?: string | null;
+  /**
+   * Optional image. When set, the text and image are shown side by side; otherwise the content is centered.
+   */
+  image?: (number | null) | Media;
+  variant?: ('teal' | 'orange' | 'dark' | 'cream') | null;
+  /**
+   * Only applies when no image is selected.
+   */
+  alignment?: ('center' | 'left') | null;
+  /**
+   * Show animated floating shapes and icons in the background.
+   */
+  showDecorations?: boolean | null;
   links?:
     | {
         link: {
@@ -496,10 +683,6 @@ export interface CallToActionBlock {
               } | null);
           url?: string | null;
           label: string;
-          /**
-           * Choose how the link should be rendered.
-           */
-          appearance?: ('default' | 'outline') | null;
         };
         id?: string | null;
       }[]
@@ -507,6 +690,127 @@ export interface CallToActionBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'cta';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DonateBlock".
+ */
+export interface DonateBlock {
+  heading: string;
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Optional small label shown above the heading.
+   */
+  badgeText?: string | null;
+  /**
+   * Optional preset amount chips. Each chip links to its own donation page.
+   */
+  amounts?:
+    | {
+        /**
+         * Chip label, e.g. "50 lei".
+         */
+        amount: string;
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Optional reassurance note shown below the CTAs.
+   */
+  trustText?: string | null;
+  /**
+   * Optional image. When set, the text and image are shown side by side; otherwise the content is centered.
+   */
+  image?: (number | null) | Media;
+  variant?: ('teal' | 'orange' | 'dark' | 'cream') | null;
+  /**
+   * Only applies when no image is selected.
+   */
+  alignment?: ('center' | 'left') | null;
+  /**
+   * Show animated floating shapes and icons in the background.
+   */
+  showDecorations?: boolean | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'donate';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DonateStory".
+ */
+export interface DonateStory {
+  /**
+   * Optional heading shown above the content.
+   */
+  heading?: string | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'donateStory';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -607,23 +911,9 @@ export interface ArchiveBlock {
  * via the `definition` "FormBlock".
  */
 export interface FormBlock {
+  sectionTitle: string;
+  sectionDescription?: string | null;
   form: number | Form;
-  enableIntro?: boolean | null;
-  introContent?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'formBlock';
@@ -790,8 +1080,58 @@ export interface Form {
         id?: string | null;
       }[]
     | null;
+  event?: (number | null) | GuidedWorkshop;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedWorkshops".
+ */
+export interface GuidedWorkshop {
+  id: number;
+  title: string;
+  slug: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  photo: number | Media;
+  teachers?:
+    | {
+        teacher: string;
+        id?: string | null;
+      }[]
+    | null;
+  date: string;
+  /**
+   * Select or create a custom registration/feedback form for this event.
+   */
+  customForm?: (number | null) | Form;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -850,7 +1190,70 @@ export interface RulesAndValues {
       };
       [k: string]: unknown;
     };
-    icon: 'lightbulb' | 'heart' | 'shield' | 'users' | 'sparkles' | 'bookOpen' | 'star';
+    icon:
+      | 'school'
+      | 'graduationCap'
+      | 'book'
+      | 'bookOpen'
+      | 'library'
+      | 'calendar'
+      | 'clock'
+      | 'users'
+      | 'sparkles'
+      | 'helpCircle'
+      | 'lightbulb'
+      | 'heart'
+      | 'star'
+      | 'shield'
+      | 'messageCircle'
+      | 'messagesSquare'
+      | 'award'
+      | 'target'
+      | 'compass'
+      | 'map'
+      | 'globe'
+      | 'flaskConical'
+      | 'atom'
+      | 'brain'
+      | 'puzzle'
+      | 'palette'
+      | 'music'
+      | 'mic'
+      | 'pencil'
+      | 'fileText'
+      | 'calculator'
+      | 'dumbbell'
+      | 'leaf'
+      | 'rocket'
+      | 'briefcase'
+      | 'handshake'
+      | 'arrowRight'
+      | 'play'
+      | 'checkCircle'
+      | 'home'
+      | 'smile'
+      | 'phone'
+      | 'mail'
+      | 'facebook'
+      | 'instagram'
+      | 'twitter'
+      | 'youtube'
+      | 'linkedin'
+      | 'github'
+      | 'twitch'
+      | 'slack'
+      | 'gitlab'
+      | 'figma'
+      | 'dribbble'
+      | 'codepen'
+      | 'codesandbox'
+      | 'trello'
+      | 'framer'
+      | 'pocket'
+      | 'atSign'
+      | 'share2'
+      | 'music2'
+      | 'rss';
     color: 'blue' | 'orange';
     id?: string | null;
   }[];
@@ -996,18 +1399,69 @@ export interface Guided {
       [k: string]: unknown;
     };
     icon:
+      | 'school'
+      | 'graduationCap'
+      | 'book'
       | 'bookOpen'
-      | 'lightbulb'
-      | 'target'
-      | 'sparkles'
-      | 'star'
-      | 'heart'
+      | 'library'
+      | 'calendar'
+      | 'clock'
       | 'users'
+      | 'sparkles'
+      | 'helpCircle'
+      | 'lightbulb'
+      | 'heart'
+      | 'star'
       | 'shield'
+      | 'messageCircle'
+      | 'messagesSquare'
+      | 'award'
+      | 'target'
+      | 'compass'
+      | 'map'
+      | 'globe'
+      | 'flaskConical'
+      | 'atom'
+      | 'brain'
+      | 'puzzle'
+      | 'palette'
+      | 'music'
+      | 'mic'
+      | 'pencil'
+      | 'fileText'
+      | 'calculator'
+      | 'dumbbell'
+      | 'leaf'
+      | 'rocket'
+      | 'briefcase'
+      | 'handshake'
       | 'arrowRight'
       | 'play'
-      | 'award'
-      | 'checkCircle';
+      | 'checkCircle'
+      | 'home'
+      | 'smile'
+      | 'phone'
+      | 'mail'
+      | 'facebook'
+      | 'instagram'
+      | 'twitter'
+      | 'youtube'
+      | 'linkedin'
+      | 'github'
+      | 'twitch'
+      | 'slack'
+      | 'gitlab'
+      | 'figma'
+      | 'dribbble'
+      | 'codepen'
+      | 'codesandbox'
+      | 'trello'
+      | 'framer'
+      | 'pocket'
+      | 'atSign'
+      | 'share2'
+      | 'music2'
+      | 'rss';
     iconColor: 'blue' | 'orange' | 'lightOrange';
     iconRotation: 'left' | 'right';
     id?: string | null;
@@ -1020,9 +1474,327 @@ export interface Guided {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "guidedWorkshops".
+ * via the `definition` "FAQ".
  */
-export interface GuidedWorkshop {
+export interface FAQ {
+  badgeText?: string | null;
+  sectionTitle: string;
+  sectionDescription?: string | null;
+  searchPlaceholder?: string | null;
+  noResultsText?: string | null;
+  categories: {
+    name: string;
+    icon:
+      | 'school'
+      | 'graduationCap'
+      | 'book'
+      | 'bookOpen'
+      | 'library'
+      | 'calendar'
+      | 'clock'
+      | 'users'
+      | 'sparkles'
+      | 'helpCircle'
+      | 'lightbulb'
+      | 'heart'
+      | 'star'
+      | 'shield'
+      | 'messageCircle'
+      | 'messagesSquare'
+      | 'award'
+      | 'target'
+      | 'compass'
+      | 'map'
+      | 'globe'
+      | 'flaskConical'
+      | 'atom'
+      | 'brain'
+      | 'puzzle'
+      | 'palette'
+      | 'music'
+      | 'mic'
+      | 'pencil'
+      | 'fileText'
+      | 'calculator'
+      | 'dumbbell'
+      | 'leaf'
+      | 'rocket'
+      | 'briefcase'
+      | 'handshake'
+      | 'arrowRight'
+      | 'play'
+      | 'checkCircle'
+      | 'home'
+      | 'smile'
+      | 'phone'
+      | 'mail'
+      | 'facebook'
+      | 'instagram'
+      | 'twitter'
+      | 'youtube'
+      | 'linkedin'
+      | 'github'
+      | 'twitch'
+      | 'slack'
+      | 'gitlab'
+      | 'figma'
+      | 'dribbble'
+      | 'codepen'
+      | 'codesandbox'
+      | 'trello'
+      | 'framer'
+      | 'pocket'
+      | 'atSign'
+      | 'share2'
+      | 'music2'
+      | 'rss';
+    questions: {
+      question: string;
+      answer: string;
+      id?: string | null;
+    }[];
+    id?: string | null;
+  }[];
+  ctaTitle?: string | null;
+  ctaDescription?: string | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faq';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Playground".
+ */
+export interface Playground {
+  sectionTitle: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  image: number | Media;
+  badgeText?: string | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'playground';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Testimonials".
+ */
+export interface Testimonials {
+  sectionTitle: string;
+  /**
+   * How long each testimonial is shown before advancing automatically.
+   */
+  autoAdvanceInterval?: number | null;
+  testimonials: {
+    name: string;
+    role: string;
+    image: number | Media;
+    text: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonials';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PlaygroundJourney".
+ */
+export interface PlaygroundJourney {
+  areas: {
+    name: string;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: number | Media;
+    color: 'customWhite' | 'customOrange';
+    badgeText?: string | null;
+    ctaLabel?: string | null;
+    links?:
+      | {
+          link: {
+            type?: ('reference' | 'custom') | null;
+            newTab?: boolean | null;
+            reference?:
+              | ({
+                  relationTo: 'pages';
+                  value: number | Page;
+                } | null)
+              | ({
+                  relationTo: 'posts';
+                  value: number | Post;
+                } | null);
+            url?: string | null;
+            label: string;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'playgroundJourney';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MapEmbed".
+ */
+export interface MapEmbed {
+  sectionTitle: string;
+  sectionDescription?: string | null;
+  /**
+   * Paste the full URL from the iframe `src` attribute.
+   */
+  embedUrl: string;
+  mapHeight?: number | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'map';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GuidedExamples".
+ */
+export interface GuidedExamples {
+  sectionTitle: string;
+  sectionDescription?: string | null;
+  /**
+   * Each card pulls its content from the selected Guided Workshop.
+   */
+  workshops: (number | GuidedWorkshop)[];
+  badgeText?: string | null;
+  cardCtaText?: string | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'guidedExamples';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PlaygroundExamples".
+ */
+export interface PlaygroundExamples {
+  sectionTitle: string;
+  sectionDescription?: string | null;
+  /**
+   * Each card pulls its content from the selected Playground Event.
+   */
+  events: (number | Event)[];
+  cardCtaText?: string | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'playgroundExamples';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
   id: number;
   title: string;
   slug: string;
@@ -1059,6 +1831,73 @@ export interface GuidedWorkshop {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Teachers".
+ */
+export interface Teachers {
+  sectionTitle: string;
+  sectionDescription?: string | null;
+  teachers: {
+    name: string;
+    course: string;
+    image: number | Media;
+    quote: string;
+    id?: string | null;
+  }[];
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'teachers';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TeacherBlock".
+ */
+export interface TeacherBlock {
+  /**
+   * Portrait photo of the teacher.
+   */
+  image: number | Media;
+  name: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'teacher';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "guidedCourses".
  */
 export interface GuidedCourse {
@@ -1089,6 +1928,54 @@ export interface GuidedCourse {
     | null;
   startDate: string;
   endDate: string;
+  layout?: (ContentBlock | MediaBlock | CallToActionBlock | TeacherBlock)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedBootcamps".
+ */
+export interface GuidedBootcamp {
+  id: number;
+  title: string;
+  slug: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  photo: number | Media;
+  teachers?:
+    | {
+        teacher: string;
+        id?: string | null;
+      }[]
+    | null;
+  startDate: string;
+  endDate: string;
+  location: string;
   meta?: {
     title?: string | null;
     /**
@@ -1440,6 +2327,10 @@ export interface PayloadLockedDocument {
         value: number | GuidedCourse;
       } | null)
     | ({
+        relationTo: 'guidedBootcamps';
+        value: number | GuidedBootcamp;
+      } | null)
+    | ({
         relationTo: 'autonomousGroups';
         value: number | AutonomousGroup;
       } | null)
@@ -1450,6 +2341,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'courses';
         value: number | Course;
+      } | null)
+    | ({
+        relationTo: 'events';
+        value: number | Event;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1523,6 +2418,40 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         type?: T;
+        title?: T;
+        subtitle?: T;
+        ctaLabel?: T;
+        contact?:
+          | T
+          | {
+              heading?: T;
+            };
+        heading?: T;
+        description?: T;
+        image?: T;
+        floatingImage?: T;
+        badgeText?: T;
+        imagePosition?: T;
+        features?:
+          | T
+          | {
+              title?: T;
+              icon?: T;
+              id?: T;
+            };
+        backgroundColor?: T;
+        showDecorations?: T;
+        stats?:
+          | T
+          | {
+              value?: T;
+              label?: T;
+              id?: T;
+            };
+        floatingText?: T;
+        goalLabel?: T;
+        goalProgress?: T;
+        waveDivider?: T;
         richText?: T;
         links?:
           | T
@@ -1535,16 +2464,16 @@ export interface PagesSelect<T extends boolean = true> {
                     reference?: T;
                     url?: T;
                     label?: T;
-                    appearance?: T;
                   };
               id?: T;
             };
-        media?: T;
       };
   layout?:
     | T
     | {
         cta?: T | CallToActionBlockSelect<T>;
+        donate?: T | DonateBlockSelect<T>;
+        donateStory?: T | DonateStorySelect<T>;
         content?: T | ContentBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
@@ -1553,6 +2482,15 @@ export interface PagesSelect<T extends boolean = true> {
         rulesAndValues?: T | RulesAndValuesSelect<T>;
         about?: T | AboutSelect<T>;
         guided?: T | GuidedSelect<T>;
+        faq?: T | FAQSelect<T>;
+        playground?: T | PlaygroundSelect<T>;
+        testimonials?: T | TestimonialsSelect<T>;
+        playgroundJourney?: T | PlaygroundJourneySelect<T>;
+        map?: T | MapEmbedSelect<T>;
+        guidedExamples?: T | GuidedExamplesSelect<T>;
+        playgroundExamples?: T | PlaygroundExamplesSelect<T>;
+        teachers?: T | TeachersSelect<T>;
+        teacher?: T | TeacherBlockSelect<T>;
       };
   meta?:
     | T
@@ -1573,7 +2511,13 @@ export interface PagesSelect<T extends boolean = true> {
  * via the `definition` "CallToActionBlock_select".
  */
 export interface CallToActionBlockSelect<T extends boolean = true> {
+  heading?: T;
   richText?: T;
+  badgeText?: T;
+  image?: T;
+  variant?: T;
+  alignment?: T;
+  showDecorations?: T;
   links?:
     | T
     | {
@@ -1585,10 +2529,64 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
               reference?: T;
               url?: T;
               label?: T;
-              appearance?: T;
             };
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DonateBlock_select".
+ */
+export interface DonateBlockSelect<T extends boolean = true> {
+  heading?: T;
+  richText?: T;
+  badgeText?: T;
+  amounts?:
+    | T
+    | {
+        amount?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  trustText?: T;
+  image?: T;
+  variant?: T;
+  alignment?: T;
+  showDecorations?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DonateStory_select".
+ */
+export interface DonateStorySelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
   id?: T;
   blockName?: T;
 }
@@ -1646,9 +2644,9 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
  * via the `definition` "FormBlock_select".
  */
 export interface FormBlockSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
   form?: T;
-  enableIntro?: T;
-  introContent?: T;
   id?: T;
   blockName?: T;
 }
@@ -1746,6 +2744,236 @@ export interface GuidedSelect<T extends boolean = true> {
       };
   ctaText?: T;
   ctaLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQ_select".
+ */
+export interface FAQSelect<T extends boolean = true> {
+  badgeText?: T;
+  sectionTitle?: T;
+  sectionDescription?: T;
+  searchPlaceholder?: T;
+  noResultsText?: T;
+  categories?:
+    | T
+    | {
+        name?: T;
+        icon?: T;
+        questions?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaDescription?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Playground_select".
+ */
+export interface PlaygroundSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  description?: T;
+  image?: T;
+  badgeText?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  autoAdvanceInterval?: T;
+  testimonials?:
+    | T
+    | {
+        name?: T;
+        role?: T;
+        image?: T;
+        text?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PlaygroundJourney_select".
+ */
+export interface PlaygroundJourneySelect<T extends boolean = true> {
+  areas?:
+    | T
+    | {
+        name?: T;
+        description?: T;
+        image?: T;
+        color?: T;
+        badgeText?: T;
+        ctaLabel?: T;
+        links?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                  };
+              id?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MapEmbed_select".
+ */
+export interface MapEmbedSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
+  embedUrl?: T;
+  mapHeight?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GuidedExamples_select".
+ */
+export interface GuidedExamplesSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
+  workshops?: T;
+  badgeText?: T;
+  cardCtaText?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PlaygroundExamples_select".
+ */
+export interface PlaygroundExamplesSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
+  events?: T;
+  cardCtaText?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Teachers_select".
+ */
+export interface TeachersSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
+  teachers?:
+    | T
+    | {
+        name?: T;
+        course?: T;
+        image?: T;
+        quote?: T;
+        id?: T;
+      };
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TeacherBlock_select".
+ */
+export interface TeacherBlockSelect<T extends boolean = true> {
+  image?: T;
+  name?: T;
+  description?: T;
   id?: T;
   blockName?: T;
 }
@@ -1927,7 +3155,14 @@ export interface GuidedWorkshopsSelect<T extends boolean = true> {
   slug?: T;
   description?: T;
   photo?: T;
+  teachers?:
+    | T
+    | {
+        teacher?: T;
+        id?: T;
+      };
   date?: T;
+  customForm?: T;
   meta?:
     | T
     | {
@@ -1958,6 +3193,45 @@ export interface GuidedCoursesSelect<T extends boolean = true> {
       };
   startDate?: T;
   endDate?: T;
+  layout?:
+    | T
+    | {
+        content?: T | ContentBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        teacher?: T | TeacherBlockSelect<T>;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  authors?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedBootcamps_select".
+ */
+export interface GuidedBootcampsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  photo?: T;
+  teachers?:
+    | T
+    | {
+        teacher?: T;
+        id?: T;
+      };
+  startDate?: T;
+  endDate?: T;
+  location?: T;
   meta?:
     | T
     | {
@@ -2028,6 +3302,29 @@ export interface CoursesSelect<T extends boolean = true> {
   photo?: T;
   startDate?: T;
   endDate?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  authors?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events_select".
+ */
+export interface EventsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  photo?: T;
+  date?: T;
   meta?:
     | T
     | {
@@ -2187,6 +3484,7 @@ export interface FormsSelect<T extends boolean = true> {
         message?: T;
         id?: T;
       };
+  event?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2322,6 +3620,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Header {
   id: number;
+  logo?: (number | null) | Media;
   navItems?:
     | {
         link: {
@@ -2351,23 +3650,117 @@ export interface Header {
  */
 export interface Footer {
   id: number;
-  navItems?:
+  logo: number | Media;
+  description: string;
+  columns?:
     | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ({
-                relationTo: 'pages';
-                value: number | Page;
-              } | null)
-            | ({
-                relationTo: 'posts';
-                value: number | Post;
-              } | null);
-          url?: string | null;
-          label: string;
-        };
+        title: string;
+        links?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?:
+                  | ({
+                      relationTo: 'pages';
+                      value: number | Page;
+                    } | null)
+                  | ({
+                      relationTo: 'posts';
+                      value: number | Post;
+                    } | null);
+                url?: string | null;
+                label: string;
+              };
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  copyright: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "socials".
+ */
+export interface Social {
+  id: number;
+  contact: {
+    address: string;
+    email: string;
+    phone: string;
+  };
+  platforms?:
+    | {
+        icon:
+          | 'school'
+          | 'graduationCap'
+          | 'book'
+          | 'bookOpen'
+          | 'library'
+          | 'calendar'
+          | 'clock'
+          | 'users'
+          | 'sparkles'
+          | 'helpCircle'
+          | 'lightbulb'
+          | 'heart'
+          | 'star'
+          | 'shield'
+          | 'messageCircle'
+          | 'messagesSquare'
+          | 'award'
+          | 'target'
+          | 'compass'
+          | 'map'
+          | 'globe'
+          | 'flaskConical'
+          | 'atom'
+          | 'brain'
+          | 'puzzle'
+          | 'palette'
+          | 'music'
+          | 'mic'
+          | 'pencil'
+          | 'fileText'
+          | 'calculator'
+          | 'dumbbell'
+          | 'leaf'
+          | 'rocket'
+          | 'briefcase'
+          | 'handshake'
+          | 'arrowRight'
+          | 'play'
+          | 'checkCircle'
+          | 'home'
+          | 'smile'
+          | 'phone'
+          | 'mail'
+          | 'facebook'
+          | 'instagram'
+          | 'twitter'
+          | 'youtube'
+          | 'linkedin'
+          | 'github'
+          | 'twitch'
+          | 'slack'
+          | 'gitlab'
+          | 'figma'
+          | 'dribbble'
+          | 'codepen'
+          | 'codesandbox'
+          | 'trello'
+          | 'framer'
+          | 'pocket'
+          | 'atSign'
+          | 'share2'
+          | 'music2'
+          | 'rss';
+        name: string;
+        link: string;
         id?: string | null;
       }[]
     | null;
@@ -2379,6 +3772,7 @@ export interface Footer {
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
+  logo?: T;
   navItems?:
     | T
     | {
@@ -2402,18 +3796,51 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
-  navItems?:
+  logo?: T;
+  description?: T;
+  columns?:
     | T
     | {
-        link?:
+        title?: T;
+        links?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                  };
+              id?: T;
             };
+        id?: T;
+      };
+  copyright?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "socials_select".
+ */
+export interface SocialsSelect<T extends boolean = true> {
+  contact?:
+    | T
+    | {
+        address?: T;
+        email?: T;
+        phone?: T;
+      };
+  platforms?:
+    | T
+    | {
+        icon?: T;
+        name?: T;
+        link?: T;
         id?: T;
       };
   updatedAt?: T;
@@ -2456,6 +3883,10 @@ export interface TaskSchedulePublish {
           value: number | GuidedCourse;
         } | null)
       | ({
+          relationTo: 'guidedBootcamps';
+          value: number | GuidedBootcamp;
+        } | null)
+      | ({
           relationTo: 'autonomousGroups';
           value: number | AutonomousGroup;
         } | null)
@@ -2466,6 +3897,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'courses';
           value: number | Course;
+        } | null)
+      | ({
+          relationTo: 'events';
+          value: number | Event;
         } | null);
     global?: string | null;
     user?: {

@@ -6,15 +6,14 @@ import configPromise from "@payload-config";
 import { draftMode } from "next/headers";
 import { cache } from "react";
 
-import type { Workshop } from "@/payload-types";
-
+import { EventHero } from "@/components/EventHero";
 import { generateMeta } from '@/utilities/generateMeta'
 import { LivePreviewListener } from "@/components/LivePreviewListener";
 
 export async function generateStaticParams() {
     const payload = await getPayload({ config: configPromise });
     const workshops = await payload.find({
-        collection: "workshops",
+        collection: "guidedWorkshops",
         draft: false,
         limit: 1000,
         overrideAccess: false,
@@ -56,9 +55,7 @@ export default async function Workshop({ params: paramsPromise }: Args) {
 
             {draft && <LivePreviewListener />}
 
-            {/* <WorkshopHero workshop={workshop} /> */}
-
-        
+            <EventHero event={workshop} type="workshop" />
         </article>
     )
 }
@@ -78,7 +75,7 @@ const queryWorkshopBySlug = cache(async ({ slug }: { slug: string }) => {
     const payload = await getPayload({ config: configPromise })
 
     const result = await payload.find({
-        collection: 'workshops',
+        collection: 'guidedWorkshops',
         draft,
         where: {
             slug: {

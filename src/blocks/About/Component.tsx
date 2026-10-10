@@ -2,7 +2,7 @@
 
 import { Bangers, Nunito } from 'next/font/google'
 import clsx from 'clsx'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Pause, Play, Volume2, VolumeX } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 
@@ -47,13 +47,28 @@ export const About: React.FC<Props> = (props) => {
   const videoResource = typeof video === 'object' ? video : null
   const posterResource = typeof poster === 'object' ? poster : null
 
-  const handlePlayPause = () => {
+  // Keep the element's muted state in sync with React state. The video must
+  // never start muted, so it plays with sound when the user presses play.
+  useEffect(() => {
+    const element = videoRef.current
+    if (element) {
+      element.muted = isMuted
+    }
+  }, [isMuted])
+
+  const handlePlayPause = async () => {
     const element = videoRef.current
     if (!element) return
 
     if (element.paused) {
-      element.play()
-      setIsPlaying(true)
+      element.muted = isMuted
+      try {
+        await element.play()
+        setIsPlaying(true)
+        setIsMuted(element.muted)
+      } catch {
+        setIsPlaying(false)
+      }
     } else {
       element.pause()
       setIsPlaying(false)

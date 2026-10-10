@@ -222,3 +222,58 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+@keyframes circleExpand {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(150);
+  }
+}
+
+@keyframes circleShrink {
+  from {
+    transform: scale(150);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes navFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.circle-expand {
+  animation: circleExpand 2s forwards;
+}
+
+.circle-shrink {
+  animation: circleShrink 1s forwards;
+}
+
+.nav-menu-fade-in {
+  opacity: 0;
+  animation: navFadeIn 0.5s forwards;
+  animation-delay: 0.3s;
+}
+
+.nav-menu-fade-out {
+  opacity: 1;
+  animation: navFadeOut 0.5s forwards;
+}

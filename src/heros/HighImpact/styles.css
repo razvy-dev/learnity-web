@@ -1,0 +1,67 @@
+@keyframes hiHeaderFallBounce {
+  0% {
+    transform: translateY(-100vh);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  70% {
+    transform: translateY(10px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hiSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hiFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hi-header-fall-bounce {
+  animation: hiHeaderFallBounce 1s ease-in-out both;
+}
+
+.hi-spin-slow {
+  animation: hiSpin 2s linear infinite;
+}
+
+.hi-fade-in {
+  animation: hiFadeIn 0.5s ease-out both;
+}
+
+.hi-bubble {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0.2;
+  transition: all 3000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hi-header-fall-bounce,
+  .hi-spin-slow,
+  .hi-fade-in {
+    animation: none;
+  }
+}

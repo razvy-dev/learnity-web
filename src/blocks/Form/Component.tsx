@@ -4,19 +4,31 @@ import type { FormFieldBlock, Form as FormType } from '@payloadcms/plugin-form-b
 import { useRouter } from 'next/navigation'
 import React, { useCallback, useState } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
+import { Bangers, Nunito } from 'next/font/google'
+import { Loader2 } from 'lucide-react'
 import RichText from '@/components/RichText'
 import { Button } from '@/components/ui/button'
-import type { DefaultTypedEditorState } from '@payloadcms/richtext-lexical'
 
 import { fields } from './fields'
 import { getClientSideURL } from '@/utilities/getURL'
 
+const bangers = Bangers({
+  subsets: ['latin', 'latin-ext'],
+  weight: '400',
+  display: 'swap',
+})
+
+const nunito = Nunito({
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+})
+
 export type FormBlockType = {
   blockName?: string
   blockType?: 'formBlock'
-  enableIntro: boolean
+  sectionTitle?: string
+  sectionDescription?: string
   form: FormType
-  introContent?: DefaultTypedEditorState
 }
 
 export const FormBlock: React.FC<
@@ -25,10 +37,10 @@ export const FormBlock: React.FC<
   } & FormBlockType
 > = (props) => {
   const {
-    enableIntro,
+    sectionTitle,
+    sectionDescription,
     form: formFromProps,
     form: { id: formID, confirmationMessage, confirmationType, redirect, submitButtonLabel } = {},
-    introContent,
   } = props
 
   const formMethods = useForm({
@@ -114,29 +126,68 @@ export const FormBlock: React.FC<
   )
 
   return (
-    <div className="container lg:max-w-[48rem]">
-      {enableIntro && introContent && !hasSubmitted && (
-        <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
-      )}
-      <div className="p-4 lg:p-6 border border-border rounded-[0.8rem]">
-        <FormProvider {...formMethods}>
-          {!isLoading && hasSubmitted && confirmationType === 'message' && (
-            <RichText data={confirmationMessage} />
-          )}
-          {isLoading && !hasSubmitted && <p>Loading, please wait...</p>}
-          {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}
-          {!hasSubmitted && (
-            <form id={formID} onSubmit={handleSubmit(onSubmit)}>
-              <div className="mb-4 last:mb-0">
-                {formFromProps &&
-                  formFromProps.fields &&
-                  formFromProps.fields?.map((field, index) => {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const Field: React.FC<any> = fields?.[field.blockType as keyof typeof fields]
-                    if (Field) {
-                      return (
-                        <div className="mb-6 last:mb-0" key={index}>
+    <section
+      className="relative overflow-hidden bg-customWhite px-4 py-20"
+      style={{ fontFamily: nunito.style.fontFamily }}
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-20 right-10 h-40 w-40 rounded-full bg-customOrange opacity-10 md:right-24" />
+        <div className="absolute bottom-20 left-0 h-56 w-56 rounded-full bg-customBlue opacity-10 md:left-16" />
+      </div>
+
+      <div className="container relative z-10 lg:max-w-[56rem]">
+        {(sectionTitle || sectionDescription) && !hasSubmitted && (
+          <div className="mb-10 text-center lg:mb-12">
+            {sectionTitle && (
+              <h2
+                className="text-4xl md:text-5xl text-customBlack mb-4 italic"
+                style={{ fontFamily: bangers.style.fontFamily }}
+              >
+                {sectionTitle}
+              </h2>
+            )}
+            <div className="w-40 h-2 bg-customOrange mx-auto rounded-full" />
+            {sectionDescription && (
+              <p className="text-lg text-customBlack max-w-2xl mx-auto mt-6">
+                {sectionDescription}
+              </p>
+            )}
+          </div>
+        )}
+
+        <div className="rounded-3xl border border-customLightBlue/70 bg-white p-6 shadow-xl md:p-10">
+          <FormProvider {...formMethods}>
+            {!isLoading && hasSubmitted && confirmationType === 'message' && (
+              <div className="rounded-2xl border border-customBlue/30 bg-customLightBlue/40 p-6">
+                <RichText data={confirmationMessage} enableGutter={false} />
+              </div>
+            )}
+
+            {isLoading && !hasSubmitted && (
+              <div className="flex items-center justify-center gap-3 py-8 text-customBlack">
+                <Loader2 className="size-5 animate-spin text-customBlue" />
+                <span className="font-medium">Loading, please wait...</span>
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm font-medium text-destructive">
+                {`${error.status || '500'}: ${error.message || ''}`}
+              </div>
+            )}
+
+            {!hasSubmitted && (
+              <form id={formID} onSubmit={handleSubmit(onSubmit)}>
+                <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-12">
+                  {formFromProps &&
+                    formFromProps.fields &&
+                    formFromProps.fields?.map((field, index) => {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      const Field: React.FC<any> = fields?.[field.blockType as keyof typeof fields]
+                      if (Field) {
+                        return (
                           <Field
+                            key={index}
                             form={formFromProps}
                             {...field}
                             {...formMethods}
@@ -144,20 +195,25 @@ export const FormBlock: React.FC<
                             errors={errors}
                             register={register}
                           />
-                        </div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
+                        )
+                      }
+                      return null
+                    })}
+                </div>
 
-              <Button form={formID} type="submit" variant="default">
-                {submitButtonLabel}
-              </Button>
-            </form>
-          )}
-        </FormProvider>
+                <Button
+                  className="mt-8 w-full rounded-full bg-customBlue py-3 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:bg-customOrange sm:w-auto sm:px-10"
+                  form={formID}
+                  type="submit"
+                  variant="default"
+                >
+                  {submitButtonLabel}
+                </Button>
+              </form>
+            )}
+          </FormProvider>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }

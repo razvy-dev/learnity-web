@@ -24,6 +24,17 @@ import { Timeline } from '@/blocks/Timeline/config'
 import { RulesAndValues } from '@/blocks/RulesAndValues/config'
 import { About } from '@/blocks/About/config'
 import { Guided } from '@/blocks/Guided/config'
+import { FAQ } from '@/blocks/FAQ/config'
+import { Playground } from '@/blocks/Playground/config'
+import { Testimonials } from '@/blocks/Testimonials/config'
+import { PlaygroundJourney } from '@/blocks/PlaygroundJourney/config'
+import { MapEmbed } from '@/blocks/MapEmbed/config'
+import { GuidedExamples } from '@/blocks/GuidedExamples/config'
+import { PlaygroundExamples } from '@/blocks/PlaygroundExamples/config'
+import { Teachers } from '@/blocks/Teachers/config'
+import { Teacher } from '@/blocks/Teacher/config'
+import { Donate } from '@/blocks/Donate/config'
+import { DonateStory } from '@/blocks/DonateStory/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -76,7 +87,28 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Timeline, RulesAndValues, About, Guided],
+              blocks: [
+                CallToAction,
+                Donate,
+                DonateStory,
+                Content,
+                MediaBlock,
+                Archive,
+                FormBlock,
+                Timeline,
+                RulesAndValues,
+                About,
+                Guided,
+                FAQ,
+                Playground,
+                Testimonials,
+                PlaygroundJourney,
+                MapEmbed,
+                GuidedExamples,
+                PlaygroundExamples,
+                Teachers,
+                Teacher,
+              ],
               required: true,
               admin: {
                 initCollapsed: true,

@@ -1,0 +1,65 @@
+@keyframes dhFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes dhSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dhFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dhZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dh-float {
+  animation: dhFloat 6s ease-in-out infinite;
+}
+
+.dh-slide-up {
+  animation: dhSlideUp 0.5s ease-out forwards;
+}
+
+.dh-fade-in {
+  animation: dhFadeIn 0.5s ease-in forwards;
+}
+
+.dh-zoom-in {
+  animation: dhZoomIn 0.5s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dh-float,
+  .dh-slide-up,
+  .dh-fade-in,
+  .dh-zoom-in {
+    animation: none;
+  }
+}

@@ -7,6 +7,8 @@ import React from 'react'
 
 import { Error } from '../Error'
 import { Width } from '../Width'
+import { cn } from '@/utilities/ui'
+import { fieldError, fieldLabel, inputBase, requiredMark } from '../styles'
 
 export const Text: React.FC<
   TextField & {
@@ -16,16 +18,22 @@ export const Text: React.FC<
 > = ({ name, defaultValue, errors, label, register, required, width }) => {
   return (
     <Width width={width}>
-      <Label htmlFor={name}>
+      <Label className={fieldLabel} htmlFor={name}>
         {label}
 
         {required && (
-          <span className="required">
+          <span className={requiredMark}>
             * <span className="sr-only">(required)</span>
           </span>
         )}
       </Label>
-      <Input defaultValue={defaultValue} id={name} type="text" {...register(name, { required })} />
+      <Input
+        className={cn(inputBase, errors[name] && fieldError)}
+        defaultValue={defaultValue}
+        id={name}
+        type="text"
+        {...register(name, { required })}
+      />
       {errors[name] && <Error name={name} />}
     </Width>
   )

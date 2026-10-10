@@ -6,8 +6,11 @@ import { authenticatedOrPublished } from '../../../access/authenticatedOrPublish
 import { generatePreviewPath } from '../../../utilities/generatePreviewPath'
 
 import { Banner } from '../../../blocks/Banner/config'
+import { CallToAction } from '../../../blocks/CallToAction/config'
 import { Code } from '../../../blocks/Code/config'
+import { Content } from '../../../blocks/Content/config'
 import { MediaBlock } from '../../../blocks/MediaBlock/config'
+import { Teacher } from '../../../blocks/Teacher/config'
 
 import {
   BlocksFeature,
@@ -128,6 +131,20 @@ export const GuidedCourses: CollectionConfig<'guidedCourses'> = {
                             required: true,
                         }
                     ]
+                },
+                {
+                    label: 'Page Content',
+                    fields: [
+                        {
+                            name: 'layout',
+                            type: 'blocks',
+                            admin: {
+                                initCollapsed: true,
+                            },
+                            blocks: [Content, MediaBlock, CallToAction, Teacher],
+                            label: 'Page content',
+                        },
+                    ],
                 },
                 {
                     name: 'meta',

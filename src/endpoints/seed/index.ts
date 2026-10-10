@@ -1,4 +1,4 @@
-import type { CollectionSlug, GlobalSlug, Payload, PayloadRequest, File } from 'payload'
+import type { CollectionSlug, Payload, PayloadRequest, File } from 'payload'
 
 import { contactForm as contactFormData } from './contact-form'
 import { contact as contactPageData } from './contact-page'
@@ -19,8 +19,6 @@ const collections: CollectionSlug[] = [
   'form-submissions',
   'search',
 ]
-
-const globals: GlobalSlug[] = ['header', 'footer']
 
 const categories = ['Technology', 'News', 'Finance', 'Design', 'Software', 'Engineering']
 
@@ -44,20 +42,16 @@ export const seed = async ({
   payload.logger.info(`— Clearing collections and globals...`)
 
   // clear the database
-  await Promise.all(
-    globals.map((global) =>
-      payload.updateGlobal({
-        slug: global,
-        data: {
-          navItems: [],
-        },
-        depth: 0,
-        context: {
-          disableRevalidate: true,
-        },
-      }),
-    ),
-  )
+  await payload.updateGlobal({
+    slug: 'header',
+    data: {
+      navItems: [],
+    },
+    depth: 0,
+    context: {
+      disableRevalidate: true,
+    },
+  })
 
   await Promise.all(
     collections.map((collection) => payload.db.deleteMany({ collection, req, where: {} })),
@@ -245,29 +239,49 @@ export const seed = async ({
     payload.updateGlobal({
       slug: 'footer',
       data: {
-        navItems: [
+        logo: image1Doc.id,
+        description:
+          'Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.',
+        columns: [
           {
-            link: {
-              type: 'custom',
-              label: 'Admin',
-              url: '/admin',
-            },
+            title: 'Quick Links',
+            links: [
+              { link: { type: 'custom', label: 'Acasă', url: '/' } },
+              { link: { type: 'custom', label: 'Despre noi', url: '/despre-noi' } },
+              { link: { type: 'custom', label: 'Guided Learning', url: '/guided-learning' } },
+              { link: { type: 'custom', label: 'Playground', url: '/playground' } },
+            ],
           },
           {
-            link: {
-              type: 'custom',
-              label: 'Source Code',
-              newTab: true,
-              url: 'https://github.com/payloadcms/payload/tree/3.x/templates/website',
-            },
+            title: 'Resources',
+            links: [
+              { link: { type: 'custom', label: 'Newsletter', url: '/newsletter' } },
+              { link: { type: 'custom', label: 'Contact', url: '/contact' } },
+              { link: { type: 'custom', label: 'Posts', url: '/posts' } },
+            ],
+          },
+        ],
+        copyright: `© ${new Date().getFullYear()} Learnity. Toate drepturile rezervate.`,
+      },
+    }),
+    payload.updateGlobal({
+      slug: 'socials',
+      data: {
+        contact: {
+          address: 'Str. Duzilor nr. 23, sector 2, București',
+          email: 'contact.learnity@gmail.com',
+          phone: '0722 280 009',
+        },
+        platforms: [
+          {
+            name: 'Facebook',
+            link: 'https://www.facebook.com/learnity/',
+            icon: 'facebook',
           },
           {
-            link: {
-              type: 'custom',
-              label: 'Payload',
-              newTab: true,
-              url: 'https://payloadcms.com/',
-            },
+            name: 'Instagram',
+            link: 'https://www.instagram.com/learnityro/',
+            icon: 'instagram',
           },
         ],
       },

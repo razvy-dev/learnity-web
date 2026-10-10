@@ -7,6 +7,7 @@ import {
 } from '@payloadcms/richtext-lexical'
 
 import { lexicalEditorState } from '@/utilities/lexical'
+import { iconPicker } from '@/fields/iconPicker'
 
 export const RulesAndValues: Block = {
   slug: 'rulesAndValues',
@@ -59,21 +60,11 @@ export const RulesAndValues: Block = {
           }),
           required: true,
         },
-        {
-          name: 'icon',
-          type: 'select',
-          required: true,
-          defaultValue: 'lightbulb',
-          options: [
-            { label: 'Lightbulb', value: 'lightbulb' },
-            { label: 'Heart', value: 'heart' },
-            { label: 'Shield', value: 'shield' },
-            { label: 'Users', value: 'users' },
-            { label: 'Sparkles', value: 'sparkles' },
-            { label: 'BookOpen', value: 'bookOpen' },
-            { label: 'Star', value: 'star' },
-          ],
-        },
+        iconPicker({
+          overrides: {
+            defaultValue: 'lightbulb',
+          },
+        }),
         {
           name: 'color',
           type: 'select',

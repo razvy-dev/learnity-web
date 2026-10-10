@@ -3,9 +3,10 @@
 import React, { useState } from 'react'
 import { Bangers, Nunito } from 'next/font/google'
 import clsx from 'clsx'
-import { Heart, Lightbulb, Shield, Users, Sparkles, BookOpen, Star } from 'lucide-react'
+import { BookOpen, Star } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 
+import { Icon } from '@/components/Icon'
 import RichText from '@/components/RichText'
 import type { RulesAndValues as RulesAndValuesBlockProps } from '@/payload-types'
 
@@ -28,27 +29,6 @@ const CREAM = '#F0E6DD'
 const ORANGE = '#F8A12E'
 const DARK = '#2f2f27'
 const BLUE = '#5C9CE6'
-
-const getIcon = (icon: string) => {
-  const iconClass = 'w-10 h-10 text-white'
-  switch (icon) {
-    case 'heart':
-      return <Heart className={iconClass} />
-    case 'shield':
-      return <Shield className={iconClass} />
-    case 'users':
-      return <Users className={iconClass} />
-    case 'sparkles':
-      return <Sparkles className={iconClass} />
-    case 'bookOpen':
-      return <BookOpen className={iconClass} />
-    case 'star':
-      return <Star className={iconClass} />
-    case 'lightbulb':
-    default:
-      return <Lightbulb className={iconClass} />
-  }
-}
 
 export const RulesAndValues: React.FC<Props> = (props) => {
   const {
@@ -106,8 +86,14 @@ export const RulesAndValues: React.FC<Props> = (props) => {
       `}</style>
 
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-20 right-20 w-40 h-40 rounded-full opacity-20" style={{ backgroundColor: ORANGE }} />
-        <div className="absolute bottom-20 left-20 w-56 h-56 rounded-full opacity-30" style={{ backgroundColor: BLUE }} />
+        <div
+          className="absolute top-20 right-20 w-40 h-40 rounded-full opacity-20"
+          style={{ backgroundColor: ORANGE }}
+        />
+        <div
+          className="absolute bottom-20 left-20 w-56 h-56 rounded-full opacity-30"
+          style={{ backgroundColor: BLUE }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -121,18 +107,28 @@ export const RulesAndValues: React.FC<Props> = (props) => {
             </h2>
             <div className="w-40 h-2 mx-auto rounded-full" style={{ backgroundColor: ORANGE }} />
           </div>
-          <p className={clsx('text-lg max-w-2xl mx-auto mt-6', inView ? 'animate-fade-in' : 'opacity-0')} style={{ color: DARK }}>
+          <p
+            className={clsx(
+              'text-lg max-w-2xl mx-auto mt-6',
+              inView ? 'animate-fade-in' : 'opacity-0',
+            )}
+            style={{ color: DARK }}
+          >
             {sectionDescription}
           </p>
         </div>
 
-        <div className={clsx('flex justify-center mb-12', inView ? 'animate-fade-in' : 'opacity-0')}>
+        <div
+          className={clsx('flex justify-center mb-12', inView ? 'animate-fade-in' : 'opacity-0')}
+        >
           <div className="bg-gray-100 p-1 rounded-full inline-flex">
             <button
               onClick={() => setActiveTab('values')}
               className={clsx(
                 'px-6 py-3 rounded-full font-bold transition-all duration-300',
-                activeTab === 'values' ? 'text-white shadow-md' : 'bg-transparent hover:bg-gray-200 text-gray-800',
+                activeTab === 'values'
+                  ? 'text-white shadow-md'
+                  : 'bg-transparent hover:bg-gray-200 text-gray-800',
               )}
               style={activeTab === 'values' ? { backgroundColor: BLUE } : {}}
             >
@@ -142,7 +138,9 @@ export const RulesAndValues: React.FC<Props> = (props) => {
               onClick={() => setActiveTab('rules')}
               className={clsx(
                 'px-6 py-3 rounded-full font-bold transition-all duration-300',
-                activeTab === 'rules' ? 'text-white shadow-md' : 'bg-transparent hover:bg-gray-200 text-gray-800',
+                activeTab === 'rules'
+                  ? 'text-white shadow-md'
+                  : 'bg-transparent hover:bg-gray-200 text-gray-800',
               )}
               style={activeTab === 'rules' ? { backgroundColor: BLUE } : {}}
             >
@@ -167,14 +165,18 @@ export const RulesAndValues: React.FC<Props> = (props) => {
                       className="w-20 h-20 rounded-full flex items-center justify-center mb-4 shadow-md"
                       style={{ backgroundColor: value.color === 'orange' ? ORANGE : BLUE }}
                     >
-                      {getIcon(value.icon)}
+                      <Icon name={value.icon} className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-3" style={{ color: DARK }}>
                       {value.title}
                     </h3>
                     {value.description && (
                       <div style={{ color: DARK }}>
-                        <RichText data={value.description} enableGutter={false} enableProse={false} />
+                        <RichText
+                          data={value.description}
+                          enableGutter={false}
+                          enableProse={false}
+                        />
                       </div>
                     )}
                   </div>
@@ -183,13 +185,20 @@ export const RulesAndValues: React.FC<Props> = (props) => {
             </div>
 
             <div className={clsx('mt-16 text-center', inView ? 'animate-fade-in' : 'opacity-0')}>
-              <div className="rounded-2xl p-8 relative overflow-hidden" style={{ backgroundColor: BLUE }}>
+              <div
+                className="rounded-2xl p-8 relative overflow-hidden"
+                style={{ backgroundColor: BLUE }}
+              >
                 <div className="relative z-10">
                   <BookOpen className="w-16 h-16 mx-auto mb-4 text-white" />
                   <h3 className="text-2xl font-bold mb-3 text-white">{valuesFooterTitle}</h3>
                   {valuesFooterDescription && (
                     <div className="max-w-3xl mx-auto text-white">
-                      <RichText data={valuesFooterDescription} enableGutter={false} enableProse={false} />
+                      <RichText
+                        data={valuesFooterDescription}
+                        enableGutter={false}
+                        enableProse={false}
+                      />
                     </div>
                   )}
                 </div>
@@ -200,7 +209,10 @@ export const RulesAndValues: React.FC<Props> = (props) => {
 
         {activeTab === 'rules' && (
           <div className={clsx(inView ? 'animate-fade-in' : 'opacity-0')}>
-            <div className="rounded-3xl p-8 md:p-12 relative overflow-hidden" style={{ backgroundColor: BLUE }}>
+            <div
+              className="rounded-3xl p-8 md:p-12 relative overflow-hidden"
+              style={{ backgroundColor: BLUE }}
+            >
               <div className="relative z-10">
                 <div className="space-y-8">
                   {rules.map((rule: any, index: number) => (
@@ -221,7 +233,11 @@ export const RulesAndValues: React.FC<Props> = (props) => {
                           </h3>
                           {rule.description && (
                             <div style={{ color: DARK }}>
-                              <RichText data={rule.description} enableGutter={false} enableProse={false} />
+                              <RichText
+                                data={rule.description}
+                                enableGutter={false}
+                                enableProse={false}
+                              />
                             </div>
                           )}
                         </div>
@@ -230,7 +246,9 @@ export const RulesAndValues: React.FC<Props> = (props) => {
                   ))}
                 </div>
 
-                <div className={clsx('mt-10 text-center', inView ? 'animate-fade-in' : 'opacity-0')}>
+                <div
+                  className={clsx('mt-10 text-center', inView ? 'animate-fade-in' : 'opacity-0')}
+                >
                   <div className="bg-white rounded-xl p-6 shadow-md inline-block">
                     {rulesFooterText && (
                       <div className="font-bold italic" style={{ color: DARK }}>
