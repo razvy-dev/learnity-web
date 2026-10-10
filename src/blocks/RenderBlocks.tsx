@@ -3,19 +3,25 @@ import React, { Fragment } from 'react'
 import type { Page } from '@/payload-types'
 
 import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
+import { About } from '@/blocks/About/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { Timeline } from '@/blocks/Timeline/Component'
+import { RulesAndValues } from '@/blocks/RulesAndValues/Component'
+import { Guided } from '@/blocks/Guided/Component'
 
 const blockComponents = {
+  about: About,
   archive: ArchiveBlock,
   content: ContentBlock,
   cta: CallToActionBlock,
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
   timeline: Timeline,
+  rulesAndValues: RulesAndValues,
+  guided: Guided,
 }
 
 export const RenderBlocks: React.FC<{

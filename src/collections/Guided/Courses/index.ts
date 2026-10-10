@@ -116,7 +116,7 @@ export const GuidedCourses: CollectionConfig<'guidedCourses'> = {
                                     required: true,
                                 },
                             ],
-                        }
+                        },
                         {
                             name: 'startDate',
                             type: 'date',

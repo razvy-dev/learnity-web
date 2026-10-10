@@ -72,9 +72,11 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    guidedWorkshops: GuidedWorkshop;
+    guidedCourses: GuidedCourse;
+    autonomousGroups: AutonomousGroup;
     workshops: Workshop;
     courses: Course;
-    autonomousGroups: AutonomousGroup;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -97,9 +99,11 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    guidedWorkshops: GuidedWorkshopsSelect<false> | GuidedWorkshopsSelect<true>;
+    guidedCourses: GuidedCoursesSelect<false> | GuidedCoursesSelect<true>;
+    autonomousGroups: AutonomousGroupsSelect<false> | AutonomousGroupsSelect<true>;
     workshops: WorkshopsSelect<false> | WorkshopsSelect<true>;
     courses: CoursesSelect<false> | CoursesSelect<true>;
-    autonomousGroups: AutonomousGroupsSelect<false> | AutonomousGroupsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -207,7 +211,17 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | Timeline)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | Timeline
+    | RulesAndValues
+    | About
+    | Guided
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -812,6 +826,324 @@ export interface Timeline {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RulesAndValues".
+ */
+export interface RulesAndValues {
+  sectionTitle: string;
+  sectionDescription: string;
+  valuesTabLabel: string;
+  rulesTabLabel: string;
+  values: {
+    title: string;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    icon: 'lightbulb' | 'heart' | 'shield' | 'users' | 'sparkles' | 'bookOpen' | 'star';
+    color: 'blue' | 'orange';
+    id?: string | null;
+  }[];
+  rules: {
+    title: string;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    id?: string | null;
+  }[];
+  valuesFooterTitle?: string | null;
+  valuesFooterDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  rulesFooterText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'rulesAndValues';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "About".
+ */
+export interface About {
+  title: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  caption?: string | null;
+  video: number | Media;
+  poster?: (number | null) | Media;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'about';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Guided".
+ */
+export interface Guided {
+  sectionTitle: string;
+  sectionDescription: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  image: number | Media;
+  features: {
+    title: string;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    icon:
+      | 'bookOpen'
+      | 'lightbulb'
+      | 'target'
+      | 'sparkles'
+      | 'star'
+      | 'heart'
+      | 'users'
+      | 'shield'
+      | 'arrowRight'
+      | 'play'
+      | 'award'
+      | 'checkCircle';
+    iconColor: 'blue' | 'orange' | 'lightOrange';
+    iconRotation: 'left' | 'right';
+    id?: string | null;
+  }[];
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'guided';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedWorkshops".
+ */
+export interface GuidedWorkshop {
+  id: number;
+  title: string;
+  slug: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  photo: number | Media;
+  date: string;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedCourses".
+ */
+export interface GuidedCourse {
+  id: number;
+  title: string;
+  slug: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  photo: number | Media;
+  teachers?:
+    | {
+        teacher: string;
+        id?: string | null;
+      }[]
+    | null;
+  startDate: string;
+  endDate: string;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "autonomousGroups".
+ */
+export interface AutonomousGroup {
+  id: number;
+  title: string;
+  slug: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  photo: number | Media;
+  date: string;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "workshops".
  */
 export interface Workshop {
@@ -875,45 +1207,6 @@ export interface Course {
   photo: number | Media;
   startDate: string;
   endDate: string;
-  meta?: {
-    title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (number | null) | Media;
-    description?: string | null;
-  };
-  publishedAt?: string | null;
-  authors?: (number | User)[] | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "autonomousGroups".
- */
-export interface AutonomousGroup {
-  id: number;
-  title: string;
-  slug: string;
-  description: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  photo: number | Media;
-  date: string;
   meta?: {
     title?: string | null;
     /**
@@ -1139,16 +1432,24 @@ export interface PayloadLockedDocument {
         value: number | User;
       } | null)
     | ({
+        relationTo: 'guidedWorkshops';
+        value: number | GuidedWorkshop;
+      } | null)
+    | ({
+        relationTo: 'guidedCourses';
+        value: number | GuidedCourse;
+      } | null)
+    | ({
+        relationTo: 'autonomousGroups';
+        value: number | AutonomousGroup;
+      } | null)
+    | ({
         relationTo: 'workshops';
         value: number | Workshop;
       } | null)
     | ({
         relationTo: 'courses';
         value: number | Course;
-      } | null)
-    | ({
-        relationTo: 'autonomousGroups';
-        value: number | AutonomousGroup;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1249,6 +1550,9 @@ export interface PagesSelect<T extends boolean = true> {
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
         timeline?: T | TimelineSelect<T>;
+        rulesAndValues?: T | RulesAndValuesSelect<T>;
+        about?: T | AboutSelect<T>;
+        guided?: T | GuidedSelect<T>;
       };
   meta?:
     | T
@@ -1361,6 +1665,87 @@ export interface TimelineSelect<T extends boolean = true> {
         photo?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RulesAndValues_select".
+ */
+export interface RulesAndValuesSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
+  valuesTabLabel?: T;
+  rulesTabLabel?: T;
+  values?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        icon?: T;
+        color?: T;
+        id?: T;
+      };
+  rules?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  valuesFooterTitle?: T;
+  valuesFooterDescription?: T;
+  rulesFooterText?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "About_select".
+ */
+export interface AboutSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  caption?: T;
+  video?: T;
+  poster?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Guided_select".
+ */
+export interface GuidedSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
+  image?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        icon?: T;
+        iconColor?: T;
+        iconRotation?: T;
+        id?: T;
+      };
+  ctaText?: T;
+  ctaLink?: T;
   id?: T;
   blockName?: T;
 }
@@ -1535,6 +1920,82 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedWorkshops_select".
+ */
+export interface GuidedWorkshopsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  photo?: T;
+  date?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  authors?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedCourses_select".
+ */
+export interface GuidedCoursesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  photo?: T;
+  teachers?:
+    | T
+    | {
+        teacher?: T;
+        id?: T;
+      };
+  startDate?: T;
+  endDate?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  authors?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "autonomousGroups_select".
+ */
+export interface AutonomousGroupsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  photo?: T;
+  date?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  authors?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "workshops_select".
  */
 export interface WorkshopsSelect<T extends boolean = true> {
@@ -1567,29 +2028,6 @@ export interface CoursesSelect<T extends boolean = true> {
   photo?: T;
   startDate?: T;
   endDate?: T;
-  meta?:
-    | T
-    | {
-        title?: T;
-        image?: T;
-        description?: T;
-      };
-  publishedAt?: T;
-  authors?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "autonomousGroups_select".
- */
-export interface AutonomousGroupsSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  description?: T;
-  photo?: T;
-  date?: T;
   meta?:
     | T
     | {
@@ -2010,16 +2448,24 @@ export interface TaskSchedulePublish {
           value: number | Post;
         } | null)
       | ({
+          relationTo: 'guidedWorkshops';
+          value: number | GuidedWorkshop;
+        } | null)
+      | ({
+          relationTo: 'guidedCourses';
+          value: number | GuidedCourse;
+        } | null)
+      | ({
+          relationTo: 'autonomousGroups';
+          value: number | AutonomousGroup;
+        } | null)
+      | ({
           relationTo: 'workshops';
           value: number | Workshop;
         } | null)
       | ({
           relationTo: 'courses';
           value: number | Course;
-        } | null)
-      | ({
-          relationTo: 'autonomousGroups';
-          value: number | AutonomousGroup;
         } | null);
     global?: string | null;
     user?: {
