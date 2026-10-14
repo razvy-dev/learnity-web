@@ -3,7 +3,7 @@ import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { searchPlugin } from '@payloadcms/plugin-search'
-import { Plugin } from 'payload'
+import { Field, Plugin } from 'payload'
 import { revalidateRedirects } from '@/hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
@@ -22,6 +22,12 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
 
   return doc?.slug ? `${url}/${doc.slug}` : url
 }
+
+const guidedEventCollections: ['guidedWorkshops', 'guidedCourses', 'guidedBootcamps'] = [
+  'guidedWorkshops',
+  'guidedCourses',
+  'guidedBootcamps',
+]
 
 export const plugins: Plugin[] = [
   redirectsPlugin({
@@ -60,7 +66,7 @@ export const plugins: Plugin[] = [
     },
     formOverrides: {
       fields: ({ defaultFields }) => {
-        let checkedDefaultFields
+        let checkedDefaultFields: Field[]
 
         // this part is basically the validation of fields names being differnet one from the other
         
@@ -82,21 +88,36 @@ export const plugins: Plugin[] = [
           return field
         })
 
-        // and this is teh field used to keep track to what event was this form submitted to
+        // Links a form back to the guided-learning event it belongs to
 
-        checkedDefaultFields = [...checkedDefaultFields,
-            {
-              name: 'event',
-              type: 'relationship',
-              relationTo: 'guidedWorkshops',
-              admin: {
-                position: 'sidebar',
-              },
+        checkedDefaultFields = [
+          ...checkedDefaultFields,
+          {
+            name: 'event',
+            type: 'relationship',
+            relationTo: guidedEventCollections,
+            admin: {
+              position: 'sidebar',
+              description: 'The guided-learning event this form is used for.',
             },
-          ]
+          },
+        ]
 
         return checkedDefaultFields
       },
+    },
+    formSubmissionOverrides: {
+      fields: ({ defaultFields }) => [
+        ...defaultFields,
+        {
+          name: 'event',
+          type: 'relationship',
+          relationTo: guidedEventCollections,
+          admin: {
+            description: 'The guided-learning event this submission registers the person for.',
+          },
+        },
+      ],
     },
   }),
   searchPlugin({

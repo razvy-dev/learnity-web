@@ -1,0 +1,1 @@
+export { GuidedLearningByYear } from './config'

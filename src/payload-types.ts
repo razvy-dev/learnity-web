@@ -378,6 +378,7 @@ export interface Page {
     | RulesAndValues
     | About
     | Guided
+    | GuidedLearningByYear
     | FAQ
     | Playground
     | Testimonials
@@ -1080,7 +1081,22 @@ export interface Form {
         id?: string | null;
       }[]
     | null;
-  event?: (number | null) | GuidedWorkshop;
+  /**
+   * The guided-learning event this form is used for.
+   */
+  event?:
+    | ({
+        relationTo: 'guidedWorkshops';
+        value: number | GuidedWorkshop;
+      } | null)
+    | ({
+        relationTo: 'guidedCourses';
+        value: number | GuidedCourse;
+      } | null)
+    | ({
+        relationTo: 'guidedBootcamps';
+        value: number | GuidedBootcamp;
+      } | null);
   updatedAt: string;
   createdAt: string;
 }
@@ -1116,9 +1132,154 @@ export interface GuidedWorkshop {
     | null;
   date: string;
   /**
+   * Select which module this workshop belongs to.
+   */
+  module: 'module1' | 'module2' | 'module3';
+  /**
    * Select or create a custom registration/feedback form for this event.
    */
   customForm?: (number | null) | Form;
+  layout?: (ContentBlock | MediaBlock | CallToActionBlock | TeacherBlock)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TeacherBlock".
+ */
+export interface TeacherBlock {
+  /**
+   * Portrait photo of the teacher.
+   */
+  image: number | Media;
+  name: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'teacher';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedCourses".
+ */
+export interface GuidedCourse {
+  id: number;
+  title: string;
+  slug: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  photo: number | Media;
+  teachers?:
+    | {
+        teacher: string;
+        id?: string | null;
+      }[]
+    | null;
+  startDate: string;
+  endDate: string;
+  /**
+   * Select which module this course belongs to.
+   */
+  module: 'module1' | 'module2' | 'module3';
+  /**
+   * Select or create a custom registration/feedback form for this event.
+   */
+  customForm?: (number | null) | Form;
+  layout?: (ContentBlock | MediaBlock | CallToActionBlock | TeacherBlock)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (number | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "guidedBootcamps".
+ */
+export interface GuidedBootcamp {
+  id: number;
+  title: string;
+  slug: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  photo: number | Media;
+  teachers?:
+    | {
+        teacher: string;
+        id?: string | null;
+      }[]
+    | null;
+  startDate: string;
+  endDate: string;
+  location: string;
+  /**
+   * Select which module this bootcamp belongs to.
+   */
+  module: 'module1' | 'module2' | 'module3';
+  /**
+   * Select or create a custom registration/feedback form for this event.
+   */
+  customForm?: (number | null) | Form;
+  layout?: (ContentBlock | MediaBlock | CallToActionBlock | TeacherBlock)[] | null;
   meta?: {
     title?: string | null;
     /**
@@ -1471,6 +1632,51 @@ export interface Guided {
   id?: string | null;
   blockName?: string | null;
   blockType: 'guided';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GuidedLearningByYear".
+ */
+export interface GuidedLearningByYear {
+  sectionTitle: string;
+  sectionDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Year to display guided learning experiences for (e.g., 2025)
+   */
+  year: number;
+  /**
+   * If checked, modules without any experiences will still be displayed with a placeholder message.
+   */
+  showEmptyModules?: boolean | null;
+  /**
+   * Customize labels and colors for each module.
+   */
+  moduleLabels?:
+    | {
+        moduleValue: 'module1' | 'module2' | 'module3';
+        label: string;
+        description?: string | null;
+        color: 'blue' | 'orange' | 'green' | 'purple' | 'red';
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'guidedLearningByYear';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1869,129 +2075,6 @@ export interface Teachers {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "TeacherBlock".
- */
-export interface TeacherBlock {
-  /**
-   * Portrait photo of the teacher.
-   */
-  image: number | Media;
-  name: string;
-  description: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'teacher';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "guidedCourses".
- */
-export interface GuidedCourse {
-  id: number;
-  title: string;
-  slug: string;
-  description: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  photo: number | Media;
-  teachers?:
-    | {
-        teacher: string;
-        id?: string | null;
-      }[]
-    | null;
-  startDate: string;
-  endDate: string;
-  layout?: (ContentBlock | MediaBlock | CallToActionBlock | TeacherBlock)[] | null;
-  meta?: {
-    title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (number | null) | Media;
-    description?: string | null;
-  };
-  publishedAt?: string | null;
-  authors?: (number | User)[] | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "guidedBootcamps".
- */
-export interface GuidedBootcamp {
-  id: number;
-  title: string;
-  slug: string;
-  description: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  photo: number | Media;
-  teachers?:
-    | {
-        teacher: string;
-        id?: string | null;
-      }[]
-    | null;
-  startDate: string;
-  endDate: string;
-  location: string;
-  meta?: {
-    title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (number | null) | Media;
-    description?: string | null;
-  };
-  publishedAt?: string | null;
-  authors?: (number | User)[] | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "autonomousGroups".
  */
 export interface AutonomousGroup {
@@ -2148,6 +2231,22 @@ export interface FormSubmission {
         id?: string | null;
       }[]
     | null;
+  /**
+   * The guided-learning event this submission registers the person for.
+   */
+  event?:
+    | ({
+        relationTo: 'guidedWorkshops';
+        value: number | GuidedWorkshop;
+      } | null)
+    | ({
+        relationTo: 'guidedCourses';
+        value: number | GuidedCourse;
+      } | null)
+    | ({
+        relationTo: 'guidedBootcamps';
+        value: number | GuidedBootcamp;
+      } | null);
   updatedAt: string;
   createdAt: string;
 }
@@ -2482,6 +2581,7 @@ export interface PagesSelect<T extends boolean = true> {
         rulesAndValues?: T | RulesAndValuesSelect<T>;
         about?: T | AboutSelect<T>;
         guided?: T | GuidedSelect<T>;
+        guidedLearningByYear?: T | GuidedLearningByYearSelect<T>;
         faq?: T | FAQSelect<T>;
         playground?: T | PlaygroundSelect<T>;
         testimonials?: T | TestimonialsSelect<T>;
@@ -2744,6 +2844,27 @@ export interface GuidedSelect<T extends boolean = true> {
       };
   ctaText?: T;
   ctaLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GuidedLearningByYear_select".
+ */
+export interface GuidedLearningByYearSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  sectionDescription?: T;
+  year?: T;
+  showEmptyModules?: T;
+  moduleLabels?:
+    | T
+    | {
+        moduleValue?: T;
+        label?: T;
+        description?: T;
+        color?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -3162,7 +3283,16 @@ export interface GuidedWorkshopsSelect<T extends boolean = true> {
         id?: T;
       };
   date?: T;
+  module?: T;
   customForm?: T;
+  layout?:
+    | T
+    | {
+        content?: T | ContentBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        teacher?: T | TeacherBlockSelect<T>;
+      };
   meta?:
     | T
     | {
@@ -3193,6 +3323,8 @@ export interface GuidedCoursesSelect<T extends boolean = true> {
       };
   startDate?: T;
   endDate?: T;
+  module?: T;
+  customForm?: T;
   layout?:
     | T
     | {
@@ -3232,6 +3364,16 @@ export interface GuidedBootcampsSelect<T extends boolean = true> {
   startDate?: T;
   endDate?: T;
   location?: T;
+  module?: T;
+  customForm?: T;
+  layout?:
+    | T
+    | {
+        content?: T | ContentBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        teacher?: T | TeacherBlockSelect<T>;
+      };
   meta?:
     | T
     | {
@@ -3501,6 +3643,7 @@ export interface FormSubmissionsSelect<T extends boolean = true> {
         value?: T;
         id?: T;
       };
+  event?: T;
   updatedAt?: T;
   createdAt?: T;
 }

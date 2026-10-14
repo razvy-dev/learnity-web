@@ -6,8 +6,11 @@ import { authenticatedOrPublished } from '../../../access/authenticatedOrPublish
 import { generatePreviewPath } from '../../../utilities/generatePreviewPath'
 
 import { Banner } from '../../../blocks/Banner/config'
+import { CallToAction } from '../../../blocks/CallToAction/config'
 import { Code } from '../../../blocks/Code/config'
+import { Content } from '../../../blocks/Content/config'
 import { MediaBlock } from '../../../blocks/MediaBlock/config'
+import { Teacher } from '../../../blocks/Teacher/config'
 
 import {
   BlocksFeature,
@@ -130,8 +133,45 @@ export const GuidedBootcamps: CollectionConfig<'guidedBootcamps'> = {
                             name: 'location',
                             type: 'text',
                             required: true,
-                        }
+                        },
+                        {
+                            name: 'module',
+                            type: 'select',
+                            required: true,
+                            defaultValue: 'module1',
+                            options: [
+                                { label: 'Module 1', value: 'module1' },
+                                { label: 'Module 2', value: 'module2' },
+                                { label: 'Module 3', value: 'module3' },
+                            ],
+                            admin: {
+                                description: 'Select which module this bootcamp belongs to.',
+                            },
+                        },
+                        {
+                            name: 'customForm',
+                            type: 'relationship',
+                            relationTo: 'forms',
+                            hasMany: false,
+                            admin: {
+                                description: 'Select or create a custom registration/feedback form for this event.',
+                            },
+                        },
                     ]
+                },
+                {
+                    label: 'Page Content',
+                    fields: [
+                        {
+                            name: 'layout',
+                            type: 'blocks',
+                            admin: {
+                                initCollapsed: true,
+                            },
+                            blocks: [Content, MediaBlock, CallToAction, Teacher],
+                            label: 'Page content',
+                        },
+                    ],
                 },
                 {
                     name: 'meta',

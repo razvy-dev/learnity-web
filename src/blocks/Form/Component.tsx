@@ -29,6 +29,14 @@ export type FormBlockType = {
   sectionTitle?: string
   sectionDescription?: string
   form: FormType
+  /**
+   * When provided, records which guided-learning event this submission belongs to.
+   * Used by the event registration (participa) pages.
+   */
+  event?: {
+    relationTo: 'guidedWorkshops' | 'guidedCourses' | 'guidedBootcamps'
+    value: number | string
+  } | null
 }
 
 export const FormBlock: React.FC<
@@ -39,6 +47,7 @@ export const FormBlock: React.FC<
   const {
     sectionTitle,
     sectionDescription,
+    event,
     form: formFromProps,
     form: { id: formID, confirmationMessage, confirmationType, redirect, submitButtonLabel } = {},
   } = props
@@ -79,6 +88,7 @@ export const FormBlock: React.FC<
             body: JSON.stringify({
               form: formID,
               submissionData: dataToSend,
+              ...(event ? { event } : {}),
             }),
             headers: {
               'Content-Type': 'application/json',
@@ -122,7 +132,7 @@ export const FormBlock: React.FC<
 
       void submitForm()
     },
-    [router, formID, redirect, confirmationType],
+    [router, formID, redirect, confirmationType, event],
   )
 
   return (

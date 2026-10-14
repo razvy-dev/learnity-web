@@ -6,6 +6,7 @@ import configPromise from "@payload-config";
 import { draftMode } from "next/headers";
 import { cache } from "react";
 
+import { RenderBlocks } from "@/blocks/RenderBlocks";
 import { EventHero } from "@/components/EventHero";
 import { generateMeta } from '@/utilities/generateMeta'
 import { LivePreviewListener } from "@/components/LivePreviewListener";
@@ -56,6 +57,8 @@ export default async function Course({ params: paramsPromise }: Args) {
             {draft && <LivePreviewListener />}
 
             <EventHero event={course} type="course" />
+
+            {course.layout && course.layout.length > 0 && <RenderBlocks blocks={course.layout} />}
         </article>
     )
 }

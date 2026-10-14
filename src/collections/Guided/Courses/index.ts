@@ -41,7 +41,6 @@ export const GuidedCourses: CollectionConfig<'guidedCourses'> = {
     defaultPopulate: {
         title: true,
         slug: true,
-        categories: true,
         meta: {
             image: true,
             description: true,
@@ -129,7 +128,30 @@ export const GuidedCourses: CollectionConfig<'guidedCourses'> = {
                             name: 'endDate',
                             type: 'date',
                             required: true,
-                        }
+                        },
+                        {
+                            name: 'module',
+                            type: 'select',
+                            required: true,
+                            defaultValue: 'module1',
+                            options: [
+                                { label: 'Module 1', value: 'module1' },
+                                { label: 'Module 2', value: 'module2' },
+                                { label: 'Module 3', value: 'module3' },
+                            ],
+                            admin: {
+                                description: 'Select which module this course belongs to.',
+                            },
+                        },
+                        {
+                            name: 'customForm',
+                            type: 'relationship',
+                            relationTo: 'forms',
+                            hasMany: false,
+                            admin: {
+                                description: 'Select or create a custom registration/feedback form for this event.',
+                            },
+                        },
                     ]
                 },
                 {

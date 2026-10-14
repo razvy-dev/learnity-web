@@ -24,6 +24,7 @@ import { Timeline } from '@/blocks/Timeline/config'
 import { RulesAndValues } from '@/blocks/RulesAndValues/config'
 import { About } from '@/blocks/About/config'
 import { Guided } from '@/blocks/Guided/config'
+import { GuidedLearningByYear } from '@/blocks/GuidedLearningByYear/config'
 import { FAQ } from '@/blocks/FAQ/config'
 import { Playground } from '@/blocks/Playground/config'
 import { Testimonials } from '@/blocks/Testimonials/config'
@@ -99,6 +100,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 RulesAndValues,
                 About,
                 Guided,
+                GuidedLearningByYear,
                 FAQ,
                 Playground,
                 Testimonials,
