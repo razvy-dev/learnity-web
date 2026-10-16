@@ -7,12 +7,13 @@ import { useInView } from 'react-intersection-observer'
 import { Calendar, User, MapPin, BookOpen, GraduationCap, Target } from 'lucide-react'
 
 import { Media } from '@/components/Media'
+import RichText from '@/components/RichText'
 import { formatRomanianDate } from '@/utilities/formatRomanianDate'
 import { richTextToPlainText } from '@/utilities/richTextToPlainText'
 import { cn } from '@/utilities/ui'
 
 import type { GuidedLearningByYear as GuidedLearningByYearBlockProps } from '@/payload-types'
-import type { Media as MediaType } from '@/payload-types'
+import type { GuidedWorkshop, Media as MediaType } from '@/payload-types'
 
 const bangers = Bangers({
   subsets: ['latin', 'latin-ext'],
@@ -29,7 +30,7 @@ type Experience = {
   id: number
   title: string
   slug: string
-  description: GuidedLearningByYearBlockProps['experiencesByModule'] extends { module1: infer T } ? T[0] : never
+  description: GuidedWorkshop['description']
   photo: number | MediaType
   teachers?: { teacher: string }[] | null
   date?: string
@@ -121,11 +122,11 @@ const colorStyles = {
 function getTypeInfo(type: Experience['type']) {
   switch (type) {
     case 'workshop':
-      return { icon: <BookOpen size={18} />, label: 'Workshop' }
+      return { Icon: BookOpen, label: 'Workshop' }
     case 'course':
-      return { icon: <GraduationCap size={18} />, label: 'Curs' }
+      return { Icon: GraduationCap, label: 'Curs' }
     case 'bootcamp':
-      return { icon: <Target size={18} />, label: 'Bootcamp' }
+      return { Icon: Target, label: 'Bootcamp' }
   }
 }
 
@@ -219,7 +220,7 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
               )}
               style={{ transitionDelay: '0.2s' }}
             >
-              {sectionDescription}
+              <RichText data={sectionDescription} enableGutter={false} enableProse={false} />
             </div>
           )}
         </div>
@@ -312,7 +313,7 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                             <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white backdrop-blur-sm"
                               style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
                             >
-                              {typeInfo.icon}
+                              <typeInfo.Icon size={18} />
                               <span>{typeInfo.label}</span>
                             </div>
                             {/* Module indicator */}
@@ -365,7 +366,7 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                               )}
                             >
                               Explorează
-                              <typeInfo.icon
+                              <typeInfo.Icon
                                 className="ml-2 transform group-hover/cta:translate-x-1 transition-transform duration-300"
                                 size={16}
                               />

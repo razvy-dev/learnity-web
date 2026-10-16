@@ -136,8 +136,6 @@ export const Guided: React.FC<Props> = (props) => {
                         className="w-full h-auto"
                         imgClassName="w-full h-auto object-cover"
                         fill={false}
-                        width={800}
-                        height={600}
                       />
                     )}
                   </div>

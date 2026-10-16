@@ -51,6 +51,7 @@ export const GuidedLearningByYear: Block = {
     {
       name: 'moduleLabels',
       type: 'array',
+      dbName: 'gl_module_labels',
       fields: [
         {
           name: 'moduleValue',

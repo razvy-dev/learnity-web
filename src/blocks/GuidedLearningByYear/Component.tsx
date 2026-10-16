@@ -160,7 +160,7 @@ export const GuidedLearningByYear: React.FC<Props> = async (props) => {
   const modulesConfig = (moduleLabels || []).map((ml) => ({
     value: ml.moduleValue,
     label: ml.label,
-    description: ml.description,
+    description: ml.description ?? '',
     color: ml.color,
   }))
 

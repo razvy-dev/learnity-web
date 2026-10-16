@@ -1,2 +1,3 @@
-export * from './Component'
-export * from './config'
+export { Guided } from './Component'
+export { Guided as GuidedConfig } from './config'
+export type { Props } from './Component'

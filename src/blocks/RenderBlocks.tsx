@@ -11,6 +11,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { Timeline } from '@/blocks/Timeline/Component'
 import { RulesAndValues } from '@/blocks/RulesAndValues/Component'
 import { Guided } from '@/blocks/Guided/Component'
+import { GuidedLearningByYear } from '@/blocks/GuidedLearningByYear/Component'
 import { FAQ } from '@/blocks/FAQ/Component'
 import { Playground } from '@/blocks/Playground/Component'
 import { Testimonials } from '@/blocks/Testimonials/Component'
@@ -35,6 +36,7 @@ const blockComponents = {
   timeline: Timeline,
   rulesAndValues: RulesAndValues,
   guided: Guided,
+  guidedLearningByYear: GuidedLearningByYear,
   faq: FAQ,
   playground: Playground,
   testimonials: Testimonials,

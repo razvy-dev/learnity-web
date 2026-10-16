@@ -11,25 +11,7 @@ import { EventHero } from "@/components/EventHero";
 import { generateMeta } from '@/utilities/generateMeta'
 import { LivePreviewListener } from "@/components/LivePreviewListener";
 
-export async function generateStaticParams() {
-    const payload = await getPayload({ config: configPromise });
-    const bootcamps = await payload.find({
-        collection: "guidedBootcamps",
-        draft: false,
-        limit: 1000,
-        overrideAccess: false,
-        pagination: false,
-        select: {
-            slug: true,
-        },
-    })
-
-    const params = bootcamps.docs.map(({ slug }) => {
-        return { slug }
-    })
-
-    return params
-}
+export const dynamic = 'force-dynamic'
 
 type Args = {
     params: Promise<{

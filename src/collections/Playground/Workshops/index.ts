@@ -38,7 +38,6 @@ export const Workshops: CollectionConfig<'workshops'> = {
     defaultPopulate: {
         title: true,
         slug: true,
-        categories: true,
         meta: {
             image: true,
             description: true,
