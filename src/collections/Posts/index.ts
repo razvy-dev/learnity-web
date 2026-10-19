@@ -41,6 +41,7 @@ export const Posts: CollectionConfig<'posts'> = {
   defaultPopulate: {
     title: true,
     slug: true,
+    excerpt: true,
     categories: true,
     meta: {
       image: true,
@@ -72,6 +73,15 @@ export const Posts: CollectionConfig<'posts'> = {
       required: true,
     },
     {
+      name: 'excerpt',
+      type: 'textarea',
+      maxLength: 300,
+      admin: {
+        description:
+          'A short summary of the post. Shown on post cards and below the title at the top of the post.',
+      },
+    },
+    {
       type: 'tabs',
       tabs: [
         {
@@ -80,6 +90,11 @@ export const Posts: CollectionConfig<'posts'> = {
               name: 'heroImage',
               type: 'upload',
               relationTo: 'media',
+              label: 'Main photo',
+              admin: {
+                description:
+                  'The main photo for this post. It is displayed next to the title at the top of the post.',
+              },
             },
             {
               name: 'content',

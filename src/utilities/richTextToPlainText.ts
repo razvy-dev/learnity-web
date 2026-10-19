@@ -3,7 +3,9 @@ export function richTextToPlainText(node: unknown): string {
   if (Array.isArray(node)) return node.map(richTextToPlainText).join('')
   if (typeof node !== 'object') return ''
 
-  const record = node as { children?: unknown; text?: unknown; type?: unknown }
+  const record = node as { children?: unknown; root?: unknown; text?: unknown; type?: unknown }
+
+  if (record.root) return richTextToPlainText(record.root)
 
   if (typeof record.text === 'string') return record.text
 

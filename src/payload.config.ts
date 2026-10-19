@@ -1,4 +1,5 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { resendAdapter } from '@payloadcms/email-resend'
 import sharp from 'sharp'
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
@@ -27,6 +28,8 @@ import { Events } from './collections/Playground/Events'
 import { GuidedWorkshops } from './collections/Guided/Workshops'
 import { GuidedCourses } from './collections/Guided/Courses'
 import { GuidedBootcamps } from './collections/Guided/Bootcamps'
+import { WhatTheFuture } from './collections/WhatTheFuture'
+import { Camps } from './collections/Camps'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -70,12 +73,17 @@ export default buildConfig({
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
+  email: resendAdapter({
+    defaultFromAddress: process.env.RESEND_EMAIL_FROM || '',
+    defaultFromName: 'Learnity',
+    apiKey: process.env.RESEND_API_KEY || '',
+  }),
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URL || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, GuidedWorkshops, GuidedCourses, GuidedBootcamps, AutonomousGroups, Workshops, Courses, Events],
+  collections: [Pages, Posts, Media, Categories, Users, GuidedWorkshops, GuidedCourses, GuidedBootcamps, AutonomousGroups, Workshops, Courses, Events, WhatTheFuture, Camps],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Socials],
   plugins,

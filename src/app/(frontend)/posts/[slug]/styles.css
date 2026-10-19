@@ -1,0 +1,66 @@
+.post-content .payload-richtext {
+  color: #2f2f27;
+}
+
+.post-content .payload-richtext > :first-child {
+  margin-top: 0;
+}
+
+.post-content .payload-richtext > :last-child {
+  margin-bottom: 0;
+}
+
+.post-content .payload-richtext :is(h1, h2, h3, h4) {
+  color: #2f2f27;
+  font-family: var(--post-heading-font), sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.post-content .payload-richtext h2 {
+  margin-top: 2em;
+}
+
+.post-content .payload-richtext strong {
+  color: #2f2f27;
+  font-weight: 700;
+}
+
+.post-content .payload-richtext a {
+  color: #05be9e;
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.post-content .payload-richtext a:hover {
+  color: #f8a12e;
+  text-decoration: underline;
+}
+
+.post-content .payload-richtext :is(ul, ol) > li::marker {
+  color: #f8a12e;
+}
+
+.post-content .payload-richtext blockquote {
+  border-left: 4px solid #f8a12e;
+  color: #2f2f27;
+  font-style: italic;
+}
+
+.post-content .payload-richtext hr {
+  border-color: rgba(47, 47, 39, 0.15);
+}
+
+.post-content .payload-richtext code:not(pre code) {
+  background: #c7f1f0;
+  border-radius: 0.375rem;
+  color: #2f2f27;
+  font-weight: 600;
+  padding: 0.15em 0.4em;
+}
+
+.post-content .payload-richtext img {
+  border-radius: 1rem;
+}

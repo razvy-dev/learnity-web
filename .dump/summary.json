@@ -1,0 +1,285 @@
+{
+  "pages": [
+    {
+      "id": 6,
+      "slug": "contact",
+      "title": "Contact",
+      "layout": [
+        "formBlock",
+        "map"
+      ]
+    },
+    {
+      "id": 1,
+      "slug": "despre-noi",
+      "title": "Despre noi",
+      "layout": [
+        "timeline"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "doneaza",
+      "title": "Doneaza",
+      "layout": [
+        "cta"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "guided-learning",
+      "title": "Guided Learning",
+      "layout": [
+        "teachers",
+        "cta"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "home",
+      "title": "Acasa",
+      "layout": [
+        "about",
+        "donate",
+        "guided",
+        "guidedExamples",
+        "playground",
+        "faq"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "playground",
+      "title": "Playground",
+      "layout": [
+        "playgroundJourney"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": 1,
+      "filename": "boca.jpeg",
+      "alt": "boca"
+    },
+    {
+      "id": 2,
+      "filename": "despre-noi1.jpg",
+      "alt": "Poza din \"Incubatorul de Afaceri\""
+    },
+    {
+      "id": 3,
+      "filename": "despre-noi2.jpg",
+      "alt": "Strategicul pentru Learnity 2.0"
+    },
+    {
+      "id": 4,
+      "filename": "despre-noi3.jpg",
+      "alt": "Cum arata Learnity acum?"
+    },
+    {
+      "id": 5,
+      "filename": "guided1.jpg",
+      "alt": "Eveniment Guided Learning"
+    },
+    {
+      "id": 15,
+      "filename": "image-1.png",
+      "alt": "The Fireplace"
+    },
+    {
+      "id": 24,
+      "filename": "image-10.png",
+      "alt": "Poza dintr-o tabara Learnity"
+    },
+    {
+      "id": 16,
+      "filename": "image-2.png",
+      "alt": "The Roots"
+    },
+    {
+      "id": 17,
+      "filename": "image-3.png",
+      "alt": "The Tower"
+    },
+    {
+      "id": 18,
+      "filename": "image-4.png",
+      "alt": "Guided Learning Image"
+    },
+    {
+      "id": 19,
+      "filename": "image-5.png",
+      "alt": "Teodora"
+    },
+    {
+      "id": 20,
+      "filename": "image-6.png",
+      "alt": "Alex Necșulescu"
+    },
+    {
+      "id": 21,
+      "filename": "image-7.png",
+      "alt": "Smaranda Nay"
+    },
+    {
+      "id": 22,
+      "filename": "image-8.png",
+      "alt": "Valentin Brabete"
+    },
+    {
+      "id": 23,
+      "filename": "image-9.png",
+      "alt": "Povești despre antreprenoriat"
+    },
+    {
+      "id": 14,
+      "filename": "image.png",
+      "alt": "The Arena"
+    },
+    {
+      "id": 7,
+      "filename": "logo_learnity-1.png",
+      "alt": null
+    },
+    {
+      "id": 6,
+      "filename": "logo_learnity.png",
+      "alt": "Logo"
+    },
+    {
+      "id": 13,
+      "filename": "output_smallest.mp4",
+      "alt": "Video Prezentare Learnity"
+    },
+    {
+      "id": 12,
+      "filename": "playground1-CrpR_TV1.jpg",
+      "alt": "Playground"
+    },
+    {
+      "id": 11,
+      "filename": "plm.jpg",
+      "alt": "Taboo Talk: Depresie si anxietate"
+    },
+    {
+      "id": 8,
+      "filename": "poster_video.png",
+      "alt": null
+    },
+    {
+      "id": 10,
+      "filename": "prim_ajutor.jpg",
+      "alt": "Workshop Prim Ajutor"
+    },
+    {
+      "id": 9,
+      "filename": "tks.jpg",
+      "alt": "Poza de la Doza De Inspiratie"
+    }
+  ],
+  "headerNav": [
+    {
+      "id": "6aca32dd80ff82d91246942f",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 4,
+            "title": "Acasa",
+            "slug": "home"
+          }
+        },
+        "url": null,
+        "label": "Acasa"
+      }
+    },
+    {
+      "id": "6aca32e480ff82d912469431",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 1,
+            "title": "Despre noi",
+            "slug": "despre-noi"
+          }
+        },
+        "url": null,
+        "label": "Despre noi"
+      }
+    },
+    {
+      "id": "6aca32ed80ff82d912469433",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 3,
+            "title": "Playground",
+            "slug": "playground"
+          }
+        },
+        "url": null,
+        "label": "Playground"
+      }
+    },
+    {
+      "id": "6aca4a41c547b49858d89c81",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 5,
+            "title": "Guided Learning",
+            "slug": "guided-learning"
+          }
+        },
+        "url": null,
+        "label": "Guided Learning"
+      }
+    },
+    {
+      "id": "6aca4a4ac547b49858d89c83",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 6,
+            "title": "Contact",
+            "slug": "contact"
+          }
+        },
+        "url": null,
+        "label": "Contact"
+      }
+    },
+    {
+      "id": "6aca4b64c547b49858d89c8b",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 7,
+            "title": "Doneaza",
+            "slug": "doneaza"
+          }
+        },
+        "url": null,
+        "label": "Doneaza"
+      }
+    }
+  ]
+}

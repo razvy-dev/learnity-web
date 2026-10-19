@@ -23,6 +23,16 @@ import { Teachers } from '@/blocks/Teachers/Component'
 import { Teacher } from '@/blocks/Teacher/Component'
 import { Donate } from '@/blocks/Donate/Component'
 import { DonateStory } from '@/blocks/DonateStory/Component'
+import { PresentCourses } from '@/blocks/PresentCourses/Component'
+import { AboutStory } from '@/blocks/AboutStory/Component'
+import { Camps } from '@/blocks/Camps/Component'
+import { GuidedCourses } from '@/blocks/GuidedCourses/Component'
+import { ObjectivesBlock } from '@/blocks/Objectives/Component'
+import { PlaygroundShowcase } from '@/blocks/PlaygroundShowcase/Component'
+import { SpinningTopBlock } from '@/blocks/SpinningTop/Component'
+import { WhatTheFutureBlock } from '@/blocks/WhatTheFuture/Component'
+import { WhySupport } from '@/blocks/WhySupport/Component'
+import { DonationMethodsBlock } from '@/blocks/DonationMethods/Component'
 
 const blockComponents = {
   about: About,
@@ -46,6 +56,16 @@ const blockComponents = {
   playgroundExamples: PlaygroundExamples,
   teachers: Teachers,
   teacher: Teacher,
+  presentCourses: PresentCourses,
+  aboutStory: AboutStory,
+  camps: Camps,
+  guidedCourses: GuidedCourses,
+  objectives: ObjectivesBlock,
+  playgroundShowcase: PlaygroundShowcase,
+  spinningTop: SpinningTopBlock,
+  whatTheFuture: WhatTheFutureBlock,
+  whySupport: WhySupport,
+  donationMethods: DonationMethodsBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -1,0 +1,65 @@
+@keyframes phFloatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes phSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes phFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes phZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ph-float-slow {
+  animation: phFloatSlow 6s ease-in-out infinite;
+}
+
+.ph-slide-up {
+  animation: phSlideUp 0.5s ease-out forwards;
+}
+
+.ph-fade-in {
+  animation: phFadeIn 0.5s ease-in forwards;
+}
+
+.ph-zoom-in {
+  animation: phZoomIn 0.5s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ph-float-slow,
+  .ph-slide-up,
+  .ph-fade-in,
+  .ph-zoom-in {
+    animation: none;
+  }
+}

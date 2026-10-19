@@ -65,7 +65,7 @@ export const GuidedWorkshopCard: React.FC<GuidedWorkshopCardProps> = ({
         )}
       </div>
 
-      <div className="p-6 flex flex-col flex-1">
+      <div className="p-6 flex flex-col flex-1 bg-white">
         <h3 className="text-xl font-bold text-customBlack mb-3">{workshop.title}</h3>
 
         {description && <p className="text-customBlack mb-4 text-sm line-clamp-4">{description}</p>}

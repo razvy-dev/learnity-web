@@ -9,6 +9,7 @@ const config = {
         customWhite: '#F0E6DD',
         customOrange: '#F8A12E',
         customLightOrange: '#FEC782',
+        customLighterOrange: '#FFE4C2',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in forwards',

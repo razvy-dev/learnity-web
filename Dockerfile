@@ -46,6 +46,13 @@ RUN adduser --system --uid 1001 nextjs
 # Remove this line if you do not have this folder
 COPY --from=builder /app/public ./public
 
+# The Railway volume is mounted at /app/public/media. When Docker/Compose
+# initialized the volume it created a root-owned `lost+found` directory,
+# which the non-root runtime user cannot scan (EACCES). Create our own
+# `lost+found` in the image so Docker copies it into the empty volume on
+# mount and the runtime user can read the whole media directory.
+RUN mkdir -p public/media/lost+found && chown -R nextjs:nodejs public/media
+
 # Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next

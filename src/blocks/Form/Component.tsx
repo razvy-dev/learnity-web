@@ -37,6 +37,19 @@ export type FormBlockType = {
     relationTo: 'guidedWorkshops' | 'guidedCourses' | 'guidedBootcamps'
     value: number | string
   } | null
+  /**
+   * Optional summary of the event details to display above the form fields.
+   * Used by the event registration (participa) pages.
+   */
+  eventSummary?: {
+    label: string
+    value: string
+  }[] | null
+  /**
+   * Optional image URL to display above the form fields.
+   * Used by the event registration (participa) pages.
+   */
+  eventImage?: string | null
 }
 
 export const FormBlock: React.FC<
@@ -48,6 +61,8 @@ export const FormBlock: React.FC<
     sectionTitle,
     sectionDescription,
     event,
+    eventSummary,
+    eventImage,
     form: formFromProps,
     form: { id: formID, confirmationMessage, confirmationType, redirect, submitButtonLabel } = {},
   } = props
@@ -137,7 +152,7 @@ export const FormBlock: React.FC<
 
   return (
     <section
-      className="relative overflow-hidden bg-customWhite px-4 py-20"
+      className="relative overflow-hidden bg-customWhite px-3 py-20 md:px-4"
       style={{ fontFamily: nunito.style.fontFamily }}
     >
       <div className="pointer-events-none absolute inset-0">
@@ -168,7 +183,7 @@ export const FormBlock: React.FC<
         <div className="rounded-3xl border border-customLightBlue/70 bg-white p-6 shadow-xl md:p-10">
           <FormProvider {...formMethods}>
             {!isLoading && hasSubmitted && confirmationType === 'message' && (
-              <div className="rounded-2xl border border-customBlue/30 bg-customLightBlue/40 p-6">
+              <div className="rounded-2xl border border-customBlue/30 bg-customLightBlue/40 p-6 text-customBlack">
                 <RichText data={confirmationMessage} enableGutter={false} />
               </div>
             )}
@@ -183,6 +198,35 @@ export const FormBlock: React.FC<
             {error && (
               <div className="mb-6 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm font-medium text-destructive">
                 {`${error.status || '500'}: ${error.message || ''}`}
+              </div>
+            )}
+
+            {!hasSubmitted && (eventImage || (eventSummary && eventSummary.length > 0)) && (
+              <div className="mb-8 rounded-2xl border border-customLightBlue/70 bg-customLightBlue/20 p-5">
+                {eventImage && (
+                  <img
+                    src={eventImage}
+                    alt={sectionTitle || 'Event'}
+                    className="mb-4 h-48 w-full rounded-xl object-cover"
+                  />
+                )}
+                {eventSummary && eventSummary.length > 0 && (
+                  <>
+                    <h3 className="mb-3 text-lg font-bold text-customBlack">
+                      Detalii eveniment
+                    </h3>
+                    <dl className="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+                      {eventSummary.map((item) => (
+                        <div key={item.label} className="flex flex-col">
+                          <dt className="text-sm font-semibold text-customBlack/60">
+                            {item.label}
+                          </dt>
+                          <dd className="text-sm text-customBlack">{item.value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </>
+                )}
               </div>
             )}
 

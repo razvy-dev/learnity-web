@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Bangers, Nunito } from 'next/font/google'
 
 import { RelatedPosts } from '@/blocks/RelatedPosts/Component'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
@@ -12,10 +13,22 @@ import type { Post } from '@/payload-types'
 
 import { PostHero } from '@/heros/PostHero'
 import { generateMeta } from '@/utilities/generateMeta'
-import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 
+import './styles.css'
+
 export const dynamic = 'force-dynamic'
+
+const nunito = Nunito({
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+})
+
+const bangers = Bangers({
+  subsets: ['latin', 'latin-ext'],
+  weight: '400',
+  display: 'swap',
+})
 
 type Args = {
   params: Promise<{
@@ -33,10 +46,10 @@ export default async function Post({ params: paramsPromise }: Args) {
 
   if (!post) return <PayloadRedirects url={url} />
 
-  return (
-    <article className="pt-16 pb-16">
-      <PageClient />
+  const relatedPosts = post.relatedPosts?.filter((post) => typeof post === 'object') || []
 
+  return (
+    <article className="pt-16 pb-0">
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
 
@@ -44,17 +57,33 @@ export default async function Post({ params: paramsPromise }: Args) {
 
       <PostHero post={post} />
 
-      <div className="flex flex-col items-center gap-4 pt-8">
-        <div className="container">
-          <RichText className="max-w-[48rem] mx-auto" data={post.content} enableGutter={false} />
-          {post.relatedPosts && post.relatedPosts.length > 0 && (
-            <RelatedPosts
-              className="mt-12 max-w-[52rem] lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
-              docs={post.relatedPosts.filter((post) => typeof post === 'object')}
+      <section
+        className="bg-customWhite px-4 py-16 md:py-24"
+        style={{ fontFamily: nunito.style.fontFamily }}
+      >
+        <div className="mx-auto max-w-[52rem]">
+          <div
+            className="post-content rounded-3xl bg-white p-6 shadow-xl md:p-12"
+            style={
+              {
+                '--post-heading-font': bangers.style.fontFamily,
+              } as React.CSSProperties
+            }
+          >
+            <RichText
+              className="prose md:prose-md max-w-none"
+              data={post.content}
+              enableGutter={false}
             />
-          )}
+          </div>
         </div>
-      </div>
+
+        {relatedPosts.length > 0 && (
+          <div className="mt-16">
+            <RelatedPosts docs={relatedPosts} />
+          </div>
+        )}
+      </section>
     </article>
   )
 }

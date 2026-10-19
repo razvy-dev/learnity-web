@@ -1,0 +1,4578 @@
+[
+  {
+    "id": 6,
+    "title": "Contact",
+    "hero": {
+      "type": "mediumImpact",
+      "title": "Learnity",
+      "subtitle": "Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.",
+      "ctaLabel": "Vezi mai mult",
+      "contact": {
+        "heading": "Contactează-ne"
+      },
+      "heading": "Contact",
+      "description": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Partea din Learnity care oferă experiențe de învățare precum cursuri și workshop-uri susținute de profesioniști. Acestea diferă de educația formală prin modul de predare cât mai practic și atractiv, lipsa temelor obligatorii sau activităților impuse și relația de egalitate dintre profesori și elevi.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": "ltr"
+        }
+      },
+      "image": null,
+      "floatingImage": null,
+      "badgeText": null,
+      "imagePosition": "left",
+      "features": [],
+      "backgroundColor": "cream",
+      "showDecorations": true,
+      "stats": [],
+      "floatingText": "Împreună facem diferența!",
+      "goalLabel": "Obiectiv 2025 · 100 de tineri",
+      "goalProgress": 45,
+      "waveDivider": true,
+      "richText": null,
+      "links": []
+    },
+    "layout": [
+      {
+        "id": "6aca52c83cc13430565ddb9f",
+        "sectionTitle": "Title",
+        "sectionDescription": null,
+        "form": {
+          "id": 3,
+          "title": "Contact",
+          "fields": [
+            {
+              "id": "6aca528c3cc13430565ddb9b",
+              "name": "nume",
+              "label": "Name",
+              "width": 20,
+              "defaultValue": null,
+              "required": true,
+              "blockName": null,
+              "blockType": "text"
+            },
+            {
+              "id": "6aca52a43cc13430565ddb9d",
+              "name": "email",
+              "label": "Email",
+              "width": 20,
+              "required": true,
+              "blockName": null,
+              "blockType": "email"
+            }
+          ],
+          "submitButtonLabel": null,
+          "confirmationType": "message",
+          "confirmationMessage": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Am primit mesajul tau, raspundem cat de curand posibil!",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          },
+          "redirect": {
+            "url": null
+          },
+          "emails": [],
+          "updatedAt": "2026-10-10T14:58:54.731Z",
+          "createdAt": "2026-10-10T14:58:33.183Z"
+        },
+        "blockName": null,
+        "blockType": "formBlock"
+      },
+      {
+        "id": "6aca4a16c547b49858d89c7d",
+        "sectionTitle": "Vino să ne vizitezi",
+        "sectionDescription": "Suntem localizați central, ușor de găsit și mereu bucuroși să primim vizitatori. Te așteptăm!",
+        "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8272833334277!2d26.12669317670501!3d44.43670500140456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff29423828e1%3A0x3b1df70f8b904c25!2sStrada%20Duzilor%2023%2C%20Bucure%C8%99ti%20030167!5e0!3m2!1sen!2sro!4v1746787133637!5m2!1sen!2sro",
+        "mapHeight": 450,
+        "blockName": null,
+        "blockType": "map"
+      }
+    ],
+    "meta": {
+      "title": null,
+      "image": null,
+      "description": null
+    },
+    "publishedAt": "2026-10-10T14:21:19.599Z",
+    "generateSlug": false,
+    "slug": "contact",
+    "updatedAt": "2026-10-10T14:59:42.323Z",
+    "createdAt": "2026-10-10T14:21:17.203Z",
+    "_status": "published"
+  },
+  {
+    "id": 1,
+    "title": "Despre noi",
+    "hero": {
+      "type": "mediumImpact",
+      "title": "Learnity",
+      "subtitle": "Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.",
+      "ctaLabel": "Vezi mai mult",
+      "contact": {
+        "heading": "Contactează-ne"
+      },
+      "heading": "Guided Learning",
+      "description": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Partea din Learnity care oferă experiențe de învățare precum cursuri și workshop-uri susținute de profesioniști. Acestea diferă de educația formală prin modul de predare cât mai practic și atractiv, lipsa temelor obligatorii sau activităților impuse și relația de egalitate dintre profesori și elevi.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": "ltr"
+        }
+      },
+      "image": null,
+      "floatingImage": null,
+      "badgeText": null,
+      "imagePosition": "left",
+      "features": [],
+      "backgroundColor": "lightBlue",
+      "showDecorations": true,
+      "stats": [],
+      "floatingText": "Împreună facem diferența!",
+      "goalLabel": "Obiectiv 2025 · 100 de tineri",
+      "goalProgress": 45,
+      "waveDivider": true,
+      "richText": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            },
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Despre noi",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": null
+        }
+      },
+      "links": []
+    },
+    "layout": [
+      {
+        "id": "6ab5a425bcdaa582bda5f18f",
+        "blockName": null,
+        "items": [
+          {
+            "id": "6ab5a428bcdaa582bda5f191",
+            "title": "Cum a inceput?",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "În Universitatea Alternativă, în cadrul ”Incubatorului de Afaceri”, Silvia Chirnogeanu și Paul Crăciun creionează și mai apoi fondează Learnity. Comunitatea se formează, crește, apar proiecte conexe precum taberele și diverse evenimente cu focus pe educație, atât pentru elevi cât și pentru părinți și cadre didactice.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "photo": {
+              "id": 2,
+              "alt": "Poza din \"Incubatorul de Afaceri\"",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "O fotografie a participantilor la cursul \"Incubatorul de afaceri\" din cadrul Universitatii Alternative.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 1,
+                "name": "content",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 24
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 18
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 14
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 13
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 5
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 4
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 3
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 2
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-03T09:47:43.538Z",
+                "createdAt": "2026-10-03T09:47:43.537Z"
+              },
+              "updatedAt": "2026-10-03T09:48:47.653Z",
+              "createdAt": "2026-10-03T09:48:47.652Z",
+              "url": "/api/media/file/despre-noi1.jpg",
+              "thumbnailURL": "/api/media/file/despre-noi1-300x201.jpg",
+              "filename": "despre-noi1.jpg",
+              "mimeType": "image/jpeg",
+              "filesize": 146941,
+              "width": 960,
+              "height": 643,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/despre-noi1-300x201.jpg",
+                  "width": 300,
+                  "height": 201,
+                  "mimeType": "image/jpeg",
+                  "filesize": 23278,
+                  "filename": "despre-noi1-300x201.jpg"
+                },
+                "square": {
+                  "url": "/api/media/file/despre-noi1-500x500.jpg",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/jpeg",
+                  "filesize": 81700,
+                  "filename": "despre-noi1-500x500.jpg"
+                },
+                "small": {
+                  "url": "/api/media/file/despre-noi1-600x402.jpg",
+                  "width": 600,
+                  "height": 402,
+                  "mimeType": "image/jpeg",
+                  "filesize": 82681,
+                  "filename": "despre-noi1-600x402.jpg"
+                },
+                "medium": {
+                  "url": "/api/media/file/despre-noi1-900x603.jpg",
+                  "width": 900,
+                  "height": 603,
+                  "mimeType": "image/jpeg",
+                  "filesize": 164946,
+                  "filename": "despre-noi1-900x603.jpg"
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/despre-noi1-1200x630.jpg",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/jpeg",
+                  "filesize": 189264,
+                  "filename": "despre-noi1-1200x630.jpg"
+                }
+              }
+            }
+          },
+          {
+            "id": "6ac0cf8f61e17bc56e085c5a",
+            "title": "Learnity 2.0",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "Pentru că își dorea ca proiectul să continue într-o formă sau alta, însă nu coordonat de ea, Silvia a adunat câțiva dintre alumnii pe care îi considera cei mai potriviți pentru acest rol, care respirau valorile Learnity, pentru a le prezenta următoarea provocare: “Vrem să ne retragem din Learnity - ori îl închidem, ori îl preluați voi”. Acesta a fost un moment decisiv, în care mulți alumni s-au implicat cât de mult au putut, cu un sfat, o ședință sau chiar săptămâni întregi de muncă, pentru a creiona Learnity 2.0. Ana Predescu și Ana Stinghe, alături de o echipă de learnitași experimentați din comunitate, au adunat echipa ce urma să fie următoarea echipă de organizare sau “Core Team” a primului an din varianta nouă Learnity. După multe ședințe cu mentori, întâlniri strategice cu alumni și design de proiect, s-a dat startul unui nou an Learnity!!",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "photo": {
+              "id": 3,
+              "alt": "Strategicul pentru Learnity 2.0",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Cum s-a pus la cale Learnity 2.0",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 1,
+                "name": "content",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 24
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 18
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 14
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 13
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 5
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 4
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 3
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 2
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-03T09:47:43.538Z",
+                "createdAt": "2026-10-03T09:47:43.537Z"
+              },
+              "updatedAt": "2026-10-03T09:50:36.423Z",
+              "createdAt": "2026-10-03T09:50:36.423Z",
+              "url": "/api/media/file/despre-noi2.jpg",
+              "thumbnailURL": "/api/media/file/despre-noi2-300x169.jpg",
+              "filename": "despre-noi2.jpg",
+              "mimeType": "image/jpeg",
+              "filesize": 205764,
+              "width": 1599,
+              "height": 899,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/despre-noi2-300x169.jpg",
+                  "width": 300,
+                  "height": 169,
+                  "mimeType": "image/jpeg",
+                  "filesize": 17359,
+                  "filename": "despre-noi2-300x169.jpg"
+                },
+                "square": {
+                  "url": "/api/media/file/despre-noi2-500x500.jpg",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/jpeg",
+                  "filesize": 57862,
+                  "filename": "despre-noi2-500x500.jpg"
+                },
+                "small": {
+                  "url": "/api/media/file/despre-noi2-600x337.jpg",
+                  "width": 600,
+                  "height": 337,
+                  "mimeType": "image/jpeg",
+                  "filesize": 54052,
+                  "filename": "despre-noi2-600x337.jpg"
+                },
+                "medium": {
+                  "url": "/api/media/file/despre-noi2-900x506.jpg",
+                  "width": 900,
+                  "height": 506,
+                  "mimeType": "image/jpeg",
+                  "filesize": 101804,
+                  "filename": "despre-noi2-900x506.jpg"
+                },
+                "large": {
+                  "url": "/api/media/file/despre-noi2-1400x787.jpg",
+                  "width": 1400,
+                  "height": 787,
+                  "mimeType": "image/jpeg",
+                  "filesize": 194554,
+                  "filename": "despre-noi2-1400x787.jpg"
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/despre-noi2-1200x630.jpg",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/jpeg",
+                  "filesize": 147318,
+                  "filename": "despre-noi2-1200x630.jpg"
+                }
+              }
+            }
+          },
+          {
+            "id": "6ac0cff061e17bc56e085c5c",
+            "title": "Cum arata acum?",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "Ne-am dat seama că, pe de o parte, visam la o comunitate complet autonomă, autodirijata, unde totul este creat de learnitasi de la 0, un proiect destul de diferit și ambițios în comparație cu ce era Learnity înainte. Pe de o alta parte, voiam să păstram structura cursurilor și evenimentelor cu care ne obișnuisem în Learnity și cu care știam că și noile generații vor rezona. Așa că, acum avem Playground, partea prin care oferim libertatea și autonomia atât de valoroase procesului de învățare, dar și partea de Guided Learning în care adolescenții se pot bucura de cursuri și workshop-uri organizate pe baza nevoilor și intereselor lor. Așa am dat startul unui nou an de Learnity, în a doua sa etapă, în care proiectul continua să crească și să formeze “changemakers”!",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "photo": {
+              "id": 4,
+              "alt": "Cum arata Learnity acum?",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Poza de la unul din cursurile noastre din prezent.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 1,
+                "name": "content",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 24
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 18
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 14
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 13
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 5
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 4
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 3
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 2
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-03T09:47:43.538Z",
+                "createdAt": "2026-10-03T09:47:43.537Z"
+              },
+              "updatedAt": "2026-10-03T09:51:54.591Z",
+              "createdAt": "2026-10-03T09:51:54.591Z",
+              "url": "/api/media/file/despre-noi3.jpg",
+              "thumbnailURL": "/api/media/file/despre-noi3-300x225.jpg",
+              "filename": "despre-noi3.jpg",
+              "mimeType": "image/jpeg",
+              "filesize": 4042962,
+              "width": 4032,
+              "height": 3024,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/despre-noi3-300x225.jpg",
+                  "width": 300,
+                  "height": 225,
+                  "mimeType": "image/jpeg",
+                  "filesize": 17140,
+                  "filename": "despre-noi3-300x225.jpg"
+                },
+                "square": {
+                  "url": "/api/media/file/despre-noi3-500x500.jpg",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/jpeg",
+                  "filesize": 51065,
+                  "filename": "despre-noi3-500x500.jpg"
+                },
+                "small": {
+                  "url": "/api/media/file/despre-noi3-600x450.jpg",
+                  "width": 600,
+                  "height": 450,
+                  "mimeType": "image/jpeg",
+                  "filesize": 54242,
+                  "filename": "despre-noi3-600x450.jpg"
+                },
+                "medium": {
+                  "url": "/api/media/file/despre-noi3-900x675.jpg",
+                  "width": 900,
+                  "height": 675,
+                  "mimeType": "image/jpeg",
+                  "filesize": 106352,
+                  "filename": "despre-noi3-900x675.jpg"
+                },
+                "large": {
+                  "url": "/api/media/file/despre-noi3-1400x1050.jpg",
+                  "width": 1400,
+                  "height": 1050,
+                  "mimeType": "image/jpeg",
+                  "filesize": 232486,
+                  "filename": "despre-noi3-1400x1050.jpg"
+                },
+                "xlarge": {
+                  "url": "/api/media/file/despre-noi3-1920x1440.jpg",
+                  "width": 1920,
+                  "height": 1440,
+                  "mimeType": "image/jpeg",
+                  "filesize": 423459,
+                  "filename": "despre-noi3-1920x1440.jpg"
+                },
+                "og": {
+                  "url": "/api/media/file/despre-noi3-1200x630.jpg",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/jpeg",
+                  "filesize": 138530,
+                  "filename": "despre-noi3-1200x630.jpg"
+                }
+              }
+            }
+          }
+        ],
+        "blockType": "timeline"
+      }
+    ],
+    "meta": {
+      "title": "Despre Noi",
+      "image": null,
+      "description": "Despre noi - Cum s-a creat Learnity? "
+    },
+    "publishedAt": "2026-09-24T22:24:46.958Z",
+    "generateSlug": false,
+    "slug": "despre-noi",
+    "updatedAt": "2026-10-03T09:52:46.785Z",
+    "createdAt": "2026-09-24T22:24:43.801Z",
+    "_status": "published"
+  },
+  {
+    "id": 7,
+    "title": "Doneaza",
+    "hero": {
+      "type": "donate",
+      "title": "Learnity",
+      "subtitle": "Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.",
+      "ctaLabel": "Vezi mai mult",
+      "contact": {
+        "heading": "Contactează-ne"
+      },
+      "heading": "Susține Educația pentru Viitorul Tinerilor",
+      "description": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "start",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Investește în viitorul tinerilor și contribuie la crearea unei societăți mai bune prin educație de calitate, creativă și accesibilă tuturor.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": "ltr"
+        }
+      },
+      "image": {
+        "id": 24,
+        "alt": "Poza dintr-o tabara Learnity",
+        "caption": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Poza dintr-o tabara Learnity",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": null
+          }
+        },
+        "folder": {
+          "id": 1,
+          "name": "content",
+          "folder": null,
+          "documentsAndFolders": {
+            "docs": [
+              {
+                "relationTo": "media",
+                "value": 24
+              },
+              {
+                "relationTo": "media",
+                "value": 18
+              },
+              {
+                "relationTo": "media",
+                "value": 14
+              },
+              {
+                "relationTo": "media",
+                "value": 13
+              },
+              {
+                "relationTo": "media",
+                "value": 5
+              },
+              {
+                "relationTo": "media",
+                "value": 4
+              },
+              {
+                "relationTo": "media",
+                "value": 3
+              },
+              {
+                "relationTo": "media",
+                "value": 2
+              }
+            ],
+            "hasNextPage": false
+          },
+          "folderType": [
+            "media"
+          ],
+          "updatedAt": "2026-10-03T09:47:43.538Z",
+          "createdAt": "2026-10-03T09:47:43.537Z"
+        },
+        "updatedAt": "2026-10-10T14:25:51.096Z",
+        "createdAt": "2026-10-10T14:25:51.096Z",
+        "url": "/api/media/file/image-10.png",
+        "thumbnailURL": "/api/media/file/image-10-300x400.png",
+        "filename": "image-10.png",
+        "mimeType": "image/png",
+        "filesize": 4015003,
+        "width": 1200,
+        "height": 1600,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/image-10-300x400.png",
+            "width": 300,
+            "height": 400,
+            "mimeType": "image/png",
+            "filesize": 331596,
+            "filename": "image-10-300x400.png"
+          },
+          "square": {
+            "url": "/api/media/file/image-10-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 702440,
+            "filename": "image-10-500x500.png"
+          },
+          "small": {
+            "url": "/api/media/file/image-10-600x800.png",
+            "width": 600,
+            "height": 800,
+            "mimeType": "image/png",
+            "filesize": 1323957,
+            "filename": "image-10-600x800.png"
+          },
+          "medium": {
+            "url": "/api/media/file/image-10-900x1200.png",
+            "width": 900,
+            "height": 1200,
+            "mimeType": "image/png",
+            "filesize": 2965408,
+            "filename": "image-10-900x1200.png"
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": "/api/media/file/image-10-1200x630.png",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/png",
+            "filesize": 2094988,
+            "filename": "image-10-1200x630.png"
+          }
+        }
+      },
+      "floatingImage": null,
+      "badgeText": "",
+      "imagePosition": "left",
+      "features": [],
+      "backgroundColor": "cream",
+      "showDecorations": true,
+      "stats": [],
+      "floatingText": "Împreună facem diferența!",
+      "goalLabel": "Obiectiv 2025 · 100 de tineri",
+      "goalProgress": 45,
+      "waveDivider": true,
+      "richText": null,
+      "links": [
+        {
+          "id": "6aca4afac547b49858d89c85",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "pages",
+              "value": {
+                "id": 6,
+                "title": "Contact",
+                "slug": "contact"
+              }
+            },
+            "url": null,
+            "label": "Contact"
+          }
+        }
+      ]
+    },
+    "layout": [
+      {
+        "id": "6aca4b23c547b49858d89c87",
+        "heading": "Sustine educatia alternativa din Romania!",
+        "richText": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "center",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Cu ajutorul donațiilor tale, putem transforma educația și crea oportunități pentru tinerii din România.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": null
+          }
+        },
+        "badgeText": null,
+        "image": null,
+        "variant": "teal",
+        "alignment": "center",
+        "showDecorations": true,
+        "blockName": null,
+        "links": [
+          {
+            "id": "6aca4b4ac547b49858d89c89",
+            "link": {
+              "type": "reference",
+              "newTab": null,
+              "reference": {
+                "relationTo": "pages",
+                "value": {
+                  "id": 1,
+                  "title": "Despre noi",
+                  "slug": "despre-noi"
+                }
+              },
+              "url": null,
+              "label": "Mai multe despre noi"
+            }
+          }
+        ],
+        "blockType": "cta"
+      }
+    ],
+    "meta": {
+      "title": null,
+      "image": null,
+      "description": null
+    },
+    "publishedAt": "2026-10-10T14:24:45.353Z",
+    "generateSlug": false,
+    "slug": "doneaza",
+    "updatedAt": "2026-10-10T14:27:39.530Z",
+    "createdAt": "2026-10-10T14:24:43.239Z",
+    "_status": "published"
+  },
+  {
+    "id": 5,
+    "title": "Guided Learning",
+    "hero": {
+      "type": "mediumImpact",
+      "title": "Learnity",
+      "subtitle": "Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.",
+      "ctaLabel": "Vezi mai mult",
+      "contact": {
+        "heading": "Contactează-ne"
+      },
+      "heading": "Guided Learning",
+      "description": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Partea din Learnity care oferă experiențe de învățare precum cursuri și workshop-uri susținute de profesioniști. Acestea diferă de educația formală prin modul de predare cât mai practic și atractiv, lipsa temelor obligatorii sau activităților impuse și relația de egalitate dintre profesori și elevi.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": "ltr"
+        }
+      },
+      "image": {
+        "id": 11,
+        "alt": "Taboo Talk: Depresie si anxietate",
+        "caption": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Taboo Talk: Depresie si anxietate",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": null
+          }
+        },
+        "folder": null,
+        "updatedAt": "2026-10-10T13:26:10.329Z",
+        "createdAt": "2026-10-10T13:26:10.329Z",
+        "url": "/api/media/file/plm.jpg",
+        "thumbnailURL": "/api/media/file/plm-300x400.jpg",
+        "filename": "plm.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 2785124,
+        "width": 3024,
+        "height": 4032,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/plm-300x400.jpg",
+            "width": 300,
+            "height": 400,
+            "mimeType": "image/jpeg",
+            "filesize": 26415,
+            "filename": "plm-300x400.jpg"
+          },
+          "square": {
+            "url": "/api/media/file/plm-500x500.jpg",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/jpeg",
+            "filesize": 56217,
+            "filename": "plm-500x500.jpg"
+          },
+          "small": {
+            "url": "/api/media/file/plm-600x800.jpg",
+            "width": 600,
+            "height": 800,
+            "mimeType": "image/jpeg",
+            "filesize": 87488,
+            "filename": "plm-600x800.jpg"
+          },
+          "medium": {
+            "url": "/api/media/file/plm-900x1200.jpg",
+            "width": 900,
+            "height": 1200,
+            "mimeType": "image/jpeg",
+            "filesize": 175773,
+            "filename": "plm-900x1200.jpg"
+          },
+          "large": {
+            "url": "/api/media/file/plm-1400x1867.jpg",
+            "width": 1400,
+            "height": 1867,
+            "mimeType": "image/jpeg",
+            "filesize": 379168,
+            "filename": "plm-1400x1867.jpg"
+          },
+          "xlarge": {
+            "url": "/api/media/file/plm-1920x2560.jpg",
+            "width": 1920,
+            "height": 2560,
+            "mimeType": "image/jpeg",
+            "filesize": 670480,
+            "filename": "plm-1920x2560.jpg"
+          },
+          "og": {
+            "url": "/api/media/file/plm-1200x630.jpg",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/jpeg",
+            "filesize": 151396,
+            "filename": "plm-1200x630.jpg"
+          }
+        }
+      },
+      "floatingImage": {
+        "id": 10,
+        "alt": "Workshop Prim Ajutor",
+        "caption": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Workshop Prim Ajutor",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": null
+          }
+        },
+        "folder": {
+          "id": 2,
+          "name": "Guided Workshops",
+          "folder": null,
+          "documentsAndFolders": {
+            "docs": [
+              {
+                "relationTo": "media",
+                "value": 10
+              }
+            ],
+            "hasNextPage": false
+          },
+          "folderType": [
+            "media"
+          ],
+          "updatedAt": "2026-10-10T13:22:27.902Z",
+          "createdAt": "2026-10-10T13:22:27.901Z"
+        },
+        "updatedAt": "2026-10-10T13:22:53.105Z",
+        "createdAt": "2026-10-10T13:22:53.105Z",
+        "url": "/api/media/file/prim_ajutor.jpg",
+        "thumbnailURL": "/api/media/file/prim_ajutor-300x400.jpg",
+        "filename": "prim_ajutor.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 2548841,
+        "width": 3024,
+        "height": 4032,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/prim_ajutor-300x400.jpg",
+            "width": 300,
+            "height": 400,
+            "mimeType": "image/jpeg",
+            "filesize": 28053,
+            "filename": "prim_ajutor-300x400.jpg"
+          },
+          "square": {
+            "url": "/api/media/file/prim_ajutor-500x500.jpg",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/jpeg",
+            "filesize": 54570,
+            "filename": "prim_ajutor-500x500.jpg"
+          },
+          "small": {
+            "url": "/api/media/file/prim_ajutor-600x800.jpg",
+            "width": 600,
+            "height": 800,
+            "mimeType": "image/jpeg",
+            "filesize": 87987,
+            "filename": "prim_ajutor-600x800.jpg"
+          },
+          "medium": {
+            "url": "/api/media/file/prim_ajutor-900x1200.jpg",
+            "width": 900,
+            "height": 1200,
+            "mimeType": "image/jpeg",
+            "filesize": 175082,
+            "filename": "prim_ajutor-900x1200.jpg"
+          },
+          "large": {
+            "url": "/api/media/file/prim_ajutor-1400x1867.jpg",
+            "width": 1400,
+            "height": 1867,
+            "mimeType": "image/jpeg",
+            "filesize": 375182,
+            "filename": "prim_ajutor-1400x1867.jpg"
+          },
+          "xlarge": {
+            "url": "/api/media/file/prim_ajutor-1920x2560.jpg",
+            "width": 1920,
+            "height": 2560,
+            "mimeType": "image/jpeg",
+            "filesize": 650795,
+            "filename": "prim_ajutor-1920x2560.jpg"
+          },
+          "og": {
+            "url": "/api/media/file/prim_ajutor-1200x630.jpg",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/jpeg",
+            "filesize": 133655,
+            "filename": "prim_ajutor-1200x630.jpg"
+          }
+        }
+      },
+      "badgeText": "Guided",
+      "imagePosition": "left",
+      "features": [
+        {
+          "id": "6aca455980ff82d912469459",
+          "title": "Cursuri",
+          "icon": "bookOpen"
+        },
+        {
+          "id": "6aca456080ff82d91246945b",
+          "title": "Workshop-uri",
+          "icon": "library"
+        },
+        {
+          "id": "6aca456980ff82d91246945d",
+          "title": "Bootcamp-uri",
+          "icon": "target"
+        }
+      ],
+      "backgroundColor": "cream",
+      "showDecorations": true,
+      "stats": [],
+      "floatingText": "Împreună facem diferența!",
+      "goalLabel": "Obiectiv 2025 · 100 de tineri",
+      "goalProgress": 45,
+      "waveDivider": true,
+      "richText": null,
+      "links": []
+    },
+    "layout": [
+      {
+        "id": "6aca482980ff82d91246945f",
+        "sectionTitle": "Câțiva dintre profesorii noștri",
+        "sectionDescription": "Profesorii noștri pasionați aduc învățarea la viață cu creativitate, expertiză și o înțelegere profundă a modului în care copiii învață cel mai bine. Fiecare profesor contribuie cu aptitudinile sale unice pentru a crea un mediu captivant și sigur.",
+        "blockName": null,
+        "teachers": [
+          {
+            "id": "6aca482d80ff82d912469461",
+            "name": "Teodora",
+            "course": "Relații internaționale",
+            "image": {
+              "id": 19,
+              "alt": "Teodora",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Teodora",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 3,
+                "name": "Teachers",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 23
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 22
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 21
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 19
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-10T14:15:35.024Z",
+                "createdAt": "2026-10-10T14:15:35.024Z"
+              },
+              "updatedAt": "2026-10-10T14:15:55.674Z",
+              "createdAt": "2026-10-10T14:15:55.674Z",
+              "url": "/api/media/file/image-5.png",
+              "thumbnailURL": "/api/media/file/image-5-300x300.png",
+              "filename": "image-5.png",
+              "mimeType": "image/png",
+              "filesize": 3270311,
+              "width": 1600,
+              "height": 1600,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-5-300x300.png",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/png",
+                  "filesize": 217734,
+                  "filename": "image-5-300x300.png"
+                },
+                "square": {
+                  "url": "/api/media/file/image-5-500x500.png",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/png",
+                  "filesize": 578812,
+                  "filename": "image-5-500x500.png"
+                },
+                "small": {
+                  "url": "/api/media/file/image-5-600x600.png",
+                  "width": 600,
+                  "height": 600,
+                  "mimeType": "image/png",
+                  "filesize": 820210,
+                  "filename": "image-5-600x600.png"
+                },
+                "medium": {
+                  "url": "/api/media/file/image-5-900x900.png",
+                  "width": 900,
+                  "height": 900,
+                  "mimeType": "image/png",
+                  "filesize": 1782038,
+                  "filename": "image-5-900x900.png"
+                },
+                "large": {
+                  "url": "/api/media/file/image-5-1400x1400.png",
+                  "width": 1400,
+                  "height": 1400,
+                  "mimeType": "image/png",
+                  "filesize": 4040217,
+                  "filename": "image-5-1400x1400.png"
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/image-5-1200x630.png",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/png",
+                  "filesize": 1582357,
+                  "filename": "image-5-1200x630.png"
+                }
+              }
+            },
+            "quote": "\"Relațiile internaționale explicate pe gustul tinerilor"
+          },
+          {
+            "id": "6aca48a3c547b49858d89c6b",
+            "name": "Alex Necșulescu",
+            "course": "Psihologie Aplicată",
+            "image": {
+              "id": 20,
+              "alt": "Alex Necșulescu",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Alex Necșulescu",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": null,
+              "updatedAt": "2026-10-10T14:16:39.110Z",
+              "createdAt": "2026-10-10T14:16:39.110Z",
+              "url": "/api/media/file/image-6.png",
+              "thumbnailURL": "/api/media/file/image-6-300x300.png",
+              "filename": "image-6.png",
+              "mimeType": "image/png",
+              "filesize": 312985,
+              "width": 480,
+              "height": 480,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-6-300x300.png",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/png",
+                  "filesize": 197398,
+                  "filename": "image-6-300x300.png"
+                },
+                "square": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "small": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "medium": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                }
+              }
+            },
+            "quote": "\"Psihologie Aplicată: Înțelege mintea umană prin teorie și practică.\""
+          },
+          {
+            "id": "6aca48cec547b49858d89c6d",
+            "name": "Smaranda Nay",
+            "course": "Comunicare",
+            "image": {
+              "id": 21,
+              "alt": "Smaranda Nay",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "start",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Smaranda Nay",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 3,
+                "name": "Teachers",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 23
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 22
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 21
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 19
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-10T14:15:35.024Z",
+                "createdAt": "2026-10-10T14:15:35.024Z"
+              },
+              "updatedAt": "2026-10-10T14:17:15.987Z",
+              "createdAt": "2026-10-10T14:17:15.987Z",
+              "url": "/api/media/file/image-7.png",
+              "thumbnailURL": "/api/media/file/image-7-300x408.png",
+              "filename": "image-7.png",
+              "mimeType": "image/png",
+              "filesize": 1052335,
+              "width": 1176,
+              "height": 1600,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-7-300x408.png",
+                  "width": 300,
+                  "height": 408,
+                  "mimeType": "image/png",
+                  "filesize": 159205,
+                  "filename": "image-7-300x408.png"
+                },
+                "square": {
+                  "url": "/api/media/file/image-7-500x500.png",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/png",
+                  "filesize": 325207,
+                  "filename": "image-7-500x500.png"
+                },
+                "small": {
+                  "url": "/api/media/file/image-7-600x816.png",
+                  "width": 600,
+                  "height": 816,
+                  "mimeType": "image/png",
+                  "filesize": 536888,
+                  "filename": "image-7-600x816.png"
+                },
+                "medium": {
+                  "url": "/api/media/file/image-7-900x1224.png",
+                  "width": 900,
+                  "height": 1224,
+                  "mimeType": "image/png",
+                  "filesize": 1084631,
+                  "filename": "image-7-900x1224.png"
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/image-7-1200x630.png",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/png",
+                  "filesize": 753859,
+                  "filename": "image-7-1200x630.png"
+                }
+              }
+            },
+            "quote": "\"Descoperă-ți vocea și transformă-ți relațiile prin înțelegerea celor trei stări: Părinte, Adult și Copil!\""
+          },
+          {
+            "id": "6aca48fec547b49858d89c6f",
+            "name": "Valentin Brabete",
+            "course": "Economie",
+            "image": {
+              "id": 22,
+              "alt": "Valentin Brabete",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Valentin Brabete",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 3,
+                "name": "Teachers",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 23
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 22
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 21
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 19
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-10T14:15:35.024Z",
+                "createdAt": "2026-10-10T14:15:35.024Z"
+              },
+              "updatedAt": "2026-10-10T14:18:11.466Z",
+              "createdAt": "2026-10-10T14:18:11.466Z",
+              "url": "/api/media/file/image-8.png",
+              "thumbnailURL": "/api/media/file/image-8-300x300.png",
+              "filename": "image-8.png",
+              "mimeType": "image/png",
+              "filesize": 306128,
+              "width": 480,
+              "height": 480,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-8-300x300.png",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/png",
+                  "filesize": 202697,
+                  "filename": "image-8-300x300.png"
+                },
+                "square": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "small": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "medium": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                }
+              }
+            },
+            "quote": "\"Economie la firul ierbii, explicată simplu, prin dialog și perspective din viața reală!\""
+          },
+          {
+            "id": "6aca492bc547b49858d89c71",
+            "name": "Cristi Chirnogeanu",
+            "course": "Povești despre antreprenoriat",
+            "image": {
+              "id": 23,
+              "alt": "Povești despre antreprenoriat",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Povești despre antreprenoriat",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 3,
+                "name": "Teachers",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 23
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 22
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 21
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 19
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-10T14:15:35.024Z",
+                "createdAt": "2026-10-10T14:15:35.024Z"
+              },
+              "updatedAt": "2026-10-10T14:18:49.542Z",
+              "createdAt": "2026-10-10T14:18:49.542Z",
+              "url": "/api/media/file/image-9.png",
+              "thumbnailURL": "/api/media/file/image-9-300x225.png",
+              "filename": "image-9.png",
+              "mimeType": "image/png",
+              "filesize": 5732676,
+              "width": 2048,
+              "height": 1536,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-9-300x225.png",
+                  "width": 300,
+                  "height": 225,
+                  "mimeType": "image/png",
+                  "filesize": 181197,
+                  "filename": "image-9-300x225.png"
+                },
+                "square": {
+                  "url": "/api/media/file/image-9-500x500.png",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/png",
+                  "filesize": 649041,
+                  "filename": "image-9-500x500.png"
+                },
+                "small": {
+                  "url": "/api/media/file/image-9-600x450.png",
+                  "width": 600,
+                  "height": 450,
+                  "mimeType": "image/png",
+                  "filesize": 695918,
+                  "filename": "image-9-600x450.png"
+                },
+                "medium": {
+                  "url": "/api/media/file/image-9-900x675.png",
+                  "width": 900,
+                  "height": 675,
+                  "mimeType": "image/png",
+                  "filesize": 1530581,
+                  "filename": "image-9-900x675.png"
+                },
+                "large": {
+                  "url": "/api/media/file/image-9-1400x1050.png",
+                  "width": 1400,
+                  "height": 1050,
+                  "mimeType": "image/png",
+                  "filesize": 3617300,
+                  "filename": "image-9-1400x1050.png"
+                },
+                "xlarge": {
+                  "url": "/api/media/file/image-9-1920x1440.png",
+                  "width": 1920,
+                  "height": 1440,
+                  "mimeType": "image/png",
+                  "filesize": 6604982,
+                  "filename": "image-9-1920x1440.png"
+                },
+                "og": {
+                  "url": "/api/media/file/image-9-1200x630.png",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/png",
+                  "filesize": 1831570,
+                  "filename": "image-9-1200x630.png"
+                }
+              }
+            },
+            "quote": "\"Descoperă secretele antreprenoriatului prin povești reale și lecții practice!\""
+          }
+        ],
+        "links": [
+          {
+            "id": "6aca48297ae471002461e4fe",
+            "link": {
+              "type": "reference",
+              "newTab": null,
+              "reference": {
+                "relationTo": "pages",
+                "value": {
+                  "id": 1,
+                  "title": "Despre noi",
+                  "slug": "despre-noi"
+                }
+              },
+              "url": "/despre-noi",
+              "label": "Mai multe"
+            }
+          }
+        ],
+        "blockType": "teachers"
+      },
+      {
+        "id": "6aca4981c547b49858d89c75",
+        "heading": "Vezi ce evenimente urmeaza",
+        "richText": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Hai sa vedem ce evenimente urmeaza, si sa alegem unul potrivit intereselor si nevoilor tale.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": null
+          }
+        },
+        "badgeText": null,
+        "image": null,
+        "variant": "cream",
+        "alignment": "center",
+        "showDecorations": true,
+        "blockName": null,
+        "links": [
+          {
+            "id": "6aca49b3c547b49858d89c77",
+            "link": {
+              "type": "custom",
+              "newTab": null,
+              "url": "/calendar",
+              "label": "Calendar"
+            }
+          }
+        ],
+        "blockType": "cta"
+      }
+    ],
+    "meta": {
+      "title": "Guided Learning",
+      "image": {
+        "id": 18,
+        "alt": "Guided Learning Image",
+        "caption": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Guided Learning Image",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": null
+          }
+        },
+        "folder": {
+          "id": 1,
+          "name": "content",
+          "folder": null,
+          "documentsAndFolders": {
+            "docs": [
+              {
+                "relationTo": "media",
+                "value": 24
+              },
+              {
+                "relationTo": "media",
+                "value": 18
+              },
+              {
+                "relationTo": "media",
+                "value": 14
+              },
+              {
+                "relationTo": "media",
+                "value": 13
+              },
+              {
+                "relationTo": "media",
+                "value": 5
+              },
+              {
+                "relationTo": "media",
+                "value": 4
+              },
+              {
+                "relationTo": "media",
+                "value": 3
+              },
+              {
+                "relationTo": "media",
+                "value": 2
+              }
+            ],
+            "hasNextPage": false
+          },
+          "folderType": [
+            "media"
+          ],
+          "updatedAt": "2026-10-03T09:47:43.538Z",
+          "createdAt": "2026-10-03T09:47:43.537Z"
+        },
+        "updatedAt": "2026-10-10T14:04:21.330Z",
+        "createdAt": "2026-10-10T14:04:21.330Z",
+        "url": "/api/media/file/image-4.png",
+        "thumbnailURL": "/api/media/file/image-4-300x400.png",
+        "filename": "image-4.png",
+        "mimeType": "image/png",
+        "filesize": 13973119,
+        "width": 3024,
+        "height": 4032,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/image-4-300x400.png",
+            "width": 300,
+            "height": 400,
+            "mimeType": "image/png",
+            "filesize": 245155,
+            "filename": "image-4-300x400.png"
+          },
+          "square": {
+            "url": "/api/media/file/image-4-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 514100,
+            "filename": "image-4-500x500.png"
+          },
+          "small": {
+            "url": "/api/media/file/image-4-600x800.png",
+            "width": 600,
+            "height": 800,
+            "mimeType": "image/png",
+            "filesize": 902105,
+            "filename": "image-4-600x800.png"
+          },
+          "medium": {
+            "url": "/api/media/file/image-4-900x1200.png",
+            "width": 900,
+            "height": 1200,
+            "mimeType": "image/png",
+            "filesize": 1995642,
+            "filename": "image-4-900x1200.png"
+          },
+          "large": {
+            "url": "/api/media/file/image-4-1400x1867.png",
+            "width": 1400,
+            "height": 1867,
+            "mimeType": "image/png",
+            "filesize": 4733424,
+            "filename": "image-4-1400x1867.png"
+          },
+          "xlarge": {
+            "url": "/api/media/file/image-4-1920x2560.png",
+            "width": 1920,
+            "height": 2560,
+            "mimeType": "image/png",
+            "filesize": 8597671,
+            "filename": "image-4-1920x2560.png"
+          },
+          "og": {
+            "url": "/api/media/file/image-4-1200x630.png",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/png",
+            "filesize": 1666865,
+            "filename": "image-4-1200x630.png"
+          }
+        }
+      },
+      "description": "Partea din Learnity care oferă experiențe de învățare precum cursuri și workshop-uri susținute de profesioniști. Acestea diferă de educația formală prin modul de predare cât mai practic și atractiv, lipsa temelor obligatorii sau activităților impuse și relația de egalitate dintre profesori și elevi.\n\n"
+    },
+    "publishedAt": "2026-10-10T14:01:27.672Z",
+    "generateSlug": false,
+    "slug": "guided-learning",
+    "updatedAt": "2026-10-10T14:20:51.215Z",
+    "createdAt": "2026-10-10T14:01:24.099Z",
+    "_status": "published"
+  },
+  {
+    "id": 4,
+    "title": "Acasa",
+    "hero": {
+      "type": "highImpact",
+      "title": "Learnity",
+      "subtitle": "Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.",
+      "ctaLabel": "Vezi mai mult",
+      "contact": {
+        "heading": "Contactează-ne"
+      },
+      "heading": "Guided Learning",
+      "description": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Partea din Learnity care oferă experiențe de învățare precum cursuri și workshop-uri susținute de profesioniști. Acestea diferă de educația formală prin modul de predare cât mai practic și atractiv, lipsa temelor obligatorii sau activităților impuse și relația de egalitate dintre profesori și elevi.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": "ltr"
+        }
+      },
+      "image": null,
+      "floatingImage": null,
+      "badgeText": null,
+      "imagePosition": "left",
+      "features": [],
+      "backgroundColor": "lightBlue",
+      "showDecorations": true,
+      "stats": [],
+      "floatingText": "Împreună facem diferența!",
+      "goalLabel": "Obiectiv 2025 · 100 de tineri",
+      "goalProgress": 45,
+      "waveDivider": true,
+      "richText": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Testing the test",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": null
+        }
+      },
+      "links": [
+        {
+          "id": "6ac0e1a85037906b1ef28ce9",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "pages",
+              "value": {
+                "id": 3,
+                "title": "Playground",
+                "slug": "playground"
+              }
+            },
+            "url": null,
+            "label": "test"
+          }
+        }
+      ]
+    },
+    "layout": [
+      {
+        "id": "6aca35b780ff82d912469435",
+        "title": "Ce este Learnity?",
+        "description": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Misiunea noastră este să ghidăm fiecare adolescent să devină un adult care se cunoaște pe el însuși, își urmează pasiunile și contribuie la o lume mai bună. Credem că orice schimbare începe din interior – odată ce se descoperă pe sine, poate apoi să creeze un impact real în jurul lui.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              },
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Pentru asta, le oferim un spațiu sigur în care să se exploreze fără teama de a fi judecați, să își dezvolte gândirea critică și să capete încredere în cine sunt și în ce pot face.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              },
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Learnity este și despre comunitate – despre a întâlni oameni cu aceleași valori și principii, despre conexiuni autentice și sprijin reciproc. Încurajăm adolescenții să fie proactivi, să își exprime ideile și să ia inițiativă atunci când simt că pot face o diferență.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              },
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Mai mult decât un loc de învățare, Learnity este un mediu în care adolescenții cresc, își descoperă vocea și găsesc inspirația de a contribui la o lume mai bună. Aici învață să trăiască autentic, cu încredere și curaj, transformând fiecare experiență într-un pas spre un viitor cu impact.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": "ltr"
+          }
+        },
+        "caption": "Descoperă povestea Learnity și cum transformăm educația prin joc și creativitate",
+        "video": {
+          "id": 13,
+          "alt": "Video Prezentare Learnity",
+          "caption": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Video prezentare Learnitt",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          },
+          "folder": {
+            "id": 1,
+            "name": "content",
+            "folder": null,
+            "documentsAndFolders": {
+              "docs": [
+                {
+                  "relationTo": "media",
+                  "value": 24
+                },
+                {
+                  "relationTo": "media",
+                  "value": 18
+                },
+                {
+                  "relationTo": "media",
+                  "value": 14
+                },
+                {
+                  "relationTo": "media",
+                  "value": 13
+                },
+                {
+                  "relationTo": "media",
+                  "value": 5
+                },
+                {
+                  "relationTo": "media",
+                  "value": 4
+                },
+                {
+                  "relationTo": "media",
+                  "value": 3
+                },
+                {
+                  "relationTo": "media",
+                  "value": 2
+                }
+              ],
+              "hasNextPage": false
+            },
+            "folderType": [
+              "media"
+            ],
+            "updatedAt": "2026-10-03T09:47:43.538Z",
+            "createdAt": "2026-10-03T09:47:43.537Z"
+          },
+          "updatedAt": "2026-10-10T13:38:35.393Z",
+          "createdAt": "2026-10-10T13:38:35.393Z",
+          "url": "/api/media/file/output_smallest.mp4",
+          "thumbnailURL": null,
+          "filename": "output_smallest.mp4",
+          "mimeType": "video/mp4",
+          "filesize": 9852292,
+          "width": null,
+          "height": null,
+          "focalX": null,
+          "focalY": null,
+          "sizes": {
+            "thumbnail": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "square": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "small": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "medium": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "large": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "xlarge": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "og": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            }
+          }
+        },
+        "poster": {
+          "id": 8,
+          "alt": null,
+          "caption": null,
+          "folder": null,
+          "updatedAt": "2026-10-10T12:59:44.695Z",
+          "createdAt": "2026-10-10T12:59:44.695Z",
+          "url": "/api/media/file/poster_video.png",
+          "thumbnailURL": "/api/media/file/poster_video-300x167.jpg",
+          "filename": "poster_video.png",
+          "mimeType": "image/jpeg",
+          "filesize": 92127,
+          "width": 478,
+          "height": 266,
+          "focalX": 50,
+          "focalY": 50,
+          "sizes": {
+            "thumbnail": {
+              "url": "/api/media/file/poster_video-300x167.jpg",
+              "width": 300,
+              "height": 167,
+              "mimeType": "image/jpeg",
+              "filesize": 7751,
+              "filename": "poster_video-300x167.jpg"
+            },
+            "square": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "small": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "medium": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "large": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "xlarge": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "og": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            }
+          }
+        },
+        "blockName": null,
+        "links": [
+          {
+            "id": "6aca35c680ff82d912469437",
+            "link": {
+              "type": "reference",
+              "newTab": null,
+              "reference": {
+                "relationTo": "pages",
+                "value": {
+                  "id": 1,
+                  "title": "Despre noi",
+                  "slug": "despre-noi"
+                }
+              },
+              "url": null,
+              "label": "Despre noi"
+            }
+          }
+        ],
+        "blockType": "about"
+      },
+      {
+        "id": "6aca4cb1c547b49858d89c8d",
+        "heading": "Susține Educația pentru viitorul tinerilor",
+        "richText": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Fiecare donație, indiferent de mărime, contribuie la crearea unui viitor mai bun pentru tinerii din România. Alătură-te misiunii noastre de a transforma educația!",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": "ltr"
+          }
+        },
+        "badgeText": null,
+        "trustText": "Donațiile sunt deductibile fiscal",
+        "image": null,
+        "variant": "cream",
+        "alignment": "center",
+        "showDecorations": true,
+        "blockName": null,
+        "amounts": [
+          {
+            "id": "6aca4cc1c547b49858d89c8f",
+            "amount": "100",
+            "link": {
+              "type": "custom",
+              "newTab": null,
+              "url": "https://example.com",
+              "label": "100 RON"
+            }
+          },
+          {
+            "id": "6aca4cd6c547b49858d89c91",
+            "amount": "200",
+            "link": {
+              "type": "custom",
+              "newTab": null,
+              "url": "https://example.com",
+              "label": "200"
+            }
+          },
+          {
+            "id": "6aca4ce7c547b49858d89c93",
+            "amount": "500",
+            "link": {
+              "type": "custom",
+              "newTab": null,
+              "url": "https://example.com",
+              "label": "500"
+            }
+          }
+        ],
+        "links": [
+          {
+            "id": "6aca4d04c547b49858d89c95",
+            "link": {
+              "type": "reference",
+              "newTab": null,
+              "reference": {
+                "relationTo": "pages",
+                "value": {
+                  "id": 7,
+                  "title": "Doneaza",
+                  "slug": "doneaza"
+                }
+              },
+              "url": null,
+              "label": "Vezi mai multe"
+            }
+          }
+        ],
+        "blockType": "donate"
+      },
+      {
+        "id": "6ac0e1bf5037906b1ef28ceb",
+        "sectionTitle": "Guided Learning",
+        "sectionDescription": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "center",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Partea din Learnity care oferă experiențe de învățare precum cursuri și workshop-uri susținute de profesioniști. Acestea diferă de educația formală prin modul de predare cât mai practic și atractiv, lipsa temelor obligatorii sau activităților impuse și relația de egalitate dintre profesori și elevi.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": null
+          }
+        },
+        "image": {
+          "id": 5,
+          "alt": "Eveniment Guided Learning",
+          "caption": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Eveniment Guided Learning",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          },
+          "folder": {
+            "id": 1,
+            "name": "content",
+            "folder": null,
+            "documentsAndFolders": {
+              "docs": [
+                {
+                  "relationTo": "media",
+                  "value": 24
+                },
+                {
+                  "relationTo": "media",
+                  "value": 18
+                },
+                {
+                  "relationTo": "media",
+                  "value": 14
+                },
+                {
+                  "relationTo": "media",
+                  "value": 13
+                },
+                {
+                  "relationTo": "media",
+                  "value": 5
+                },
+                {
+                  "relationTo": "media",
+                  "value": 4
+                },
+                {
+                  "relationTo": "media",
+                  "value": 3
+                },
+                {
+                  "relationTo": "media",
+                  "value": 2
+                }
+              ],
+              "hasNextPage": false
+            },
+            "folderType": [
+              "media"
+            ],
+            "updatedAt": "2026-10-03T09:47:43.538Z",
+            "createdAt": "2026-10-03T09:47:43.537Z"
+          },
+          "updatedAt": "2026-10-03T11:07:45.534Z",
+          "createdAt": "2026-10-03T11:07:45.534Z",
+          "url": "/api/media/file/guided1.jpg",
+          "thumbnailURL": "/api/media/file/guided1-300x400.jpg",
+          "filename": "guided1.jpg",
+          "mimeType": "image/jpeg",
+          "filesize": 2728151,
+          "width": 3024,
+          "height": 4032,
+          "focalX": 50,
+          "focalY": 50,
+          "sizes": {
+            "thumbnail": {
+              "url": "/api/media/file/guided1-300x400.jpg",
+              "width": 300,
+              "height": 400,
+              "mimeType": "image/jpeg",
+              "filesize": 27071,
+              "filename": "guided1-300x400.jpg"
+            },
+            "square": {
+              "url": "/api/media/file/guided1-500x500.jpg",
+              "width": 500,
+              "height": 500,
+              "mimeType": "image/jpeg",
+              "filesize": 57382,
+              "filename": "guided1-500x500.jpg"
+            },
+            "small": {
+              "url": "/api/media/file/guided1-600x800.jpg",
+              "width": 600,
+              "height": 800,
+              "mimeType": "image/jpeg",
+              "filesize": 88510,
+              "filename": "guided1-600x800.jpg"
+            },
+            "medium": {
+              "url": "/api/media/file/guided1-900x1200.jpg",
+              "width": 900,
+              "height": 1200,
+              "mimeType": "image/jpeg",
+              "filesize": 176178,
+              "filename": "guided1-900x1200.jpg"
+            },
+            "large": {
+              "url": "/api/media/file/guided1-1400x1867.jpg",
+              "width": 1400,
+              "height": 1867,
+              "mimeType": "image/jpeg",
+              "filesize": 374887,
+              "filename": "guided1-1400x1867.jpg"
+            },
+            "xlarge": {
+              "url": "/api/media/file/guided1-1920x2560.jpg",
+              "width": 1920,
+              "height": 2560,
+              "mimeType": "image/jpeg",
+              "filesize": 653160,
+              "filename": "guided1-1920x2560.jpg"
+            },
+            "og": {
+              "url": "/api/media/file/guided1-1200x630.jpg",
+              "width": 1200,
+              "height": 630,
+              "mimeType": "image/jpeg",
+              "filesize": 164114,
+              "filename": "guided1-1200x630.jpg"
+            }
+          }
+        },
+        "ctaText": "Vezi mai multe",
+        "ctaLink": "/guided-learning",
+        "blockName": null,
+        "features": [
+          {
+            "id": "6ac0e20e5037906b1ef28ced",
+            "title": "Cursuri",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "start",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "Cursurile sunt experiențe de învățare care constau în mai multe sesiuni, permițându-le adolescenților să exploreze în adâncime subiectul abordat alături de profesioniști din domeniul respectiv. Acestea au aproximativ 6-7 sesiuni de curs, fiecare de căte două ore, pline de exerciții, discuții și teorie explicată pe înțelesul lor.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "icon": "bookOpen",
+            "iconColor": "blue",
+            "iconRotation": "left"
+          },
+          {
+            "id": "6ac0e22a5037906b1ef28cef",
+            "title": "Workshop-uri",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "start",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "Workshop-urile sunt experiențe de învățare ce au loc o singură dată, pe un singur subiect, într-o sesiune de aproximativ două ore. Alături de diferiți profesioniști din domeniile în cauză, adolescenții învață despre subiectul discutat prin diferite exerciții și discuții.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "icon": "lightbulb",
+            "iconColor": "orange",
+            "iconRotation": "left"
+          },
+          {
+            "id": "6ac0e23a5037906b1ef28cf1",
+            "title": "Bootcamp-uri",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "start",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "Tabere de weekend în care elevii învață super practic, se conectează cu oameni faini și își ies complet din rutină. Fiecare dintre ele dezvoltă abilități cheie precum creativitatea, gândirea critică și lucrul în echipă, într-un mediu nou și provocator, cu adevărat în afara zonei de confort.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "icon": "checkCircle",
+            "iconColor": "lightOrange",
+            "iconRotation": "left"
+          }
+        ],
+        "blockType": "guided"
+      },
+      {
+        "id": "6aca3d4180ff82d912469439",
+        "sectionTitle": "Câteva dintre workshop-urile Guided",
+        "sectionDescription": "Workshop-urile ghidate: Pastile de învățare susținute de profesioniști din diferite domenii. Fiecare atelier este practic și creat în funcție de interesele adolescenților.",
+        "badgeText": "Featured",
+        "cardCtaText": "Vezi mai multe",
+        "blockName": null,
+        "links": [
+          {
+            "id": "6aca3d9280ff82d91246943b",
+            "link": {
+              "type": "reference",
+              "newTab": null,
+              "reference": {
+                "relationTo": "pages",
+                "value": {
+                  "id": 1,
+                  "title": "Despre noi",
+                  "slug": "despre-noi"
+                }
+              },
+              "url": null,
+              "label": "Contact"
+            }
+          }
+        ],
+        "blockType": "guidedExamples",
+        "workshops": [
+          {
+            "id": 1,
+            "title": "Doza de inspirație",
+            "slug": "doza-de-inspiratie",
+            "meta": {
+              "image": {
+                "id": 9,
+                "alt": "Poza de la Doza De Inspiratie",
+                "caption": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "mode": "normal",
+                            "text": "Poza de la doza de inspiratie alaturi de Kryptonite Sparks",
+                            "type": "text",
+                            "style": "",
+                            "detail": 0,
+                            "format": 0,
+                            "version": 1
+                          }
+                        ],
+                        "direction": null,
+                        "textStyle": "",
+                        "textFormat": 0
+                      }
+                    ],
+                    "direction": null
+                  }
+                },
+                "folder": null,
+                "updatedAt": "2026-10-10T13:19:51.874Z",
+                "createdAt": "2026-10-10T13:19:29.865Z",
+                "url": "/api/media/file/tks.jpg",
+                "thumbnailURL": "/api/media/file/tks-300x225.jpg",
+                "filename": "tks.jpg",
+                "mimeType": "image/jpeg",
+                "filesize": 4391826,
+                "width": 4624,
+                "height": 3472,
+                "focalX": 50,
+                "focalY": 50,
+                "sizes": {
+                  "thumbnail": {
+                    "url": "/api/media/file/tks-300x225.jpg",
+                    "width": 300,
+                    "height": 225,
+                    "mimeType": "image/jpeg",
+                    "filesize": 21656,
+                    "filename": "tks-300x225.jpg"
+                  },
+                  "square": {
+                    "url": "/api/media/file/tks-500x500.jpg",
+                    "width": 500,
+                    "height": 500,
+                    "mimeType": "image/jpeg",
+                    "filesize": 65197,
+                    "filename": "tks-500x500.jpg"
+                  },
+                  "small": {
+                    "url": "/api/media/file/tks-600x451.jpg",
+                    "width": 600,
+                    "height": 451,
+                    "mimeType": "image/jpeg",
+                    "filesize": 69284,
+                    "filename": "tks-600x451.jpg"
+                  },
+                  "medium": {
+                    "url": "/api/media/file/tks-900x676.jpg",
+                    "width": 900,
+                    "height": 676,
+                    "mimeType": "image/jpeg",
+                    "filesize": 134798,
+                    "filename": "tks-900x676.jpg"
+                  },
+                  "large": {
+                    "url": "/api/media/file/tks-1400x1051.jpg",
+                    "width": 1400,
+                    "height": 1051,
+                    "mimeType": "image/jpeg",
+                    "filesize": 278909,
+                    "filename": "tks-1400x1051.jpg"
+                  },
+                  "xlarge": {
+                    "url": "/api/media/file/tks-1920x1442.jpg",
+                    "width": 1920,
+                    "height": 1442,
+                    "mimeType": "image/jpeg",
+                    "filesize": 465547,
+                    "filename": "tks-1920x1442.jpg"
+                  },
+                  "og": {
+                    "url": "/api/media/file/tks-1200x630.jpg",
+                    "width": 1200,
+                    "height": 630,
+                    "mimeType": "image/jpeg",
+                    "filesize": 165123,
+                    "filename": "tks-1200x630.jpg"
+                  }
+                }
+              },
+              "description": "La “Doză de Inspirație” i-am avut invitați pe cei de la The Kryptonites Sparks !!!😎💪💪 Am fost foarte entuziasmați să-i primim în sufrageria Learnity pe cei trei membrii ai trupei The Kryptonite Sparks 🎸🎶🥁, pentru a ne spune povestea lor, de la cum au început, la ce îi motivează și inspiră şi până la experiența turului de lansare al ultimului lor album, pe care tocmai l-au finalizat. 🚀🪐"
+            }
+          },
+          {
+            "id": 3,
+            "title": "Taboo Talk: Depresie și anxietate",
+            "slug": "depresie-si-anxietate",
+            "meta": {
+              "image": {
+                "id": 11,
+                "alt": "Taboo Talk: Depresie si anxietate",
+                "caption": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "mode": "normal",
+                            "text": "Taboo Talk: Depresie si anxietate",
+                            "type": "text",
+                            "style": "",
+                            "detail": 0,
+                            "format": 0,
+                            "version": 1
+                          }
+                        ],
+                        "direction": null,
+                        "textStyle": "",
+                        "textFormat": 0
+                      }
+                    ],
+                    "direction": null
+                  }
+                },
+                "folder": null,
+                "updatedAt": "2026-10-10T13:26:10.329Z",
+                "createdAt": "2026-10-10T13:26:10.329Z",
+                "url": "/api/media/file/plm.jpg",
+                "thumbnailURL": "/api/media/file/plm-300x400.jpg",
+                "filename": "plm.jpg",
+                "mimeType": "image/jpeg",
+                "filesize": 2785124,
+                "width": 3024,
+                "height": 4032,
+                "focalX": 50,
+                "focalY": 50,
+                "sizes": {
+                  "thumbnail": {
+                    "url": "/api/media/file/plm-300x400.jpg",
+                    "width": 300,
+                    "height": 400,
+                    "mimeType": "image/jpeg",
+                    "filesize": 26415,
+                    "filename": "plm-300x400.jpg"
+                  },
+                  "square": {
+                    "url": "/api/media/file/plm-500x500.jpg",
+                    "width": 500,
+                    "height": 500,
+                    "mimeType": "image/jpeg",
+                    "filesize": 56217,
+                    "filename": "plm-500x500.jpg"
+                  },
+                  "small": {
+                    "url": "/api/media/file/plm-600x800.jpg",
+                    "width": 600,
+                    "height": 800,
+                    "mimeType": "image/jpeg",
+                    "filesize": 87488,
+                    "filename": "plm-600x800.jpg"
+                  },
+                  "medium": {
+                    "url": "/api/media/file/plm-900x1200.jpg",
+                    "width": 900,
+                    "height": 1200,
+                    "mimeType": "image/jpeg",
+                    "filesize": 175773,
+                    "filename": "plm-900x1200.jpg"
+                  },
+                  "large": {
+                    "url": "/api/media/file/plm-1400x1867.jpg",
+                    "width": 1400,
+                    "height": 1867,
+                    "mimeType": "image/jpeg",
+                    "filesize": 379168,
+                    "filename": "plm-1400x1867.jpg"
+                  },
+                  "xlarge": {
+                    "url": "/api/media/file/plm-1920x2560.jpg",
+                    "width": 1920,
+                    "height": 2560,
+                    "mimeType": "image/jpeg",
+                    "filesize": 670480,
+                    "filename": "plm-1920x2560.jpg"
+                  },
+                  "og": {
+                    "url": "/api/media/file/plm-1200x630.jpg",
+                    "width": 1200,
+                    "height": 630,
+                    "mimeType": "image/jpeg",
+                    "filesize": 151396,
+                    "filename": "plm-1200x630.jpg"
+                  }
+                }
+              },
+              "description": "Toți ne-am confruntat, de-a lungul vieții, cu stări proaste care păreau să nu treacă. Totuși, cum faci diferența între o simplă perioadă care te seacă de energie și o problemă adevărată? Ei bine, vă invităm miercurea aceasta , între orele 19:30 și 21:30, la \"Taboo Talk: Depresie și Anxietate\", susținut de Alex Necsulescu, pentru a răspunde la această întrebare și la altele legate de subiect. 💫💫"
+            }
+          },
+          {
+            "id": 2,
+            "title": "Prim ajutor",
+            "slug": "prim-ajutor",
+            "meta": {
+              "image": {
+                "id": 10,
+                "alt": "Workshop Prim Ajutor",
+                "caption": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "mode": "normal",
+                            "text": "Workshop Prim Ajutor",
+                            "type": "text",
+                            "style": "",
+                            "detail": 0,
+                            "format": 0,
+                            "version": 1
+                          }
+                        ],
+                        "direction": null,
+                        "textStyle": "",
+                        "textFormat": 0
+                      }
+                    ],
+                    "direction": null
+                  }
+                },
+                "folder": 2,
+                "updatedAt": "2026-10-10T13:22:53.105Z",
+                "createdAt": "2026-10-10T13:22:53.105Z",
+                "url": "/api/media/file/prim_ajutor.jpg",
+                "thumbnailURL": "/api/media/file/prim_ajutor-300x400.jpg",
+                "filename": "prim_ajutor.jpg",
+                "mimeType": "image/jpeg",
+                "filesize": 2548841,
+                "width": 3024,
+                "height": 4032,
+                "focalX": 50,
+                "focalY": 50,
+                "sizes": {
+                  "thumbnail": {
+                    "url": "/api/media/file/prim_ajutor-300x400.jpg",
+                    "width": 300,
+                    "height": 400,
+                    "mimeType": "image/jpeg",
+                    "filesize": 28053,
+                    "filename": "prim_ajutor-300x400.jpg"
+                  },
+                  "square": {
+                    "url": "/api/media/file/prim_ajutor-500x500.jpg",
+                    "width": 500,
+                    "height": 500,
+                    "mimeType": "image/jpeg",
+                    "filesize": 54570,
+                    "filename": "prim_ajutor-500x500.jpg"
+                  },
+                  "small": {
+                    "url": "/api/media/file/prim_ajutor-600x800.jpg",
+                    "width": 600,
+                    "height": 800,
+                    "mimeType": "image/jpeg",
+                    "filesize": 87987,
+                    "filename": "prim_ajutor-600x800.jpg"
+                  },
+                  "medium": {
+                    "url": "/api/media/file/prim_ajutor-900x1200.jpg",
+                    "width": 900,
+                    "height": 1200,
+                    "mimeType": "image/jpeg",
+                    "filesize": 175082,
+                    "filename": "prim_ajutor-900x1200.jpg"
+                  },
+                  "large": {
+                    "url": "/api/media/file/prim_ajutor-1400x1867.jpg",
+                    "width": 1400,
+                    "height": 1867,
+                    "mimeType": "image/jpeg",
+                    "filesize": 375182,
+                    "filename": "prim_ajutor-1400x1867.jpg"
+                  },
+                  "xlarge": {
+                    "url": "/api/media/file/prim_ajutor-1920x2560.jpg",
+                    "width": 1920,
+                    "height": 2560,
+                    "mimeType": "image/jpeg",
+                    "filesize": 650795,
+                    "filename": "prim_ajutor-1920x2560.jpg"
+                  },
+                  "og": {
+                    "url": "/api/media/file/prim_ajutor-1200x630.jpg",
+                    "width": 1200,
+                    "height": 630,
+                    "mimeType": "image/jpeg",
+                    "filesize": 133655,
+                    "filename": "prim_ajutor-1200x630.jpg"
+                  }
+                }
+              },
+              "description": "În situații critice, fiecare secundă contează și cu toții ar trebuie să știm cum să acționăm! ⏳ În acest workshop de prim ajutor susținut de Caravana cu medici vei învăța tehnici esențiale precum resuscitarea cardio-respiratorie (CPR), oprirea hemoragiilor, manevra Heimlich și gestionarea situațiilor de urgență până la sosirea echipajelor medicale."
+            }
+          }
+        ]
+      },
+      {
+        "id": "6aca3e0680ff82d91246943d",
+        "sectionTitle": "Playground",
+        "description": {
+          "root": {
+            "type": "root",
+            "format": "",
+            "indent": 0,
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "mode": "normal",
+                    "text": "Spațiul care oferă adolescenților oportunitatea de a-și lua învățarea în propriile mâini și de a organiza experiențe bazate pe interesele lor (precum grupuri autonome, cursuri, workshop-uri sau evenimente fun), totodată fiind și partea în care se construiește spiritul de comunitate.",
+                    "type": "text",
+                    "style": "",
+                    "detail": 0,
+                    "format": 0,
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "textStyle": "",
+                "textFormat": 0
+              }
+            ],
+            "direction": "ltr"
+          }
+        },
+        "image": {
+          "id": 12,
+          "alt": "Playground",
+          "caption": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Playground",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          },
+          "folder": null,
+          "updatedAt": "2026-10-10T13:31:42.420Z",
+          "createdAt": "2026-10-10T13:31:42.420Z",
+          "url": "/api/media/file/playground1-CrpR_TV1.jpg",
+          "thumbnailURL": "/api/media/file/playground1-CrpR_TV1-300x225.jpg",
+          "filename": "playground1-CrpR_TV1.jpg",
+          "mimeType": "image/jpeg",
+          "filesize": 2403536,
+          "width": 4032,
+          "height": 3024,
+          "focalX": 50,
+          "focalY": 50,
+          "sizes": {
+            "thumbnail": {
+              "url": "/api/media/file/playground1-CrpR_TV1-300x225.jpg",
+              "width": 300,
+              "height": 225,
+              "mimeType": "image/jpeg",
+              "filesize": 16824,
+              "filename": "playground1-CrpR_TV1-300x225.jpg"
+            },
+            "square": {
+              "url": "/api/media/file/playground1-CrpR_TV1-500x500.jpg",
+              "width": 500,
+              "height": 500,
+              "mimeType": "image/jpeg",
+              "filesize": 47580,
+              "filename": "playground1-CrpR_TV1-500x500.jpg"
+            },
+            "small": {
+              "url": "/api/media/file/playground1-CrpR_TV1-600x450.jpg",
+              "width": 600,
+              "height": 450,
+              "mimeType": "image/jpeg",
+              "filesize": 53365,
+              "filename": "playground1-CrpR_TV1-600x450.jpg"
+            },
+            "medium": {
+              "url": "/api/media/file/playground1-CrpR_TV1-900x675.jpg",
+              "width": 900,
+              "height": 675,
+              "mimeType": "image/jpeg",
+              "filesize": 102715,
+              "filename": "playground1-CrpR_TV1-900x675.jpg"
+            },
+            "large": {
+              "url": "/api/media/file/playground1-CrpR_TV1-1400x1050.jpg",
+              "width": 1400,
+              "height": 1050,
+              "mimeType": "image/jpeg",
+              "filesize": 208381,
+              "filename": "playground1-CrpR_TV1-1400x1050.jpg"
+            },
+            "xlarge": {
+              "url": "/api/media/file/playground1-CrpR_TV1-1920x1440.jpg",
+              "width": 1920,
+              "height": 1440,
+              "mimeType": "image/jpeg",
+              "filesize": 342650,
+              "filename": "playground1-CrpR_TV1-1920x1440.jpg"
+            },
+            "og": {
+              "url": "/api/media/file/playground1-CrpR_TV1-1200x630.jpg",
+              "width": 1200,
+              "height": 630,
+              "mimeType": "image/jpeg",
+              "filesize": 134956,
+              "filename": "playground1-CrpR_TV1-1200x630.jpg"
+            }
+          }
+        },
+        "badgeText": "Fun!",
+        "blockName": null,
+        "links": [],
+        "blockType": "playground"
+      },
+      {
+        "id": "6aca2ec680ff82d9124693fb",
+        "badgeText": "Întrebări și Răspunsuri",
+        "sectionTitle": "Întrebări Frecvente",
+        "sectionDescription": "Află răspunsuri la cele mai comune întrebări despre Learnity, metodele noastre de predare și comunitatea noastră.",
+        "searchPlaceholder": "Caută întrebări...",
+        "noResultsText": "Nu am găsit întrebări care să corespundă căutării tale.",
+        "ctaTitle": "Nu ai găsit răspunsul căutat?",
+        "ctaDescription": "Suntem aici să răspundem la toate întrebările tale. Contactează-ne direct și îți vom răspunde cât mai curând posibil.",
+        "blockName": null,
+        "categories": [
+          {
+            "id": "6aca2ed280ff82d9124693fd",
+            "name": "Despre Learnity",
+            "icon": "school",
+            "questions": [
+              {
+                "id": "6aca2ee280ff82d9124693ff",
+                "question": "Ce este Learnity?",
+                "answer": "Learnity este o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc."
+              },
+              {
+                "id": "6aca2ef880ff82d912469401",
+                "question": "Cum functioneaza pachetele?",
+                "answer": "Poți combina experiențele noastre educaționale în funcție de interesele și obiectivele tale. Poți alege să participi doar la un curs sau să îți creezi un pachet care să includă mai multe cursuri și acces la partea de Playground – spațiul nostru dedicat învățării autonome, explorării și conexiunii în comunitate.Dacă alegi mai multe cursuri, beneficiezi de reduceri progresive, iar dacă adaugi și partea de Playground, ai acces la o ofertă specială. Pentru cei care vor să se implice cât mai mult, pachetele avansate oferă și extra beneficii, cum ar fi acces gratuit la partea de Playground atunci când te înscrii la trei cursuri sau pachetul All Inclusive.Scopul acestor pachete este să îți ofere flexibilitate și să îți permită să experimentezi în ritmul tău, alături de alți adolescenți care împărtășesc aceleași curiozități și pasiuni."
+              },
+              {
+                "id": "6aca2f0480ff82d912469403",
+                "question": "Oferim diploma la final?",
+                "answer": "Noi credem că învățarea ar trebui să fie despre curiozitate, pasiune și explorare, nu doar despre a adăuga încă o diplomă în teanc. De aceea, nu punem accent pe certificări formale, ci pe progresul real și pe dezvoltarea personală. Totuși, pentru cei care au nevoie, putem oferi o diplomă la cerere. În locul unui sistem clasic de evaluare, folosim un model de tracking al progresului bazat pe Badge-uri. Fiecare Learnitaș își setează propriile obiective, criterii și metode de evaluare, iar la fiecare Playground Day, ne uităm împreună la parcursul fiecăruia: ce s-a realizat, ce provocări au apărut și cum putem susține mai departe procesul de învățare."
+              },
+              {
+                "id": "6aca2f1380ff82d912469405",
+                "question": "Cum comunicam cu parintii?",
+                "answer": "Comunicarea cu părinții este cât se poate de deschisă și bazată pe o relație de încredere reciprocă. Suntem atenți la dezvoltarea fiecărui adolescent din comunitatea noastră și ne dorim să lucrăm împreună pentru a găsi cele mai bune variante de creștere și evoluție pentru el. Credem că un dialog autentic și colaborativ între Learnity, părinți și adolescenți este esențial pentru a le oferi acestora sprijinul de care au nevoie în parcursul lor."
+              }
+            ]
+          },
+          {
+            "id": "6aca2f2980ff82d912469409",
+            "name": "Inscrieri",
+            "icon": "calendar",
+            "questions": [
+              {
+                "id": "6aca2f4480ff82d91246940b",
+                "question": "Cum pot inscrie copilul meu la Learnity?",
+                "answer": "Procesul de înscriere la Learnity începe cu completarea formularului online de pe site-ul nostru, urmată de o vizită la școală și o întâlnire cu echipa noastră. Această întâlnire ne ajută să înțelegem mai bine nevoile și interesele copilului dumneavoastră. După aceasta, organizăm o zi de probă pentru copil, pentru a experimenta direct mediul Learnity. Decizia finală se bazează pe compatibilitatea dintre valorile familiei, nevoile copilului și abordarea noastră educațională."
+              },
+              {
+                "id": "6aca2f7380ff82d91246940d",
+                "question": "Care sunt costurile de scolarizare la Learnity?",
+                "answer": "Taxele de școlarizare variază în funcție de programul ales și nivelul de studiu. Oferim opțiuni flexibile de plată, inclusiv rate lunare, trimestriale sau anuale. De asemenea, avem un program de burse pentru familiile care au nevoie de sprijin financiar. Pentru informații detaliate despre costuri, vă invităm să consultați secțiunea 'Taxe și Burse' de pe site sau să ne contactați direct."
+              },
+              {
+                "id": "6aca2f8880ff82d91246940f",
+                "question": "Exista un proces de selectie pentru admitere?",
+                "answer": "La Learnity, nu organizăm examene de admitere tradiționale. Procesul nostru se concentrează pe identificarea compatibilității dintre valorile și așteptările familiei, nevoile copilului și abordarea noastră educațională. Evaluăm dacă putem oferi mediul potrivit pentru dezvoltarea optimă a fiecărui copil. Diversitatea este valorificată în comunitatea noastră, și căutăm elevi cu perspective, talente și interese variate."
+              }
+            ]
+          },
+          {
+            "id": "6aca2fd880ff82d912469413",
+            "name": "Curriculum",
+            "icon": "bookOpen",
+            "questions": [
+              {
+                "id": "6aca2ff780ff82d912469415",
+                "question": "Ce materii studiaza elevii la Learnity?",
+                "answer": "Curriculum-ul Learnity include materiile fundamentale (matematică, limbă și comunicare, științe, istorie, geografie), completate de arii de studiu inovative precum: gândire critică și rezolvarea problemelor, educație socio-emoțională, arte și creativitate, tehnologie și programare, sustenabilitate și educație civică. Abordăm aceste subiecte interdisciplinar, prin proiecte tematice care conectează cunoștințele din diverse domenii."
+              },
+              {
+                "id": "6aca300c80ff82d912469417",
+                "question": "Cum sunt evaluati elevii la Learnity?",
+                "answer": "La Learnity, evaluarea este un proces continuu, formativ și multidimensional. În locul testelor standardizate, folosim portofolii, proiecte, prezentări, auto-evaluare și feedback de la colegi. Evaluăm nu doar cunoștințele academice, ci și dezvoltarea abilităților sociale, emoționale și creative. Oferim feedback personalizat și constructiv, care evidențiază progresul și identifică următorii pași în învățare."
+              },
+              {
+                "id": "6aca301f80ff82d912469419",
+                "question": "Cum abordati tehnologia in procesul de invatare?",
+                "answer": "Integrăm tehnologia ca instrument pentru învățare, nu ca scop în sine. Elevii folosesc dispozitive digitale pentru cercetare, creație de conținut, colaborare și dezvoltarea proiectelor. Învață programare, design digital și gândire computațională prin aplicații practice. Totodată, promovăm o relație echilibrată cu tehnologia, punând accent pe interacțiunile umane directe și activitățile în natură."
+              },
+              {
+                "id": "6aca303680ff82d91246941b",
+                "question": "Cum pregatiti elevii pentru examenele nationale si admiterea la facultate?",
+                "answer": "Deși abordarea noastră diferă de cea tradițională, ne asigurăm că elevii sunt bine pregătiți pentru examene naționale și admitere la facultate. Oferim programe specifice de pregătire pentru aceste examene în anii terminali, menținând în același timp filosofia noastră de învățare prin înțelegere profundă, nu memorare. Rata noastră de promovabilitate și rezultatele la admiterea în învățământul superior demonstrează eficiența acestei abordări."
+              }
+            ]
+          }
+        ],
+        "links": [
+          {
+            "id": "6aca305e80ff82d91246941d",
+            "link": {
+              "type": "reference",
+              "newTab": null,
+              "reference": {
+                "relationTo": "pages",
+                "value": {
+                  "id": 4,
+                  "title": "Acasa",
+                  "slug": "home"
+                }
+              },
+              "url": null,
+              "label": "Contact"
+            }
+          }
+        ],
+        "blockType": "faq"
+      }
+    ],
+    "meta": {
+      "title": "",
+      "image": null,
+      "description": "Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc."
+    },
+    "publishedAt": "2026-10-03T11:06:09.526Z",
+    "generateSlug": false,
+    "slug": "home",
+    "updatedAt": "2026-10-10T14:34:54.795Z",
+    "createdAt": "2026-10-03T11:05:57.317Z",
+    "_status": "published"
+  },
+  {
+    "id": 3,
+    "title": "Playground",
+    "hero": {
+      "type": "mediumImpact",
+      "title": "Learnity",
+      "subtitle": "Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.",
+      "ctaLabel": "Vezi mai mult",
+      "contact": {
+        "heading": "Contactează-ne"
+      },
+      "heading": "Guided Learning",
+      "description": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Partea din Learnity care oferă experiențe de învățare precum cursuri și workshop-uri susținute de profesioniști. Acestea diferă de educația formală prin modul de predare cât mai practic și atractiv, lipsa temelor obligatorii sau activităților impuse și relația de egalitate dintre profesori și elevi.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": "ltr"
+        }
+      },
+      "image": null,
+      "floatingImage": null,
+      "badgeText": null,
+      "imagePosition": "left",
+      "features": [],
+      "backgroundColor": "lightBlue",
+      "showDecorations": true,
+      "stats": [],
+      "floatingText": "Împreună facem diferența!",
+      "goalLabel": "Obiectiv 2025 · 100 de tineri",
+      "goalProgress": 45,
+      "waveDivider": true,
+      "richText": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Playground",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": null
+        }
+      },
+      "links": []
+    },
+    "layout": [
+      {
+        "id": "6aca410780ff82d91246943f",
+        "blockName": null,
+        "areas": [
+          {
+            "id": "6aca410980ff82d912469441",
+            "name": "The Arena",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "start",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "The Arena este scena principală a învățării. Este arena procesului tău de învățare: locul în care faci ceva nou sau provocator. Deși învățarea se întâmplă constant și în cele mai obișnuite momente, nu la asta ne referim prin Arenă. În Arenă învățarea se întâmplă pentru că faci ceva dificil și provocator! Este vorba de partea concreta de acțiune din procesul tău de învățare.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "image": {
+              "id": 14,
+              "alt": "The Arena",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "The Arena",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": {
+                "id": 1,
+                "name": "content",
+                "folder": null,
+                "documentsAndFolders": {
+                  "docs": [
+                    {
+                      "relationTo": "media",
+                      "value": 24
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 18
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 14
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 13
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 5
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 4
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 3
+                    },
+                    {
+                      "relationTo": "media",
+                      "value": 2
+                    }
+                  ],
+                  "hasNextPage": false
+                },
+                "folderType": [
+                  "media"
+                ],
+                "updatedAt": "2026-10-03T09:47:43.538Z",
+                "createdAt": "2026-10-03T09:47:43.537Z"
+              },
+              "updatedAt": "2026-10-10T13:44:22.115Z",
+              "createdAt": "2026-10-10T13:44:22.115Z",
+              "url": "/api/media/file/image.png",
+              "thumbnailURL": "/api/media/file/image-300x300.png",
+              "filename": "image.png",
+              "mimeType": "image/png",
+              "filesize": 79928,
+              "width": 1080,
+              "height": 1080,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-300x300.png",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/png",
+                  "filesize": 14571,
+                  "filename": "image-300x300.png"
+                },
+                "square": {
+                  "url": "/api/media/file/image-500x500.png",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/png",
+                  "filesize": 27444,
+                  "filename": "image-500x500.png"
+                },
+                "small": {
+                  "url": "/api/media/file/image-600x600.png",
+                  "width": 600,
+                  "height": 600,
+                  "mimeType": "image/png",
+                  "filesize": 35083,
+                  "filename": "image-600x600.png"
+                },
+                "medium": {
+                  "url": "/api/media/file/image-900x900.png",
+                  "width": 900,
+                  "height": 900,
+                  "mimeType": "image/png",
+                  "filesize": 59486,
+                  "filename": "image-900x900.png"
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/image-1200x630.png",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/png",
+                  "filesize": 69308,
+                  "filename": "image-1200x630.png"
+                }
+              }
+            },
+            "color": "customWhite",
+            "badgeText": "Explore",
+            "ctaLabel": "Discover",
+            "links": []
+          },
+          {
+            "id": "6aca414080ff82d912469443",
+            "name": "The Fireplace",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "start",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "The Fireplace este punctul din procesul de învățare în care reflectezi, cercetezi sau te odihnești, astfel încât să te poți întoarce la The Arena (practică) cu idei noi despre cum să-ți îmbunătățești și să-ți reîmprospătezi energia.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "image": {
+              "id": 15,
+              "alt": "The Fireplace",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "The Fireplace",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": null,
+              "updatedAt": "2026-10-10T13:45:15.507Z",
+              "createdAt": "2026-10-10T13:45:15.507Z",
+              "url": "/api/media/file/image-1.png",
+              "thumbnailURL": "/api/media/file/image-1-300x300.png",
+              "filename": "image-1.png",
+              "mimeType": "image/png",
+              "filesize": 76456,
+              "width": 1080,
+              "height": 1080,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-1-300x300.png",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/png",
+                  "filesize": 13559,
+                  "filename": "image-1-300x300.png"
+                },
+                "square": {
+                  "url": "/api/media/file/image-1-500x500.png",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/png",
+                  "filesize": 25753,
+                  "filename": "image-1-500x500.png"
+                },
+                "small": {
+                  "url": "/api/media/file/image-1-600x600.png",
+                  "width": 600,
+                  "height": 600,
+                  "mimeType": "image/png",
+                  "filesize": 32931,
+                  "filename": "image-1-600x600.png"
+                },
+                "medium": {
+                  "url": "/api/media/file/image-1-900x900.png",
+                  "width": 900,
+                  "height": 900,
+                  "mimeType": "image/png",
+                  "filesize": 55816,
+                  "filename": "image-1-900x900.png"
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/image-1-1200x630.png",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/png",
+                  "filesize": 64510,
+                  "filename": "image-1-1200x630.png"
+                }
+              }
+            },
+            "color": "customOrange",
+            "badgeText": "Explore",
+            "ctaLabel": "Discover",
+            "links": []
+          },
+          {
+            "id": "6aca416f80ff82d912469445",
+            "name": "The Roots",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "start",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "The Roots este locul în care îți dai seama cum să-ți alimentezi cu energie procesul de învățare atunci când simți că nu ai energie, încredere sau curaj pentru următorul pas.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "image": {
+              "id": 16,
+              "alt": "The Roots",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "The Roots",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": null,
+              "updatedAt": "2026-10-10T13:45:52.957Z",
+              "createdAt": "2026-10-10T13:45:52.957Z",
+              "url": "/api/media/file/image-2.png",
+              "thumbnailURL": "/api/media/file/image-2-300x300.png",
+              "filename": "image-2.png",
+              "mimeType": "image/png",
+              "filesize": 121895,
+              "width": 1080,
+              "height": 1080,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-2-300x300.png",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/png",
+                  "filesize": 18357,
+                  "filename": "image-2-300x300.png"
+                },
+                "square": {
+                  "url": "/api/media/file/image-2-500x500.png",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/png",
+                  "filesize": 37136,
+                  "filename": "image-2-500x500.png"
+                },
+                "small": {
+                  "url": "/api/media/file/image-2-600x600.png",
+                  "width": 600,
+                  "height": 600,
+                  "mimeType": "image/png",
+                  "filesize": 48592,
+                  "filename": "image-2-600x600.png"
+                },
+                "medium": {
+                  "url": "/api/media/file/image-2-900x900.png",
+                  "width": 900,
+                  "height": 900,
+                  "mimeType": "image/png",
+                  "filesize": 86701,
+                  "filename": "image-2-900x900.png"
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/image-2-1200x630.png",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/png",
+                  "filesize": 107311,
+                  "filename": "image-2-1200x630.png"
+                }
+              }
+            },
+            "color": "customWhite",
+            "badgeText": "Explore",
+            "ctaLabel": "Discover",
+            "links": []
+          },
+          {
+            "id": "6aca419880ff82d912469447",
+            "name": "The Tower",
+            "description": {
+              "root": {
+                "type": "root",
+                "format": "",
+                "indent": 0,
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "format": "start",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "mode": "normal",
+                        "text": "The Tower este spațiul în care îți stabilești intențiile, obiectivele de învățare și unde te întorci atunci când trebuie să obții claritate și o privire de ansamblu asupra procesului de învățare.",
+                        "type": "text",
+                        "style": "",
+                        "detail": 0,
+                        "format": 0,
+                        "version": 1
+                      }
+                    ],
+                    "direction": null,
+                    "textStyle": "",
+                    "textFormat": 0
+                  }
+                ],
+                "direction": null
+              }
+            },
+            "image": {
+              "id": 17,
+              "alt": "The Tower",
+              "caption": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "The Tower",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": null
+                }
+              },
+              "folder": null,
+              "updatedAt": "2026-10-10T13:46:39.224Z",
+              "createdAt": "2026-10-10T13:46:39.224Z",
+              "url": "/api/media/file/image-3.png",
+              "thumbnailURL": "/api/media/file/image-3-300x300.png",
+              "filename": "image-3.png",
+              "mimeType": "image/png",
+              "filesize": 71700,
+              "width": 1080,
+              "height": 1080,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/image-3-300x300.png",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/png",
+                  "filesize": 14514,
+                  "filename": "image-3-300x300.png"
+                },
+                "square": {
+                  "url": "/api/media/file/image-3-500x500.png",
+                  "width": 500,
+                  "height": 500,
+                  "mimeType": "image/png",
+                  "filesize": 26449,
+                  "filename": "image-3-500x500.png"
+                },
+                "small": {
+                  "url": "/api/media/file/image-3-600x600.png",
+                  "width": 600,
+                  "height": 600,
+                  "mimeType": "image/png",
+                  "filesize": 33308,
+                  "filename": "image-3-600x600.png"
+                },
+                "medium": {
+                  "url": "/api/media/file/image-3-900x900.png",
+                  "width": 900,
+                  "height": 900,
+                  "mimeType": "image/png",
+                  "filesize": 55053,
+                  "filename": "image-3-900x900.png"
+                },
+                "large": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "xlarge": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                },
+                "og": {
+                  "url": "/api/media/file/image-3-1200x630.png",
+                  "width": 1200,
+                  "height": 630,
+                  "mimeType": "image/png",
+                  "filesize": 58071,
+                  "filename": "image-3-1200x630.png"
+                }
+              }
+            },
+            "color": "customOrange",
+            "badgeText": "Explore",
+            "ctaLabel": "Discover",
+            "links": []
+          }
+        ],
+        "blockType": "playgroundJourney"
+      }
+    ],
+    "meta": {
+      "title": "Playground",
+      "image": null,
+      "description": "Playground-ul este partea din Learnity care lasa Learnitasii sa se exploreze pe ei insisi"
+    },
+    "publishedAt": "2026-10-03T09:53:55.910Z",
+    "generateSlug": false,
+    "slug": "playground",
+    "updatedAt": "2026-10-10T13:46:43.248Z",
+    "createdAt": "2026-10-03T09:53:52.003Z",
+    "_status": "published"
+  }
+]

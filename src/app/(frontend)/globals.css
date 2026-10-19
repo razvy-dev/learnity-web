@@ -51,7 +51,7 @@
   .container {
     width: 100%;
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding-inline: 0.75rem;
   }
 
   @variant sm {
@@ -87,7 +87,7 @@
 }
 
 :root {
-  --background: oklch(100% 0 0deg);
+  --background: #F0E6DD;
   --foreground: oklch(14.5% 0 0deg);
   --card: oklch(96.5% 0.005 265deg);
   --card-foreground: oklch(14.5% 0 0deg);
@@ -126,7 +126,7 @@
 }
 
 [data-theme='dark'] {
-  --background: oklch(14.5% 0 0deg);
+  --background: #F0E6DD;
   --foreground: oklch(98.5% 0 0deg);
   --card: oklch(17% 0 0deg);
   --card-foreground: oklch(98.5% 0 0deg);
@@ -212,6 +212,38 @@
   body {
     @apply bg-background text-foreground min-h-[100vh] flex flex-col;
   }
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Lenis smooth scroll base styles (inlined from lenis/dist/lenis.css) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch],
+.lenis [data-lenis-prevent-vertical],
+.lenis [data-lenis-prevent-horizontal] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
 }
 
 html {

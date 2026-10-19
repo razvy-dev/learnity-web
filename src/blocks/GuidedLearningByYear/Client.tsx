@@ -325,7 +325,7 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                           </div>
 
                           {/* Content */}
-                          <div className="p-6 flex flex-col flex-1">
+                          <div className="p-6 flex flex-col flex-1 bg-white">
                             <h4 className="text-xl font-bold text-customBlack mb-3 group-hover:text-customBlue transition-colors duration-300">
                               {experience.title}
                             </h4>

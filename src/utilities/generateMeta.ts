@@ -30,10 +30,13 @@ export const generateMeta = async (args: {
     ? doc?.meta?.title + ' | Learnity'
     : 'Learnity'
 
+  const excerpt = doc && 'excerpt' in doc ? (doc as Partial<Post>).excerpt : undefined
+  const description = doc?.meta?.description || excerpt || undefined
+
   return {
-    description: doc?.meta?.description,
+    description,
     openGraph: mergeOpenGraph({
-      description: doc?.meta?.description || '',
+      description: description || '',
       images: ogImage
         ? [
             {

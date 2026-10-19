@@ -36,6 +36,16 @@ import { Teachers } from '@/blocks/Teachers/config'
 import { Teacher } from '@/blocks/Teacher/config'
 import { Donate } from '@/blocks/Donate/config'
 import { DonateStory } from '@/blocks/DonateStory/config'
+import { PresentCourses } from '@/blocks/PresentCourses/config'
+import { AboutStory } from '@/blocks/AboutStory/config'
+import { Camps } from '@/blocks/Camps/config'
+import { GuidedCourses } from '@/blocks/GuidedCourses/config'
+import { Objectives } from '@/blocks/Objectives/config'
+import { PlaygroundShowcase } from '@/blocks/PlaygroundShowcase/config'
+import { SpinningTop } from '@/blocks/SpinningTop/config'
+import { WhatTheFuture } from '@/blocks/WhatTheFuture/config'
+import { WhySupport } from '@/blocks/WhySupport/config'
+import { DonationMethods } from '@/blocks/DonationMethods/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -92,6 +102,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 CallToAction,
                 Donate,
                 DonateStory,
+                PresentCourses,
                 Content,
                 MediaBlock,
                 Archive,
@@ -110,6 +121,15 @@ export const Pages: CollectionConfig<'pages'> = {
                 PlaygroundExamples,
                 Teachers,
                 Teacher,
+                AboutStory,
+                Camps,
+                GuidedCourses,
+                Objectives,
+                PlaygroundShowcase,
+                SpinningTop,
+                WhatTheFuture,
+                WhySupport,
+                DonationMethods,
               ],
               required: true,
               admin: {
