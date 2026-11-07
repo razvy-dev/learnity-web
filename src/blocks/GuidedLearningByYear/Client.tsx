@@ -1,10 +1,9 @@
 'use client'
 
 import { Bangers, Nunito } from 'next/font/google'
-import clsx from 'clsx'
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
-import { Calendar, User, MapPin, BookOpen, GraduationCap, Target } from 'lucide-react'
+import { Calendar, User, BookOpen, GraduationCap, Target } from 'lucide-react'
 
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
@@ -13,7 +12,7 @@ import { richTextToPlainText } from '@/utilities/richTextToPlainText'
 import { cn } from '@/utilities/ui'
 
 import type { GuidedLearningByYear as GuidedLearningByYearBlockProps } from '@/payload-types'
-import type { GuidedWorkshop, Media as MediaType } from '@/payload-types'
+import type { GuidedCourse, Media as MediaType } from '@/payload-types'
 
 const bangers = Bangers({
   subsets: ['latin', 'latin-ext'],
@@ -30,14 +29,11 @@ type Experience = {
   id: number
   title: string
   slug: string
-  description: GuidedWorkshop['description']
+  description: GuidedCourse['description']
   photo: number | MediaType
   teachers?: { teacher: string }[] | null
-  date?: string
   startDate?: string
   endDate?: string
-  location?: string
-  type: 'workshop' | 'course' | 'bootcamp'
   module: 'module1' | 'module2' | 'module3'
   href: string
 }
@@ -47,13 +43,6 @@ type ModuleConfig = {
   label: string
   description: string
   color: 'blue' | 'orange' | 'green' | 'purple' | 'red'
-}
-
-type ExperienceWithMeta = Experience & {
-  authorNames?: string
-  formattedDate: string
-  typeIcon: React.ReactNode
-  typeLabel: string
 }
 
 const colorStyles = {
@@ -119,22 +108,8 @@ const colorStyles = {
   },
 }
 
-function getTypeInfo(type: Experience['type']) {
-  switch (type) {
-    case 'workshop':
-      return { Icon: BookOpen, label: 'Workshop' }
-    case 'course':
-      return { Icon: GraduationCap, label: 'Curs' }
-    case 'bootcamp':
-      return { Icon: Target, label: 'Bootcamp' }
-  }
-}
-
 function formatExperienceDate(experience: Experience): string {
-  if (experience.type === 'workshop' && experience.date) {
-    return formatRomanianDate(experience.date)
-  }
-  if ((experience.type === 'course' || experience.type === 'bootcamp') && experience.startDate && experience.endDate) {
+  if (experience.startDate && experience.endDate) {
     const start = formatRomanianDate(experience.startDate)
     const end = formatRomanianDate(experience.endDate)
     return `${start} – ${end}`
@@ -284,8 +259,7 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                 {/* Experiences grid */}
                 {hasExperiences ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {experiences.map((experience, expIndex) => {
-                      const typeInfo = getTypeInfo(experience.type)
+                    {experiences.map((experience) => {
                       const colors = colorStyles[moduleConfig.color]
                       const description = richTextToPlainText(experience.description).trim()
                       const teachers = getTeachers(experience)
@@ -313,8 +287,8 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                             <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white backdrop-blur-sm"
                               style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
                             >
-                              <typeInfo.Icon size={18} />
-                              <span>{typeInfo.label}</span>
+                              <GraduationCap size={18} />
+                              <span>Curs</span>
                             </div>
                             {/* Module indicator */}
                             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
@@ -347,12 +321,6 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                                   <span>{formattedDate}</span>
                                 </div>
                               )}
-                              {experience.type === 'bootcamp' && experience.location && (
-                                <div className="flex items-center text-sm text-customBlack/70">
-                                  <MapPin size={16} className={cn('mr-2', colors.iconText)} />
-                                  <span>{experience.location}</span>
-                                </div>
-                              )}
                             </div>
 
                             <a
@@ -366,7 +334,7 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                               )}
                             >
                               Explorează
-                              <typeInfo.Icon
+                              <GraduationCap
                                 className="ml-2 transform group-hover/cta:translate-x-1 transition-transform duration-300"
                                 size={16}
                               />
@@ -386,7 +354,7 @@ export const GuidedLearningByYearClient: React.FC<GuidedLearningByYearClientProp
                     </div>
                     <h4 className={cn('text-lg font-semibold mb-2', colors.textDark)}>{moduleConfig.label}</h4>
                     <p className={cn('text-sm max-w-sm mx-auto', colors.text)}>
-                      Nu există experiențe disponibile pentru acest modul în anul {year}.
+                      Nu există cursuri disponibile pentru acest modul în anul {year}.
                       {moduleConfig.description && ` ${moduleConfig.description}`}
                     </p>
                   </div>
