@@ -72,16 +72,25 @@ export const hero: Field = {
         'Learnity: o comunitate democratică de învățare alternativă pentru adolescenți, locul în care aceștia descoperă cine sunt, dezvoltă relații autentice cu ceilalți și învață despre mediul în care trăiesc.',
       label: 'Subtitle',
     },
-    {
-      name: 'ctaLabel',
-      type: 'text',
-      admin: {
-        condition: isHighImpact,
-        description: 'Button label. Scrolls visitors to the contact section below.',
+    linkGroup({
+      appearances: false,
+      overrides: {
+        name: 'highImpactLinks',
+        maxRows: 1,
+        admin: {
+          condition: isHighImpact,
+        },
+        defaultValue: [
+          {
+            link: {
+              type: 'custom',
+              url: '/guided-learning',
+              label: 'Vezi toate workshop-urile',
+            },
+          },
+        ],
       },
-      defaultValue: 'Vezi mai mult',
-      label: 'Call to action label',
-    },
+    }),
     {
       name: 'contact',
       type: 'group',

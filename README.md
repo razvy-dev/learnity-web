@@ -298,6 +298,47 @@ Before deploying your app, you need to:
 
 You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
 
+## Downloading Railway backups
+
+The Railway backup scripts save files locally under `railway-backups/` (ignored by Git):
+
+```bash
+RAILWAY_APP_SERVICE=learnity-web scripts/download-railway-uploads.sh
+scripts/download-railway-database.sh
+```
+
+Both scripts default to the `production` environment. Set `RAILWAY_ENV` to download
+from another environment, and set `OUTPUT_DIR` to change the local destination.
+The uploads script downloads `/app/public/media`; override it with
+`REMOTE_UPLOADS_PATH` if the app stores uploads elsewhere. The database script
+creates a custom-format PostgreSQL dump and needs `pg_dump`/`pg_isready` installed.
+Both require the Railway CLI to be logged in and linked to the intended project.
+Treat the downloaded files as sensitive backups.
+
+To upload a downloaded Railway dump to a server and restore it into an existing,
+empty database on that server:
+
+```bash
+scripts/restore-railway-database-to-server.sh \
+  railway-backups/railway-production-<timestamp>.dump \
+  USER@SERVER DATABASE_NAME
+```
+
+The remote SSH user needs `psql` and `pg_restore` installed and permission to
+connect to the target database (for example, through `~/.pgpass`). The script
+prompts for confirmation and refuses to restore into a non-empty database.
+
+To upload the downloaded media files directly into Payload's uploads directory:
+
+```bash
+scripts/upload-uploads-to-server.sh \
+  railway-backups/uploads-<timestamp>/media \
+  USER@SERVER /path/to/payload/public/media
+```
+
+The script merges files without deleting server-only uploads, prompts before
+overwriting same-named files, and requires `rsync` on your machine and server.
+
 ## Questions
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).

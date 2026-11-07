@@ -2,11 +2,13 @@
 
 import { Nunito } from 'next/font/google'
 import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 
 import type { Page, Social } from '@/payload-types'
 
 import { Icon } from '@/components/Icon'
+import { CMSLink } from '@/components/Link'
 import { useHeaderTheme } from '@/providers/HeaderTheme'
 
 import './styles.css'
@@ -129,7 +131,7 @@ type HighImpactHeroClientProps = Page['hero'] & {
 export const HighImpactHeroClient: React.FC<HighImpactHeroClientProps> = ({
   title,
   subtitle,
-  ctaLabel,
+  highImpactLinks,
   contact,
   socials,
 }) => {
@@ -138,13 +140,6 @@ export const HighImpactHeroClient: React.FC<HighImpactHeroClientProps> = ({
   useEffect(() => {
     setHeaderTheme('light')
   }, [setHeaderTheme])
-
-  const handleScrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   const contactHeading = contact?.heading || 'Contactează-ne'
   const platforms = socials?.platforms
@@ -159,14 +154,29 @@ export const HighImpactHeroClient: React.FC<HighImpactHeroClientProps> = ({
         <Title text={title || 'Learnity'} />
         {subtitle && <p className="text-xl text-[#2f2f27] mb-8">{subtitle}</p>}
 
-        {ctaLabel && (
-          <button
-            type="button"
-            onClick={() => handleScrollToSection('contact')}
-            className="bg-[#F8A12E] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#e0911d] transition-all mb-8 transform hover:scale-105 active:scale-95"
-          >
-            {ctaLabel}
-          </button>
+        {Array.isArray(highImpactLinks) && highImpactLinks.length > 0 && (
+          <div className="mb-8 flex flex-wrap justify-center gap-4">
+            {highImpactLinks.map(({ link }, index) => {
+              if (!link) return null
+
+              return (
+                <CMSLink
+                  key={link.label || index}
+                  className="group inline-flex transform items-center rounded-full bg-[#F8A12E] px-8 py-3 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-[#e0911d] active:scale-95"
+                  newTab={link.newTab}
+                  reference={link.reference}
+                  type={link.type}
+                  url={link.url}
+                >
+                  {link.label}
+                  <ArrowRight
+                    className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    size={20}
+                  />
+                </CMSLink>
+              )
+            })}
+          </div>
         )}
 
         <div className="mt-8" id="contact">

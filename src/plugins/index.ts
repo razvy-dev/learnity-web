@@ -13,6 +13,9 @@ import { beforeSyncWithSearch } from '@/search/beforeSync'
 import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 
+import { buildConfig } from 'payload'
+import { mcpPlugin } from '@payloadcms/plugin-mcp'
+
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | Learnity` : 'Learnity'
 }
@@ -59,6 +62,12 @@ export const plugins: Plugin[] = [
   seoPlugin({
     generateTitle,
     generateURL,
+  }),
+  mcpPlugin({
+      collections: {
+        posts: { enabled: true }, // Enable collections you want Claude to access
+        pages: { enabled: true },
+      },
   }),
   formBuilderPlugin({
     fields: {
