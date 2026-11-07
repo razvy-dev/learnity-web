@@ -1,27 +1,30 @@
 #!/usr/bin/env bash
 #
-# Upload (mirror) your local Postgres database to the Railway Postgres service.
+# Upload (mirror) your local Postgres database and media files to Railway.
 #
 # This REPLACES the Railway database with an exact copy of your local database:
 #   1. Dumps the local database (from the docker compose Postgres service).
-#   2. Opens a temporary public TCP proxy to the Railway Postgres service.
-#   3. Drops the `public` schema on Railway and restores the dump into it.
-#   4. Removes the temporary proxy (unless one already existed).
+#   2. Copies local uploads from public/media to the Railway app's /app/public/media.
+#   3. Opens a temporary public TCP proxy to the Railway Postgres service.
+#   4. Drops the `public` schema on Railway and restores the dump into it.
+#   5. Removes the temporary proxy (unless one already existed).
 #
-# NOTE: only database rows are copied. Uploaded media files (public/media)
-# are NOT included - handle those separately (e.g. object storage).
+# Media files with matching names are overwritten on Railway; files that exist
+# only on Railway are left untouched. The app service must have a persistent
+# Railway volume mounted at /app/public/media.
 #
 # Usage:
-#   scripts/upload-db-to-railway.sh              # interactive, asks to confirm
-#   FORCE=1 scripts/upload-db-to-railway.sh      # non-interactive
+#   RAILWAY_APP_SERVICE=learnity-web scripts/upload-db-to-railway.sh
+#   FORCE=1 RAILWAY_APP_SERVICE=learnity-web scripts/upload-db-to-railway.sh
 #
-# Requires: railway (logged in + linked), docker, psql, pg_restore, node
+# Requires: railway (logged in + linked), docker, psql, pg_restore, node, scp
 #
 # Config (override via environment variables):
 #   LOCAL_DB=learnity-web         Local database name
 #   LOCAL_USER=postgres           Local database user
 #   COMPOSE_SERVICE=postgres      docker compose service for Postgres
 #   RAILWAY_DB_SERVICE=Postgres   Railway database service name
+#   RAILWAY_APP_SERVICE          Railway app service name
 #   RAILWAY_ENV=production        Railway environment
 #
 set -euo pipefail
@@ -30,6 +33,7 @@ LOCAL_DB="${LOCAL_DB:-learnity-web}"
 LOCAL_USER="${LOCAL_USER:-postgres}"
 COMPOSE_SERVICE="${COMPOSE_SERVICE:-postgres}"
 RAILWAY_DB_SERVICE="${RAILWAY_DB_SERVICE:-Postgres}"
+RAILWAY_APP_SERVICE="${RAILWAY_APP_SERVICE:-}"
 RAILWAY_ENV="${RAILWAY_ENV:-production}"
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -48,12 +52,17 @@ need docker
 need psql
 need pg_restore
 need node
+need scp
+
+[[ -n "$RAILWAY_APP_SERVICE" ]] || die "set RAILWAY_APP_SERVICE to the Railway app service name"
+[[ -d public/media ]] || die "local media directory not found: $repo_root/public/media"
 
 railway whoami >/dev/null 2>&1 || die "not logged in to Railway. Run: railway login"
 railway status >/dev/null 2>&1 || die "no Railway project linked. Run: railway link"
 
 tmp_dir="$(mktemp -d)"
 dump_file="$tmp_dir/railway-mirror.dump"
+ssh_config="$tmp_dir/ssh_config"
 proxy_id=""
 created_proxy=0
 
@@ -71,6 +80,7 @@ trap cleanup EXIT
 if [[ "${FORCE:-0}" != "1" ]]; then
   warn "This will OVERWRITE the Railway '$RAILWAY_DB_SERVICE' database in '$RAILWAY_ENV'"
   warn "with an exact copy of your local '$LOCAL_DB' database. This cannot be undone."
+  warn "Local files in public/media will be copied to '$RAILWAY_APP_SERVICE' in '$RAILWAY_ENV'."
   read -r -p "Type 'yes' to continue: " reply
   [[ "$reply" == "yes" ]] || die "aborted"
 fi
@@ -92,7 +102,19 @@ docker compose exec -T "$COMPOSE_SERVICE" pg_dump -U "$LOCAL_USER" -d "$LOCAL_DB
 [[ -s "$dump_file" ]] || die "dump failed (empty file)"
 log "Dump created ($(du -h "$dump_file" | cut -f1))"
 
-# --- 2. temporary TCP proxy ---
+# --- 2. media upload ---
+log "Checking Railway media directory on '$RAILWAY_APP_SERVICE'..."
+railway ssh --service "$RAILWAY_APP_SERVICE" --environment "$RAILWAY_ENV" -- test -d /app/public/media \
+  || die "Railway SSH check failed for '$RAILWAY_APP_SERVICE'. Resolve the SSH/access error above, then verify the volume is mounted at /app/public/media"
+
+log "Preparing SSH config for Railway file transfer..."
+railway ssh config --service "$RAILWAY_APP_SERVICE" --environment "$RAILWAY_ENV" \
+  --alias railway-media-upload --path "$ssh_config" >/dev/null
+
+log "Uploading local media files to Railway..."
+scp -r -F "$ssh_config" public/media railway-media-upload:/app/public/
+
+# --- 3. temporary TCP proxy ---
 log "Checking for an existing TCP proxy on '$RAILWAY_DB_SERVICE'..."
 existing="$(railway tcp-proxy list --service "$RAILWAY_DB_SERVICE" --environment "$RAILWAY_ENV" --json 2>/dev/null || true)"
 endpoint="$(printf '%s' "$existing" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{const p=(JSON.parse(s).proxies||[])[0];if(p)process.stdout.write(p.domain+":"+p.proxyPort)}catch(e){}})')"
@@ -111,7 +133,7 @@ fi
 export PGHOST="${endpoint%:*}"
 export PGPORT="${endpoint##*:}"
 
-# --- 3. Railway credentials ---
+# --- 4. Railway credentials ---
 log "Fetching Railway database credentials..."
 creds="$(railway variable list --service "$RAILWAY_DB_SERVICE" --environment "$RAILWAY_ENV" --json)"
 export PGUSER="$(printf '%s' "$creds" | json_get PGUSER)"
@@ -119,7 +141,7 @@ export PGPASSWORD="$(printf '%s' "$creds" | json_get PGPASSWORD)"
 export PGDATABASE="$(printf '%s' "$creds" | json_get PGDATABASE)"
 [[ -n "$PGUSER" && -n "$PGPASSWORD" && -n "$PGDATABASE" ]] || die "could not read Railway Postgres credentials"
 
-# --- 4. restore ---
+# --- 5. restore ---
 export PGOPTIONS="${PGOPTIONS:-} -c client_min_messages=warning"
 
 log "Waiting for the proxy to accept connections..."
@@ -136,5 +158,5 @@ psql -v ON_ERROR_STOP=1 -q -c 'DROP SCHEMA IF EXISTS public CASCADE; CREATE SCHE
 log "Restoring dump into Railway..."
 pg_restore --no-owner --no-privileges --no-comments --exit-on-error -d "$PGDATABASE" "$dump_file"
 
-log "Done. Railway '$RAILWAY_DB_SERVICE' now mirrors local '$LOCAL_DB'."
+log "Done. Railway '$RAILWAY_DB_SERVICE' now mirrors local '$LOCAL_DB'; media was uploaded to '$RAILWAY_APP_SERVICE'."
 warn "If the app was already running, restart the Railway service to drop any stale connections."

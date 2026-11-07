@@ -40,34 +40,18 @@ ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-# Remove this line if you do not have this folder
-COPY --from=builder /app/public ./public
-
-# The Railway volume is mounted at /app/public/media. When Docker/Compose
-# initialized the volume it created a root-owned `lost+found` directory,
-# which the non-root runtime user cannot scan (EACCES). Create our own
-# `lost+found` in the image so Docker copies it into the empty volume on
-# mount and the runtime user can read the whole media directory.
-RUN mkdir -p public/media/lost+found && chown -R nextjs:nodejs public/media
-
-# Set the correct permission for prerender cache
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
 EXPOSE 3000
-
 ENV PORT 3000
+ENV HOSTNAME "0.0.0.0"
+
+# Copy public assets and standalone build output from builder
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+# Ensure the media folder structure exists for the Railway volume mount
+RUN mkdir -p public/media/lost+found
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD HOSTNAME="0.0.0.0" node server.js
+CMD ["sh", "-c", "chmod -R 777 /app/public/media 2>/dev/null || true; node server.js"]
